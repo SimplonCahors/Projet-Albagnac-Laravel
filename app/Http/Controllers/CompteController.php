@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\QueryException;
 use DB;
 
 class CompteController extends Controller
@@ -22,9 +25,19 @@ class CompteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $name = $request->input('name');
+        $email = $request->input('email');
+        $password = $request->input('password');
+        
+        DB::table('users')->insert([
+            'name' => $name,
+            'email' => $email,
+            'password' => Hash::make($password)
+        ]);
+        return redirect()->route('admin');
+        
     }
 
     /**
@@ -47,7 +60,7 @@ class CompteController extends Controller
     public function show()
     {
         $users = DB::table('users')->get();
-        return view('admin', ['users' => $users]);
+        return view('adv/admin', ['users' => $users]);
     }
 
     /**
@@ -79,8 +92,10 @@ class CompteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
+    public function destroy($id){
+        $users = DB::table('users')
+        ->where('id','=',$id)
+        ->delete();
+        return redirect()->route('admin');
     }
 }

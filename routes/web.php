@@ -15,8 +15,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/admin', 'CompteController@show')->name('admin');
+Route::get('/adv/gestion', 'CompteController@show')->name('admin');
+Route::post('/adv/add', 'CompteController@create')->name('adduser');
+Route::get('/adv/{id}/delete', 'CompteController@destroy')->name('delete');
+
+Route::get('/adv/ajouter', function () {
+    return view('/adv/ajouter');
+})->name('adv-add-form');;
+
 
