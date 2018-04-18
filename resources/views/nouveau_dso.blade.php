@@ -1,17 +1,18 @@
 @extends('layouts.app')
 
-@section('title', 'Emballages')
+@section('title', 'Nouveau DSO')
 
 @section('sidebar')
     @parent
-   <nav>
+<nav>
    	<a href="#">Devis</a>
    	<a href="#">Etiquettes</a>
    	<a href="#">Emballages</a>
    	<a href="#">Combinaison</a>
-   </nav>
+</nav>
+    
 @endsection
 
 @section('content')
-  
+    
 @endsection
