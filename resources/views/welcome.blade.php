@@ -83,11 +83,15 @@
 
         <div class="content">
             <div class="title m-b-md">
+            @auth
                @if (!Auth::guest() && Auth::user()->adv)
                ADV INTERFACE
                @else
                COM INTERFACE
                @endif 
+            @else
+                LARAVEL
+            @endauth
            </div>
 
            <div class="links">
