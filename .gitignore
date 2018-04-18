@@ -13,3 +13,4 @@ yarn-error.log
 .env
 package-lock.json
 /sourcesPerso
+/resources/views/pagesTest
