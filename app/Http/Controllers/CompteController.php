@@ -29,11 +29,13 @@ class CompteController extends Controller
     {
         $name = $request->input('name');
         $email = $request->input('email');
+        $adv = $request->input('role');
         $password = $request->input('password');
         
         DB::table('users')->insert([
             'name' => $name,
             'email' => $email,
+            'adv'  => $adv,
             'password' => Hash::make($password)
         ]);
         return redirect()->route('admin');
