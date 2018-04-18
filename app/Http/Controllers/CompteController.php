@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class CompteController extends Controller
 {
@@ -43,9 +44,10 @@ class CompteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $users = DB::table('users')->get();
+        return view('admin', ['users' => $users]);
     }
 
     /**
