@@ -13,7 +13,6 @@ class CreateDsorootsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('dsolistes');
         Schema::create('dsoroots', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
