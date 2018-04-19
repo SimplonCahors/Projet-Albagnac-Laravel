@@ -19,3 +19,6 @@ Route::get('/', function () {
     $dsoroots = \App\Dsoroot::all();
     return view('welcome')->with('dsoroots', $dsoroots);
 });
+
+// Route::get('/dso/{idDso}/devis/infos-admin', 'DsorootController@index')->name('infos-admin');
+Route::get('/dso/{idDso}/devis/infos-admin/create', 'DsorootController@create')->name('infos-admin_create');
