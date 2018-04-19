@@ -9,6 +9,8 @@
 @import '~bootstrap/scss/bootstrap';
 
 @import "layout"; //pour importer la feuille de style layout.scss
+@import "components/connexion";
+@import "components/accueil";
 
 .navbar-laravel {
   background-color: #fff;
