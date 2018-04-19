@@ -10400,6 +10400,7 @@ header {
 h2 {
   color: #FFFFFF;
   text-align: center;
+  padding-top: 10px;
   padding-bottom: 5px;
 }
 
@@ -10410,6 +10411,22 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+nav {
+  background-color: #DEE0C0;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col {
+  border: solid 1px black;
 }
 
 .navbar-laravel {
