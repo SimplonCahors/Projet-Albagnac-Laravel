@@ -10617,7 +10617,7 @@ section#p-accueil div#liste-accueil ul li div.card-body {
 }
 
 section#etiquettes {
-  padding-top: 10vh;
+  padding-top: 30px;
 }
 
 section#etiquettes i {
@@ -10631,6 +10631,10 @@ section#etiquettes i {
 
 section#etiquettes div.card-header {
   margin-bottom: 30px;
+  background: #6DB99E;
+  color: white;
+  border-top-right: 4px !important;
+  border-top-left: 4px !important;
 }
 
 section#etiquettes div#image-upload {
@@ -10670,12 +10674,12 @@ section#etiquettes div#btn-bottom-page .vert:hover {
 }
 
 section#etiquettes div#btn-bottom-page .grisfonce {
-  border: 1px solid #262626 !important;
-  color: #262626;
+  border: 1px solid #395D66 !important;
+  color: #395D66;
 }
 
 section#etiquettes div#btn-bottom-page .grisfonce:hover {
-  background: #262626;
+  background: #395D66;
   color: white;
 }
 
