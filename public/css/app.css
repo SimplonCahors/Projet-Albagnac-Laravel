@@ -10389,11 +10389,12 @@ a.text-dark:focus {
 }
 
 body {
-  background-color: #6DB99E;
+  background-color: #EEE;
 }
 
 header {
-  background-color: #000000;
+  background-color: #262626;
+  height: 60px;
 }
 
 h2 {

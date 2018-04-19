@@ -1,9 +1,10 @@
 body{
-	background-color: #6DB99E;
+	background-color: #EEE;
 }
 
 header{
-	background-color: #000000;
+	background-color: $grisfonce;
+	height: 60px;
 }
 
 h2{
@@ -14,6 +15,6 @@ h2{
 
 section{
 	display: flex;
-  	justify-content: center;
+	justify-content: center;
 }
 
