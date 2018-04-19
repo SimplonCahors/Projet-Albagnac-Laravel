@@ -15,17 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/adv/gestion', 'CompteController@show')->name('admin');
-Route::post('/adv/add', 'CompteController@create')->name('adduser');
-Route::get('/adv/{id}/delete', 'CompteController@destroy')->name('delete');
 
-Route::get('/adv/ajouter', function () {
-    return view('/adv/ajouter');
+
+//Gestion des utilisateurs par l'adv
+Route::get('/users/gestion', 'CompteController@show')->name('admin');
+Route::post('/users/add', 'CompteController@create')->name('adduser');
+Route::get('/users/{id}/delete', 'CompteController@destroy')->name('delete');
+
+Route::get('/users/ajouter', function () {
+    return view('/users/ajouter');
 })->name('adv-add-form');;
 
 

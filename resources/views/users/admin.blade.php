@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+@auth
+@if (!Auth::guest() && Auth::user()->adv)
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-8">
@@ -46,4 +48,10 @@
 		</div>
 	</div>
 </div>
+@else
+Vous n'êtes pas ADV , page indisponible.
+@endif
+@else
+Se connecter
+@endauth
 @endsection

@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+@auth
+@if (!Auth::guest() && Auth::user()->adv)
 <div class="container">
 	<div class="row justify-content-center">
 		<div class="col-md-8">
@@ -8,7 +10,7 @@
 				<div class="card-header">Ajout d'un utilisateur</div>
 
 				<div class="card-body">
-					<form method="POST" action="/adv/add" enctype="multipart/form-data">
+					<form method="POST" action="/users/add" enctype="multipart/form-data">
 						@csrf
 
 						<div class="form-group row">
@@ -42,7 +44,7 @@
 							<label for="email" class="col-md-4 col-form-label text-md-right">Rôle</label>
 							<select name="role" class="col-md-6 custom-select" id="inputGroupSelect01">
 								<option selected>Role de l'utilisateur</option>
-								<option value="NULL">COM</option>
+								<option value="">COM</option>
 								<option value="1">ADV</option>
 							</select>
 						</div>
@@ -84,4 +86,10 @@
 		</div>
 	</div>
 </div>
+@else
+Vous n'êtes pas ADV , page indisponible.
+@endif
+@else
+Se connecter
+@endauth
 @endsection

@@ -62,7 +62,7 @@ class CompteController extends Controller
     public function show()
     {
         $users = DB::table('users')->get();
-        return view('adv/admin', ['users' => $users]);
+        return view('users/admin', ['users' => $users]);
     }
 
     /**
