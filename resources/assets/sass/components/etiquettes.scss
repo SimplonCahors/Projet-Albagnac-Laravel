@@ -1,0 +1,82 @@
+section#etiquettes{
+	padding-top:10vh;
+
+	i{
+		color:white;
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		font-size: 35px;
+		cursor:pointer;
+	}
+
+	div.card-header{
+		margin-bottom:30px;
+	}
+
+	div#image-upload{
+		width:90vw;
+		margin:auto;
+		background:white;
+		height:200px;
+		border-radius:5px;
+		margin-top:20px;
+		margin-bottom:30px;
+	}
+
+	div#btn-bottom-page{
+		display: flex;
+		flex-direction: column;
+		width: 220px;
+		margin-top:50px;
+		button{
+			margin:10px;
+		}
+
+		.vert{
+			border:1px solid $vert !important;
+			color:$vert;
+		}
+		.vert:hover{
+			background:$vert;
+			color:white;
+		}
+		.grisfonce{
+			border:1px solid $grisfonce !important;
+			color:$grisfonce;
+		}
+		.grisfonce:hover{
+			background:$grisfonce;
+			color:white;
+		}
+	}
+
+
+}
+
+
+
+@media all and (min-device-width: 800px) {
+	section#etiquettes{
+		form{
+			display:flex;
+			flex-direction:row;
+			
+			div#right,div#left{
+				width:45vw;
+				margin:20px;
+			}
+
+			div#right{
+				padding-top:52px;
+			}
+
+			div#image-upload{
+				width:100%;
+
+			}
+		}
+	}
+
+
+}
