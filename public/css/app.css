@@ -10595,6 +10595,32 @@ section#etiquettes div#btn-bottom-page .grisfonce:hover {
   color: white;
 }
 
+@media all and (min-device-width: 800px) {
+  section#etiquettes form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  section#etiquettes form div#right,
+  section#etiquettes form div#left {
+    width: 45vw;
+    margin: 20px;
+  }
+
+  section#etiquettes form div#right {
+    padding-top: 52px;
+  }
+
+  section#etiquettes form div#image-upload {
+    width: 100%;
+  }
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);

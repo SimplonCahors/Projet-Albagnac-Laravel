@@ -50,4 +50,33 @@ section#etiquettes{
 			color:white;
 		}
 	}
+
+
+}
+
+
+
+@media all and (min-device-width: 800px) {
+	section#etiquettes{
+		form{
+			display:flex;
+			flex-direction:row;
+			
+			div#right,div#left{
+				width:45vw;
+				margin:20px;
+			}
+
+			div#right{
+				padding-top:52px;
+			}
+
+			div#image-upload{
+				width:100%;
+
+			}
+		}
+	}
+
+
 }
