@@ -10527,8 +10527,63 @@ section#etiquettes {
   padding-top: 10vh;
 }
 
+section#etiquettes i {
+  color: white;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 35px;
+  cursor: pointer;
+}
+
 section#etiquettes div.card-header {
   margin-bottom: 30px;
+}
+
+section#etiquettes div#image-upload {
+  width: 90vw;
+  margin: auto;
+  background: white;
+  height: 200px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+section#etiquettes div#btn-bottom-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 220px;
+  margin-top: 50px;
+}
+
+section#etiquettes div#btn-bottom-page button {
+  margin: 10px;
+}
+
+section#etiquettes div#btn-bottom-page .vert {
+  border: 1px solid #6DB99E !important;
+  color: #6DB99E;
+}
+
+section#etiquettes div#btn-bottom-page .vert:hover {
+  background: #6DB99E;
+  color: white;
+}
+
+section#etiquettes div#btn-bottom-page .grisfonce {
+  border: 1px solid #262626 !important;
+  color: #262626;
+}
+
+section#etiquettes div#btn-bottom-page .grisfonce:hover {
+  background: #262626;
+  color: white;
 }
 
 .navbar-laravel {
