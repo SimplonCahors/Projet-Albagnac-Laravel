@@ -10621,6 +10621,99 @@ section#etiquettes div#btn-bottom-page .grisfonce:hover {
   }
 }
 
+section#emballages {
+  padding-top: 10vh;
+}
+
+section#emballages i {
+  color: white;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+section#emballages div.card-header {
+  margin-bottom: 30px;
+}
+
+section#emballages div#image-upload {
+  width: 90vw;
+  margin: auto;
+  background: white;
+  height: 200px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+section#emballages div.form-group div input {
+  height: 100%;
+}
+
+section#emballages div#btn-bottom-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 220px;
+  margin-top: 50px;
+}
+
+section#emballages div#btn-bottom-page button {
+  margin: 10px;
+}
+
+section#emballages div#btn-bottom-page .vert {
+  border: 1px solid #6DB99E !important;
+  color: #6DB99E;
+}
+
+section#emballages div#btn-bottom-page .vert:hover {
+  background: #6DB99E;
+  color: white;
+}
+
+section#emballages div#btn-bottom-page .grisfonce {
+  border: 1px solid #262626 !important;
+  color: #262626;
+}
+
+section#emballages div#btn-bottom-page .grisfonce:hover {
+  background: #262626;
+  color: white;
+}
+
+@media all and (min-device-width: 800px) {
+  section#emballages form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  section#emballages form div#right,
+  section#emballages form div#left {
+    width: 45vw;
+    margin: 20px;
+  }
+
+  section#emballages form div#right {
+    padding-top: 105px;
+  }
+
+  section#emballages form div#image-upload {
+    width: 100%;
+  }
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
