@@ -10523,6 +10523,14 @@ section#p-accueil div#liste-accueil ul li div.card-body {
           align-items: center;
 }
 
+section#etiquettes {
+  padding-top: 10vh;
+}
+
+section#etiquettes div.card-header {
+  margin-bottom: 30px;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
