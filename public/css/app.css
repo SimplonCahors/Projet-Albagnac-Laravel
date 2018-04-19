@@ -10395,20 +10395,13 @@ body {
 header {
   background-color: #262626;
   height: 60px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
 }
 
 h2 {
   color: #FFFFFF;
   text-align: center;
+  padding-top: 10px;
+  padding-bottom: 5px;
 }
 
 section {
@@ -10418,6 +10411,22 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+nav {
+  background-color: #DEE0C0;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col {
+  border: solid 1px black;
 }
 
 section#connexion {
