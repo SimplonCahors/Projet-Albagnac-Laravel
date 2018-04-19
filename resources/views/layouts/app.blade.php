@@ -5,7 +5,7 @@
     </head>
     <body>
         @section('sidebar')
-           <header>
+        <header>
             <h2>@yield('title')</h2>
         </header>
         @show

@@ -10395,12 +10395,20 @@ body {
 header {
   background-color: #262626;
   height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 h2 {
   color: #FFFFFF;
   text-align: center;
-  padding-bottom: 5px;
 }
 
 section {
@@ -10419,6 +10427,100 @@ section#connexion {
 section#connexion .vert {
   background: #6DB99E;
   color: white;
+}
+
+section#p-accueil {
+  padding-top: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#p-accueil div#btn-accueil {
+  margin-bottom: 30px;
+}
+
+section#p-accueil div#btn-accueil .btn {
+  margin: 5px;
+}
+
+section#p-accueil div#btn-accueil .jaune {
+  border: 1px solid #FFC11F !important;
+  color: #FFC11F;
+}
+
+section#p-accueil div#btn-accueil .jaune:hover {
+  background: #FFC11F;
+  color: white;
+}
+
+section#p-accueil div#btn-accueil .rouge {
+  border: 1px solid #ED3534 !important;
+  color: #ED3534;
+}
+
+section#p-accueil div#btn-accueil .rouge:hover {
+  background: #ED3534;
+  color: white;
+}
+
+section#p-accueil div#liste-accueil h3 {
+  width: 180px;
+  margin: auto;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #262626;
+}
+
+section#p-accueil div#liste-accueil ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+section#p-accueil div#liste-accueil ul li {
+  width: 80vw;
+  margin: 10px 0;
+}
+
+section#p-accueil div#liste-accueil ul li .vert {
+  border: 1px solid #6DB99E !important;
+  color: #6DB99E;
+}
+
+section#p-accueil div#liste-accueil ul li .vert:hover {
+  background: #6DB99E;
+  color: white;
+}
+
+section#p-accueil div#liste-accueil ul li h5.card-header {
+  background: #6DB99E;
+  color: white;
+}
+
+section#p-accueil div#liste-accueil ul li div.card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .navbar-laravel {

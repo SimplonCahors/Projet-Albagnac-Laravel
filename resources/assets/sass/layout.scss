@@ -5,12 +5,14 @@ body{
 header{
 	background-color: $grisfonce;
 	height: 60px;
+	display:flex;
+	align-items:center;
+	justify-content:center;
 }
 
 h2{
 	color:#FFFFFF;
 	text-align: center;
-	padding-bottom: 5px;
 }
 
 section{
