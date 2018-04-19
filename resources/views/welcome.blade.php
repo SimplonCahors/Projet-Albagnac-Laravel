@@ -14,7 +14,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                /* color: #636b6f; */
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -65,6 +65,12 @@
         </style>
     </head>
     <body>
+
+    @foreach ($dsoroots as $dsoroot)
+        <p>{{ $dsoroot->created_at }}</a>
+    @endforeach
+
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">

@@ -11,6 +11,6 @@ class DsorootsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Dsoroot::class, 5)->create();
+        factory(App\Dsoroot::class, 10)->create();
     }
 }
