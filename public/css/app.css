@@ -10726,8 +10726,7 @@ section#emballages div.card-header {
   margin-bottom: 30px;
   background: #6DB99E;
   color: white;
-  border-top-right: 4px !important;
-  border-top-left: 4px !important;
+  border-radius: 4px 4px 0 0;
 }
 
 section#emballages div#image-upload {
