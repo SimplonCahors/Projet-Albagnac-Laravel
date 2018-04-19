@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDsolistesTable extends Migration
+class CreateDsorootsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,8 @@ class CreateDsolistesTable extends Migration
      */
     public function up()
     {
-        Schema::create('dsolistes', function (Blueprint $table) {
+        Schema::dropIfExists('dsolistes');
+        Schema::create('dsoroots', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
             $table->unsignedInteger('id_user');
@@ -32,6 +33,6 @@ class CreateDsolistesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('dsolistes');
+        Schema::dropIfExists('dsoroots');
     }
 }

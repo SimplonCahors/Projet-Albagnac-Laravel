@@ -16,7 +16,7 @@ class CreateDevisD5sTable extends Migration
         Schema::create('devis_d5s', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_dso');
-            $table->foreign('id_dso')->references('id')->on('dsolistes');
+            $table->foreign('id_dso')->references('id')->on('dsoroots');
 
             $table->boolean('install_client');
             $table->boolean('plan_prevention');

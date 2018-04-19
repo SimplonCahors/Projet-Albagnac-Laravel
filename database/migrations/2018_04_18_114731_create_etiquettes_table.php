@@ -16,7 +16,7 @@ class CreateEtiquettesTable extends Migration
         Schema::create('etiquettes', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_dso');
-            $table->foreign('id_dso')->references('id')->on('dsolistes');
+            $table->foreign('id_dso')->references('id')->on('dsoroots');
             $table->string('ref_eti', 50);
             $table->integer('hauteur_eti');
             $table->integer('largeur_eti');

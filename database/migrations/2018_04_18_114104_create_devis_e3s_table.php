@@ -16,7 +16,7 @@ class CreateDevisE3sTable extends Migration
         Schema::create('devis_e3s', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_dso');
-            $table->foreign('id_dso')->references('id')->on('dsolistes');
+            $table->foreign('id_dso')->references('id')->on('dsoroots');
             $table->string('ref_emb', 50);
             $table->string('position_emb', 50);
             $table->string('dimension_impression_emb', 20);

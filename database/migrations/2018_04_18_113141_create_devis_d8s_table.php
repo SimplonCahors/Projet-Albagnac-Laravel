@@ -16,7 +16,7 @@ class CreateDevisD8sTable extends Migration
         Schema::create('devis_d8s', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_dso');
-            $table->foreign('id_dso')->references('id')->on('dsolistes');
+            $table->foreign('id_dso')->references('id')->on('dsoroots');
 
             $table->boolean('charge_albagnac');
             $table->boolean('charge_client');

@@ -16,7 +16,7 @@ class CreateDevisE2sTable extends Migration
         Schema::create('devis_e2s', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_dso');
-            $table->foreign('id_dso')->references('id')->on('dsolistes');
+            $table->foreign('id_dso')->references('id')->on('dsoroots');
             $table->string('ref_eti', 50);
             $table->string('position_eti', 50);
             $table->string('dimension_impression_eti', 20);

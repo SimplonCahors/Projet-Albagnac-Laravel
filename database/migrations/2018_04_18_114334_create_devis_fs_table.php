@@ -16,7 +16,7 @@ class CreateDevisFsTable extends Migration
         Schema::create('devis_fs', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_dso');
-            $table->foreign('id_dso')->references('id')->on('dsolistes');
+            $table->foreign('id_dso')->references('id')->on('dsoroots');
             $table->string('objet_rem', 100);
             $table->text('descriptif_rem');
         });

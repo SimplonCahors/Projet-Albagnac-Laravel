@@ -16,7 +16,7 @@ class CreateDevisD4sTable extends Migration
         Schema::create('devis_d4s', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_dso');
-            $table->foreign('id_dso')->references('id')->on('dsolistes');
+            $table->foreign('id_dso')->references('id')->on('dsoroots');
 
             $table->boolean('controle_conformite');
             $table->boolean('demande_fat');

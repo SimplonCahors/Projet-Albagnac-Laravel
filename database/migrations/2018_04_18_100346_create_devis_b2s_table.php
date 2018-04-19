@@ -16,7 +16,7 @@ class CreateDevisB2sTable extends Migration
         Schema::create('devis_b2s', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_dso');
-            $table->foreign('id_dso')->references('id')->on('dsolistes');
+            $table->foreign('id_dso')->references('id')->on('dsoroots');
             $table->string('nbr_type_machines', 100);
             $table->string('site_prod', 50);
             $table->string('implantation_sites', 50);

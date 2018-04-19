@@ -16,7 +16,7 @@ class CreateDevisA1sTable extends Migration
         Schema::create('devis_a1s', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_dso');
-            $table->foreign('id_dso')->references('id')->on('dsolistes');
+            $table->foreign('id_dso')->references('id')->on('dsoroots');
             $table->string('nom_client', 50);
             $table->string('adresse_client', 80);
             $table->string('tel_client', 30);

@@ -16,7 +16,7 @@ class CreateDevisE1sTable extends Migration
         Schema::create('devis_e1s', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_dso');
-            $table->foreign('id_dso')->references('id')->on('dsolistes');
+            $table->foreign('id_dso')->references('id')->on('dsoroots');
             $table->string('type_materiel', 100);
             $table->string('marque_materiel', 100);
             $table->string('modele_materiel', 100);

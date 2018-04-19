@@ -16,7 +16,7 @@ class CreateDevisD3sTable extends Migration
         Schema::create('devis_d3s', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('id_dso');
-            $table->foreign('id_dso')->references('id')->on('dsolistes');
+            $table->foreign('id_dso')->references('id')->on('dsoroots');
 
             $table->string('tension_elec');
             $table->string('reg_de_neutre');
