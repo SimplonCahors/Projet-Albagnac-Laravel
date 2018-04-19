@@ -14,8 +14,8 @@ section#etiquettes{
 		margin-bottom:30px;
 		background: $vert;	
 		color: white;
-		border-top-right: 4px !important;
-		border-top-left: 4px !important;
+		border-top-right-radius: 4px;
+		border-top-left-radius: 4px;
 	}
 
 	div#image-upload{
