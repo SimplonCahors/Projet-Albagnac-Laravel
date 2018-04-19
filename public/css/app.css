@@ -10412,6 +10412,15 @@ section {
           justify-content: center;
 }
 
+section#connexion {
+  padding-top: 10vh;
+}
+
+section#connexion .vert {
+  background: #6DB99E;
+  color: white;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
