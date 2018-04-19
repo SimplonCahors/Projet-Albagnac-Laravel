@@ -1,5 +1,5 @@
 section#etiquettes{
-	padding-top:10vh;
+	padding-top:30px;
 
 	i{
 		color:white;
@@ -12,6 +12,10 @@ section#etiquettes{
 
 	div.card-header{
 		margin-bottom:30px;
+		background: $vert;	
+		color: white;
+		border-top-right: 4px !important;
+		border-top-left: 4px !important;
 	}
 
 	div#image-upload{
@@ -42,11 +46,11 @@ section#etiquettes{
 			color:white;
 		}
 		.grisfonce{
-			border:1px solid $grisfonce !important;
-			color:$grisfonce;
+			border:1px solid $bleu !important;
+			color:$bleu;
 		}
 		.grisfonce:hover{
-			background:$grisfonce;
+			background:$bleu;
 			color:white;
 		}
 	}
