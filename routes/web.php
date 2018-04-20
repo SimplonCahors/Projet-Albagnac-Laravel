@@ -46,6 +46,7 @@ Route::get('/', function(){
 	return view('welcome');
 });
 
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -60,4 +61,8 @@ Route::get('/users/create', function () {
     return view('/users/create');
 })->name('users-create-form');;
 
+
+
+// Route::get('/dso/{idDso}/devis/infos-admin', 'DsorootController@index')->name('infos-admin');
+// Route::get('/dso/{idDso}/devis/infos-admin/create', 'DsorootController@create')->name('infos-admin_create');
 
