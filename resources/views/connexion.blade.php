@@ -16,7 +16,7 @@
 					<div class="card-header vert">Connexion à votre compte</div>
 
 					<div class="card-body">
-						<form method="POST" action="">
+						<form method="POST" action="#">
 							@csrf
 
 							<div class="form-group row">

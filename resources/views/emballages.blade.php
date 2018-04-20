@@ -9,7 +9,8 @@
 @section('content')
   <section id="emballages">
 	<i class="material-icons">menu</i>
-	<form>
+	<form method="POST" action="#">
+		 @csrf
 		<div id="left">
 			<div class="form-group row">
 				<div class="col-6">
@@ -98,8 +99,8 @@
 				<label for="ref-etiquette" class="col-7 col-form-label">Tolérance dimensionnelle</label>
 			</div>
 			<div class="container" id="btn-bottom-page">
-				<button type="button" class="btn btn-outline-primary grisfonce">Ajouter un emballage</button>
-				<button type="button" class="btn btn-outline-primary vert">Valider</button>
+				<button type="submit" class="btn btn-outline-primary grisfonce">Ajouter un emballage</button>
+				<button type="submit" class="btn btn-outline-primary vert">Valider</button>
 			</div>
 		</div>
 		
