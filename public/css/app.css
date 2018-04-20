@@ -10602,7 +10602,7 @@ section#p-accueil div#liste-accueil ul li div.card-body {
 }
 
 section#etiquettes {
-  padding-top: 10vh;
+  padding-top: 30px;
 }
 
 section#etiquettes i {
@@ -10616,6 +10616,10 @@ section#etiquettes i {
 
 section#etiquettes div.card-header {
   margin-bottom: 30px;
+  background: #6DB99E;
+  color: white;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
 }
 
 section#etiquettes div#image-upload {
@@ -10655,12 +10659,12 @@ section#etiquettes div#btn-bottom-page .vert:hover {
 }
 
 section#etiquettes div#btn-bottom-page .grisfonce {
-  border: 1px solid #262626 !important;
-  color: #262626;
+  border: 1px solid #395D66 !important;
+  color: #395D66;
 }
 
 section#etiquettes div#btn-bottom-page .grisfonce:hover {
-  background: #262626;
+  background: #395D66;
   color: white;
 }
 
@@ -10720,6 +10724,102 @@ section#sous_nav {
 section#sous_nav a {
   color: #262626;
   padding: 20px;
+}
+
+section#emballages {
+  padding-top: 10vh;
+}
+
+section#emballages i {
+  color: white;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+section#emballages div.card-header {
+  margin-bottom: 30px;
+  background: #6DB99E;
+  color: white;
+  border-radius: 4px 4px 0 0;
+}
+
+section#emballages div#image-upload {
+  width: 90vw;
+  margin: auto;
+  background: white;
+  height: 200px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+section#emballages div.form-group div input {
+  height: 100%;
+}
+
+section#emballages div#btn-bottom-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 220px;
+  margin-top: 50px;
+}
+
+section#emballages div#btn-bottom-page button {
+  margin: 10px;
+}
+
+section#emballages div#btn-bottom-page .vert {
+  border: 1px solid #6DB99E !important;
+  color: #6DB99E;
+}
+
+section#emballages div#btn-bottom-page .vert:hover {
+  background: #6DB99E;
+  color: white;
+}
+
+section#emballages div#btn-bottom-page .grisfonce {
+  border: 1px solid #395D66 !important;
+  color: #395D66;
+}
+
+section#emballages div#btn-bottom-page .grisfonce:hover {
+  background: #395D66;
+  color: white;
+}
+
+@media all and (min-device-width: 800px) {
+  section#emballages form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  section#emballages form div#right,
+  section#emballages form div#left {
+    width: 45vw;
+    margin: 20px;
+  }
+
+  section#emballages form div#right {
+    padding-top: 105px;
+  }
+
+  section#emballages form div#image-upload {
+    width: 100%;
+  }
 }
 
 .navbar-laravel {
