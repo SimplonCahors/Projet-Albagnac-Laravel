@@ -10699,20 +10699,35 @@ section#nouveau_dso form {
   width: 100%;
 }
 
-section#nouveau_dso div.div_dso {
-  width: 100%;
-  margin-top: 30px;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+section#nouveau_dso .btn.btn-outline-primary {
+  color: #FFC11F;
+  -webkit-text-decoration-color: #FFC11F;
+          text-decoration-color: #FFC11F;
+  border-color: #FFC11F;
 }
 
-section#nouveau_dso #left,
-section#nouveau_dso #right {
-  width: 35vw;
+section#nouveau_dso .btn.btn-outline-primary:hover {
+  background: #FFC11F;
+  color: white;
+  border-color: #FFC11F;
+}
+
+@media screen and (min-device-width: 1200px) {
+  section#nouveau_dso div.div_dso {
+    width: 100%;
+    margin-top: 30px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  section#nouveau_dso div.div_dso #left,
+  section#nouveau_dso div.div_dso #right {
+    width: 35vw;
+  }
 }
 
 section#sous_nav {
@@ -10731,6 +10746,16 @@ section#sous_nav {
 section#sous_nav a {
   color: #262626;
   padding: 20px;
+}
+
+@media screen and (max-device-width: 800px) {
+  section#sous_nav {
+    font-size: 14px;
+  }
+
+  section#sous_nav a {
+    padding: 2px;
+  }
 }
 
 section#emballages {

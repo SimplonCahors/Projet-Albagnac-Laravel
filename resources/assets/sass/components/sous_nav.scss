@@ -10,5 +10,12 @@ section#sous_nav{
 		color: $grisfonce;
 		padding: 20px;
 
-	}		
+	}	
+
+	@media screen and (max-device-width: 800px){
+		font-size: 14px;
+		a{
+			padding: 2px;
+		}
+	}	
 }

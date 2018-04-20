@@ -2,8 +2,6 @@
 
 @section('title', 'Nouveau DSO')
 
-@include('sous_nav')
-
 @section('content')
 <section id="nouveau_dso">
 	<form method="POST">
@@ -36,7 +34,7 @@
 					<label for="exampleInputPassword1">Nom du commercial :</label>
 					<input type="text" class="form-control" id="exampleInputPassword1" required>
 				</div>
-				<button type="submit">Suivant ></button>
+				<button type="button" class="btn btn-outline-primary" type="submit">Suivant ></button>
 			</div>
 		</div>
 	</form>
