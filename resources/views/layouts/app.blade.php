@@ -8,6 +8,7 @@
         @section('sidebar')
         <header>
             <h2>@yield('title')</h2>
+            <h5 style="text-align:right; margin-top:30px; margin-right:30px;"><a href="/">Retour</a></h5>
         </header>
         @show
 
