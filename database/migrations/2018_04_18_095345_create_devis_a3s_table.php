@@ -15,6 +15,7 @@ class CreateDevisA3sTable extends Migration
     {
         Schema::create('devis_a3s', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamps();
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
             $table->string('nom_tech', 50);

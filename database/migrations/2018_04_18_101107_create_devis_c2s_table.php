@@ -15,6 +15,7 @@ class CreateDevisC2sTable extends Migration
     {
         Schema::create('devis_c2s', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamps();
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
             $table->string('matiere_eti', 20);

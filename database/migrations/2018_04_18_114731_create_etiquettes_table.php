@@ -15,6 +15,7 @@ class CreateEtiquettesTable extends Migration
     {
         Schema::create('etiquettes', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamps();
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
             $table->string('ref_eti', 50);
