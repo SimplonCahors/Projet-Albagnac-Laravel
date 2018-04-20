@@ -6,16 +6,15 @@ section#nouveau_dso{
 	
 
 	
-	.btn.btn-outline-primary{
-		// background: $jaune;
-		color: $jaune;
-		text-decoration-color: $jaune;
+	.btn.btn-warning{
+		color: white;
+		text-decoration-color: white;
 		border-color: $jaune;
 	}
 
-	.btn.btn-outline-primary:hover{
-		background: $jaune;
-		color: white;
+	.btn.btn-warning:hover{
+		background: none;
+		color: $jaune;
 		border-color: $jaune;
 	}
 
@@ -31,7 +30,7 @@ section#nouveau_dso{
 			margin-top: 30px;
 			justify-content: space-between;
 			display: flex;
-			
+
 			#left, #right{
 				width: 35vw;
 			}

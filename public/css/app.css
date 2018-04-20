@@ -10699,16 +10699,16 @@ section#nouveau_dso form {
   width: 100%;
 }
 
-section#nouveau_dso .btn.btn-outline-primary {
-  color: #FFC11F;
-  -webkit-text-decoration-color: #FFC11F;
-          text-decoration-color: #FFC11F;
+section#nouveau_dso .btn.btn-warning {
+  color: white;
+  -webkit-text-decoration-color: white;
+          text-decoration-color: white;
   border-color: #FFC11F;
 }
 
-section#nouveau_dso .btn.btn-outline-primary:hover {
-  background: #FFC11F;
-  color: white;
+section#nouveau_dso .btn.btn-warning:hover {
+  background: none;
+  color: #FFC11F;
   border-color: #FFC11F;
 }
 

@@ -5,7 +5,7 @@
 @section('content')
 <section id="nouveau_dso">
 	<form method="POST" action="#">
-		 @csrf
+		@csrf
 		<div class="div_dso">
 			<div id="left">
 				<div class="nouveau-dso form-group">
@@ -35,7 +35,7 @@
 					<label for="exampleInputPassword1">Nom du commercial :</label>
 					<input type="text" class="form-control" id="exampleInputPassword1" required>
 				</div>
-				<button type="button" class="btn btn-outline-primary" type="submit">Suivant ></button>
+				<button type="button" class="btn btn-warning" type="submit">Suivant ></button>
 			</div>
 		</div>
 	</form>
