@@ -10395,6 +10395,7 @@ body {
 header {
   background-color: #262626;
   height: 60px;
+  margin: 0;
 }
 
 h2 {
@@ -10411,22 +10412,6 @@ section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-nav {
-  background-color: #DEE0C0;
-  font-family: "Raleway", sans-serif;
-  font-size: 18px;
-  text-align: center;
-}
-
-.row {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.col {
-  border: solid 1px black;
 }
 
 section#connexion {
@@ -10703,6 +10688,38 @@ section#etiquettes div#btn-bottom-page .grisfonce:hover {
   section#etiquettes form div#image-upload {
     width: 100%;
   }
+}
+
+section#nouveau_dso form {
+  width: 100%;
+}
+
+section#nouveau_dso div.div_dso {
+  width: 100%;
+  margin-top: 30px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section#nouveau_dso #left,
+section#nouveau_dso #right {
+  width: 35vw;
+}
+
+section#sous_nav {
+  height: 40px;
+  background-color: #FFC11F;
+  font-size: 18px;
+  text-align: center;
+}
+
+section#sous_nav a {
+  color: #262626;
+  padding: 20px;
 }
 
 .navbar-laravel {

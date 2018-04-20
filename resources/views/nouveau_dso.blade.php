@@ -2,44 +2,41 @@
 
 @section('title', 'Nouveau DSO')
 
-@section('sidebar')
-@parent
-<nav>
-	<a href="#">Devis</a>
-	<a href="#">Etiquettes</a>
-	<a href="#">Emballages</a>
-	<a href="#">Combinaison</a>
-</nav>
-
-@endsection
-
 @section('content')
+<section id="nouveau_dso">
 <form method="POST">
-<div class="container">
-
-	<div class="row">
-
-		<div class="col">
-
-			<label>Date Première demande client :</label>
-				<input type="date" name="client">
-			<label>Date de la réponse souhaitée :</label>
-				<input type="date" name="souhaitee">
-			<label>Date de l'envoie de l'offre :</label>
-				<input type="date" name="envoie">
-			<label>date de livraison souhaitée :</label>
-				<input type="date" name="livraison">
+	<div class="div_dso">
+		<div id="left">
+			<div class="nouveau-dso form-group">
+				<label for="exampleInputEmail1">Date Première demande client :</label>
+				<input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+			</div>
+			<div class="nouveau-dso form-group">
+				<label for="exampleInputPassword1">Date de la réponse souhaitée :</label>
+				<input type="date" class="form-control" id="exampleInputPassword1">
+			</div>
+			<div class="nouveau-dso form-group">
+				<label for="exampleInputEmail1">Date de l'envoi de l'offre :</label>
+				<input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+			</div>
+			<div class="nouveau-dso form-group">
+				<label for="exampleInputPassword1">Date de livraison souhaitée :</label>
+				<input type="date" class="form-control" id="exampleInputPassword1">
+			</div>
 		</div>
 
-		<div class="col">
-			<label>Date création fiche :</label>
-				<input type="date" name="fiche_creation">
-			<p>Nom du commercial :</p>
-				<input type="text" name="nom" required>
+		<div id="right">
+			<div class="nouveau-dso form-group">
+				<label for="exampleInputEmail1">Date création fiche :</label>
+				<input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+			</div>
+			<div class="nouveau-dso form-group">
+				<label for="exampleInputPassword1">Nom du commercial :</label>
+				<input type="text" class="form-control" id="exampleInputPassword1" required>
+			</div>
 			<button type="submit">Suivant ></button>
 		</div>
 	</div>
-</div>
 </form>
-
-	@endsection
+</section>
+@endsection

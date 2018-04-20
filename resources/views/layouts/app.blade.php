@@ -1,14 +1,15 @@
 <html>
     <head>
-        <title>App Name - @yield('Accueil')</title>
+        <title>@yield('Accueil')</title>
         <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
-        @section('sidebar')
+        <!-- @section('sidebar') -->
         <header>
             <h2>@yield('title')</h2>
         </header>
+        @include('sous_nav')
         @show
 
         <div class="container">
