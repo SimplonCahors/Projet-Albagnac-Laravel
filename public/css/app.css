@@ -10388,6 +10388,423 @@ a.text-dark:focus {
   }
 }
 
+body {
+  background-color: #EEE;
+}
+
+header {
+  background-color: #262626;
+  height: 60px;
+}
+
+h2 {
+  color: #FFFFFF;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav {
+  background-color: #DEE0C0;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col {
+  border: solid 1px black;
+}
+
+section#connexion {
+  padding-top: 10vh;
+}
+
+section#connexion .vert {
+  background: #6DB99E;
+  color: white;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+.archives.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.archives.btn-group-vertical {
+  margin-bottom: 15px;
+}
+
+.archives.list-group {
+  margin-bottom: 15px;
+}
+
+a.archives.list-group-item.list-group-item-action.disabled {
+  background-color: #ED3534;
+  border-color: #ED3534;
+  color: white;
+  text-align: center;
+}
+
+.form-control.mr-sm-2:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+#trierpar {
+  width: 100%;
+  height: 49px;
+  border: none;
+  background: #ED3534;
+  color: white;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+@media screen and (max-device-width: 800px) {
+  .archives.filtresetliste {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media screen and (min-device-width: 1200px) {
+  .archives.filtresetliste {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 70vw;
+  }
+
+  .archives.list-group {
+    width: 50vw;
+  }
+
+  header,
+  .archives.form-control.mr-sm-2 {
+    margin-bottom: 40px;
+  }
+}
+
+section#p-accueil {
+  padding-top: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#p-accueil div#btn-accueil {
+  margin-bottom: 30px;
+}
+
+section#p-accueil div#btn-accueil .btn {
+  margin: 5px;
+}
+
+section#p-accueil div#btn-accueil .jaune {
+  border: 1px solid #FFC11F !important;
+  color: #FFC11F;
+}
+
+section#p-accueil div#btn-accueil .jaune:hover {
+  background: #FFC11F;
+  color: white;
+}
+
+section#p-accueil div#btn-accueil .rouge {
+  border: 1px solid #ED3534 !important;
+  color: #ED3534;
+}
+
+section#p-accueil div#btn-accueil .rouge:hover {
+  background: #ED3534;
+  color: white;
+}
+
+section#p-accueil div#liste-accueil h3 {
+  width: 180px;
+  margin: auto;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #262626;
+}
+
+section#p-accueil div#liste-accueil ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+section#p-accueil div#liste-accueil ul li {
+  width: 80vw;
+  margin: 10px 0;
+}
+
+section#p-accueil div#liste-accueil ul li .vert {
+  border: 1px solid #6DB99E !important;
+  color: #6DB99E;
+}
+
+section#p-accueil div#liste-accueil ul li .vert:hover {
+  background: #6DB99E;
+  color: white;
+}
+
+section#p-accueil div#liste-accueil ul li h5.card-header {
+  background: #6DB99E;
+  color: white;
+}
+
+section#p-accueil div#liste-accueil ul li div.card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#etiquettes {
+  padding-top: 30px;
+}
+
+section#etiquettes i {
+  color: white;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+section#etiquettes div.card-header {
+  margin-bottom: 30px;
+  background: #6DB99E;
+  color: white;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+section#etiquettes div#image-upload {
+  width: 90vw;
+  margin: auto;
+  background: white;
+  height: 200px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+section#etiquettes div#btn-bottom-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 220px;
+  margin-top: 50px;
+}
+
+section#etiquettes div#btn-bottom-page button {
+  margin: 10px;
+}
+
+section#etiquettes div#btn-bottom-page .vert {
+  border: 1px solid #6DB99E !important;
+  color: #6DB99E;
+}
+
+section#etiquettes div#btn-bottom-page .vert:hover {
+  background: #6DB99E;
+  color: white;
+}
+
+section#etiquettes div#btn-bottom-page .grisfonce {
+  border: 1px solid #395D66 !important;
+  color: #395D66;
+}
+
+section#etiquettes div#btn-bottom-page .grisfonce:hover {
+  background: #395D66;
+  color: white;
+}
+
+@media all and (min-device-width: 800px) {
+  section#etiquettes form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  section#etiquettes form div#right,
+  section#etiquettes form div#left {
+    width: 45vw;
+    margin: 20px;
+  }
+
+  section#etiquettes form div#right {
+    padding-top: 52px;
+  }
+
+  section#etiquettes form div#image-upload {
+    width: 100%;
+  }
+}
+
+section#emballages {
+  padding-top: 10vh;
+}
+
+section#emballages i {
+  color: white;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 35px;
+  cursor: pointer;
+}
+
+section#emballages div.card-header {
+  margin-bottom: 30px;
+  background: #6DB99E;
+  color: white;
+  border-radius: 4px 4px 0 0;
+}
+
+section#emballages div#image-upload {
+  width: 90vw;
+  margin: auto;
+  background: white;
+  height: 200px;
+  border-radius: 5px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+section#emballages div.form-group div input {
+  height: 100%;
+}
+
+section#emballages div#btn-bottom-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 220px;
+  margin-top: 50px;
+}
+
+section#emballages div#btn-bottom-page button {
+  margin: 10px;
+}
+
+section#emballages div#btn-bottom-page .vert {
+  border: 1px solid #6DB99E !important;
+  color: #6DB99E;
+}
+
+section#emballages div#btn-bottom-page .vert:hover {
+  background: #6DB99E;
+  color: white;
+}
+
+section#emballages div#btn-bottom-page .grisfonce {
+  border: 1px solid #395D66 !important;
+  color: #395D66;
+}
+
+section#emballages div#btn-bottom-page .grisfonce:hover {
+  background: #395D66;
+  color: white;
+}
+
+@media all and (min-device-width: 800px) {
+  section#emballages form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+
+  section#emballages form div#right,
+  section#emballages form div#left {
+    width: 45vw;
+    margin: 20px;
+  }
+
+  section#emballages form div#right {
+    padding-top: 105px;
+  }
+
+  section#emballages form div#image-upload {
+    width: 100%;
+  }
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
