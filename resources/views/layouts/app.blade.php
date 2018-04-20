@@ -7,6 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
@@ -21,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav id="nav_principale" class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <h2>@yield('title')</h2>
             </div>
@@ -58,8 +59,11 @@
             @endguest
         </ul>
     </nav>
-
-    <main class="py-4">
+    <!-- Pour intégrer la sous-nav uniquement sur les pages choisies, l'url entre les quotes -->
+    @if (Request::is('nouveau_dso') or Request::is('etiquettes') or Request::is('emballages'))
+    @include('sous_nav')
+    @endif
+    <main>
         @yield('content')
     </main>
 </div>

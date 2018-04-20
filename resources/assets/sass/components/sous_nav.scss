@@ -1,0 +1,21 @@
+section#sous_nav{
+	display: flex;
+	align-items: center;
+	height: 40px;	
+	background-color: $jaune;
+	font-size: 18px;		
+	text-align: center;	
+
+	a{
+		color: $grisfonce;
+		padding: 20px;
+
+	}	
+
+	@media screen and (max-device-width: 800px){
+		font-size: 14px;
+		a{
+			padding: 2px;
+		}
+	}	
+}

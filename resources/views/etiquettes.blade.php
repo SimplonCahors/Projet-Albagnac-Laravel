@@ -9,7 +9,8 @@
 @section('content')
 <section id="etiquettes">
 	<i class="material-icons">menu</i>
-	<form>
+	<form method="POST" action="#">
+		 @csrf
 		<div id="left">
 			<div class="form-group row">
 				<div class="col-6">
@@ -91,8 +92,8 @@
 				<label class="col-7 col-form-label" for="enroulement">Enroulement</label>
 			</div>
 			<div class="container" id="btn-bottom-page">
-				<button type="button" class="btn btn-outline-primary grisfonce">Ajouter une étiquette</button>
-				<button type="button" class="btn btn-outline-primary vert">Valider</button>
+				<button type="submit" class="btn btn-outline-primary grisfonce">Ajouter une étiquette</button>
+				<button type="submit" class="btn btn-outline-primary vert">Valider</button>
 			</div>
 		</div>
 		

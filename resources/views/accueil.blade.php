@@ -9,8 +9,8 @@
 @section('content')
 <section id="p-accueil">
 	<div id="btn-accueil">
-		<button type="button" class="btn btn-outline-primary jaune">Nouveau DSO</button>
-		<button type="button" class="btn btn-outline-primary rouge">Archivres DSO</button>
+		<button type="submit" class="btn btn-outline-primary jaune">Nouveau DSO</button>
+		<button type="submit" class="btn btn-outline-primary rouge">Archivres DSO</button>
 	</div>    
 	<div id="liste-accueil">
 		<h3>DSO en cours :</h3>

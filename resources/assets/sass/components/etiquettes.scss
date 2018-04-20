@@ -1,5 +1,4 @@
 section#etiquettes{
-	padding-top:30px;
 
 	i{
 		color:white;
@@ -12,8 +11,8 @@ section#etiquettes{
 
 	div.card-header{
 		margin-bottom:30px;
-		background: $vert;	
-		color: white;
+		background: $jaune;	
+		color: $grisfonce;
 		border-top-right-radius: 4px;
 		border-top-left-radius: 4px;
 	}
@@ -38,19 +37,19 @@ section#etiquettes{
 		}
 
 		.vert{
-			border:1px solid $vert !important;
-			color:$vert;
+			border:1px solid $jaune !important;
+			color:$jaune;
 		}
 		.vert:hover{
-			background:$vert;
+			background:$jaune;
 			color:white;
 		}
 		.grisfonce{
-			border:1px solid $bleu !important;
-			color:$bleu;
+			border:1px solid $jaune !important;
+			color:$jaune;
 		}
 		.grisfonce:hover{
-			background:$bleu;
+			background:$jaune;
 			color:white;
 		}
 	}

@@ -1,0 +1,26 @@
+section#index{
+	.card-header{
+		background: $vert;
+		text-align: center;
+		color: white;
+		font-weight: bold;
+	}
+
+	.btn.btn-danger{
+		border-color: $vert;
+		background: none;
+		color: $vert;
+	}
+
+	.btn.btn-danger:hover{
+		border-color: $vert;
+		background: $vert;
+		color: white;
+	}
+
+	.btn.btn-primary{
+		background: $vert;
+		border-color: $vert;
+		margin-bottom: 30px;
+	}
+}
