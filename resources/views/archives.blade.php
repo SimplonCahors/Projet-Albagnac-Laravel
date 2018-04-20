@@ -10,7 +10,7 @@
 @section('content')
 <section id="archives">
 	<div class="archives container">
-		<form class="form-inline">
+		<form method="POST" action="#" class="form-inline">
 			<input class="archives form-control mr-sm-2" type="search" placeholder="Rechercher un DSO..." aria-label="Search">
 		</form>
 

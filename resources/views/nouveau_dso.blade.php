@@ -6,7 +6,8 @@
 
 @section('content')
 <section id="nouveau_dso">
-	<form method="POST">
+	<form method="POST" action="#">
+		 @csrf
 		<div class="div_dso">
 			<div id="left">
 				<div class="nouveau-dso form-group">

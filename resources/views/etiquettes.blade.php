@@ -9,7 +9,8 @@
 @section('content')
 <section id="etiquettes">
 	<i class="material-icons">menu</i>
-	<form>
+	<form method="POST" action="#">
+		 @csrf
 		<div id="left">
 			<div class="form-group row">
 				<div class="col-6">
