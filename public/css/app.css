@@ -10882,3 +10882,28 @@ section#emballages div#btn-bottom-page .grisfonce:hover {
   }
 }
 
+section#index .card-header {
+  background: #6DB99E;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+}
+
+section#index .btn.btn-danger {
+  border-color: #6DB99E;
+  background: none;
+  color: #6DB99E;
+}
+
+section#index .btn.btn-danger:hover {
+  border-color: #6DB99E;
+  background: #6DB99E;
+  color: white;
+}
+
+section#index .btn.btn-primary {
+  background: #6DB99E;
+  border-color: #6DB99E;
+  margin-bottom: 30px;
+}
+
