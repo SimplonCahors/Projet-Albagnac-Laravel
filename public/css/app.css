@@ -10388,24 +10388,7 @@ a.text-dark:focus {
   }
 }
 
-body {
-  background-color: #EEE;
-}
-
-header {
-  background-color: #262626;
-  height: 60px;
-  margin: 0;
-}
-
-h2 {
-  color: #FFFFFF;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 5px;
-}
-
-section {
+div#app section {
   margin-top: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10415,8 +10398,55 @@ section {
           justify-content: center;
 }
 
-section#sous_nav {
+div#app section#sous_nav {
   margin: 0;
+}
+
+div#app body {
+  background-color: #EEE;
+}
+
+div#app header {
+  background-color: #262626;
+  height: 60px;
+}
+
+div#app nav#nav_principale {
+  background-color: #262626;
+  height: 60px;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+div#app nav#nav_principale h2 {
+  width: 100%;
+  color: #FFFFFF;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 5px;
+}
+
+div#app nav#nav_principale ul {
+  position: absolute;
+  right: 80px;
+}
+
+div#app nav#nav_principale ul li a {
+  color: white;
+}
+
+div#app nav#nav_principale ul li.nav-item.dropdown.show div.dropdown-menu.show a.dropdown-item {
+  color: black;
+}
+
+div#app .row {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#app .col {
+  border: solid 1px black;
 }
 
 section#connexion {
@@ -10602,10 +10632,6 @@ section#p-accueil div#liste-accueil ul li div.card-body {
           align-items: center;
 }
 
-section#etiquettes {
-  padding-top: 30px;
-}
-
 section#etiquettes i {
   color: white;
   position: absolute;
@@ -10617,8 +10643,8 @@ section#etiquettes i {
 
 section#etiquettes div.card-header {
   margin-bottom: 30px;
-  background: #6DB99E;
-  color: white;
+  background: #FFC11F;
+  color: #262626;
   border-top-right-radius: 4px;
   border-top-left-radius: 4px;
 }
@@ -10650,22 +10676,22 @@ section#etiquettes div#btn-bottom-page button {
 }
 
 section#etiquettes div#btn-bottom-page .vert {
-  border: 1px solid #6DB99E !important;
-  color: #6DB99E;
+  border: 1px solid #FFC11F !important;
+  color: #FFC11F;
 }
 
 section#etiquettes div#btn-bottom-page .vert:hover {
-  background: #6DB99E;
+  background: #FFC11F;
   color: white;
 }
 
 section#etiquettes div#btn-bottom-page .grisfonce {
-  border: 1px solid #395D66 !important;
-  color: #395D66;
+  border: 1px solid #FFC11F !important;
+  color: #FFC11F;
 }
 
 section#etiquettes div#btn-bottom-page .grisfonce:hover {
-  background: #395D66;
+  background: #FFC11F;
   color: white;
 }
 
@@ -10696,7 +10722,7 @@ section#etiquettes div#btn-bottom-page .grisfonce:hover {
 }
 
 section#nouveau_dso form {
-  width: 100%;
+  width: 80%;
 }
 
 section#nouveau_dso .btn.btn-warning {
@@ -10710,6 +10736,12 @@ section#nouveau_dso .btn.btn-warning:hover {
   background: none;
   color: #FFC11F;
   border-color: #FFC11F;
+}
+
+@media screen and (max-device-width: 800px) {
+  section#nouveau_dso form {
+    width: 90%;
+  }
 }
 
 @media screen and (min-device-width: 1200px) {
@@ -10758,10 +10790,6 @@ section#sous_nav a {
   }
 }
 
-section#emballages {
-  padding-top: 10vh;
-}
-
 section#emballages i {
   color: white;
   position: absolute;
@@ -10773,8 +10801,8 @@ section#emballages i {
 
 section#emballages div.card-header {
   margin-bottom: 30px;
-  background: #6DB99E;
-  color: white;
+  background: #FFC11F;
+  color: #262626;
   border-radius: 4px 4px 0 0;
 }
 
@@ -10809,22 +10837,22 @@ section#emballages div#btn-bottom-page button {
 }
 
 section#emballages div#btn-bottom-page .vert {
-  border: 1px solid #6DB99E !important;
-  color: #6DB99E;
+  border: 1px solid #FFC11F !important;
+  color: #FFC11F;
 }
 
 section#emballages div#btn-bottom-page .vert:hover {
-  background: #6DB99E;
+  background: #FFC11F;
   color: white;
 }
 
 section#emballages div#btn-bottom-page .grisfonce {
-  border: 1px solid #395D66 !important;
-  color: #395D66;
+  border: 1px solid #FFC11F !important;
+  color: #FFC11F;
 }
 
 section#emballages div#btn-bottom-page .grisfonce:hover {
-  background: #395D66;
+  background: #FFC11F;
   color: white;
 }
 
@@ -10852,11 +10880,5 @@ section#emballages div#btn-bottom-page .grisfonce:hover {
   section#emballages form div#image-upload {
     width: 100%;
   }
-}
-
-.navbar-laravel {
-  background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
 

@@ -14,7 +14,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                /* color: #636b6f; */
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -72,7 +72,6 @@
                         <a href="{{ url('/home') }}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
                     @endauth
                 </div>
             @endif
@@ -87,9 +86,11 @@
                     <a href="/etiquettes">Etiquettes</a>
                     <a href="/emballages">Emballages</a>
                     <a href="/archives">Archives</a>
-                    <a href="/connexion">Connexion</a>
+                    <a href="/login">Connexion</a>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+</div>
+</body>
 </html>

@@ -45,3 +45,24 @@ Route::get('/layout', function(){
 Route::get('/', function(){
 	return view('welcome');
 });
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Gestion des utilisateurs par l'adv
+Route::get('/users/index', 'CompteController@show')->name('users-index');
+Route::post('/users/add', 'CompteController@create')->name('adduser');
+Route::get('/users/{id}/delete', 'CompteController@destroy')->name('delete');
+
+Route::get('/users/create', function () {
+    return view('/users/create');
+})->name('users-create-form');;
+
+
+
+// Route::get('/dso/{idDso}/devis/infos-admin', 'DsorootController@index')->name('infos-admin');
+// Route::get('/dso/{idDso}/devis/infos-admin/create', 'DsorootController@create')->name('infos-admin_create');
+

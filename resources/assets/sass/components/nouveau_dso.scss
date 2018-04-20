@@ -1,11 +1,9 @@
 section#nouveau_dso{
 
 	form{
-		width: 100%;
+		width: 80%;
 	}
-	
 
-	
 	.btn.btn-warning{
 		color: white;
 		text-decoration-color: white;
@@ -21,7 +19,11 @@ section#nouveau_dso{
 	// -------------------------MEDIA QUERIES-------------------------
 
 	@media screen and (max-device-width: 800px){
-		
+
+		form{
+			width: 90%;
+		}
+
 	}
 
 	@media screen and (min-device-width: 1200px){
