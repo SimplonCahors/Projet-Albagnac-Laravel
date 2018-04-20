@@ -65,12 +65,6 @@
         </style>
     </head>
     <body>
-
-    @foreach ($dsoroots as $dsoroot)
-        <p>{{ $dsoroot->created_at }}</a>
-    @endforeach
-
-
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">

@@ -47,4 +47,4 @@ Route::get('/', function(){
 });
 
 // Route::get('/dso/{idDso}/devis/infos-admin', 'DsorootController@index')->name('infos-admin');
-Route::get('/dso/{idDso}/devis/infos-admin/create', 'DsorootController@create')->name('infos-admin_create');
+// Route::get('/dso/{idDso}/devis/infos-admin/create', 'DsorootController@create')->name('infos-admin_create');
