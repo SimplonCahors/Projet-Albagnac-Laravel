@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Gestion des utilisateurs')
+
 @section('content')
 @auth
 @if (!Auth::guest() && Auth::user()->adv)
@@ -38,7 +40,7 @@
 
 					<div class="form-group row mb-0">
 						<div class="col-md-6 offset-md-4">
-							<a href="{{ route('adv-add-form') }}" class="btn btn-primary">
+							<a href="{{ route('users-create-form') }}" class="btn btn-primary">
 								Ajouter un compte COM
 							</a>
 						</div>
@@ -52,6 +54,6 @@
 Vous n'êtes pas ADV , page indisponible.
 @endif
 @else
-Se connecter
+ERROR
 @endauth
 @endsection

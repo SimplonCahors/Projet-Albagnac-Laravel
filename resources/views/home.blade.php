@@ -15,6 +15,8 @@
                     @endif
 
                     You are logged in!
+
+                    <a href="/accueil"> Accueil </a>
                 </div>
             </div>
         </div>

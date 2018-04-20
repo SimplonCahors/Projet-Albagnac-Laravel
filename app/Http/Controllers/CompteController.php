@@ -38,7 +38,7 @@ class CompteController extends Controller
             'adv'  => $adv,
             'password' => Hash::make($password)
         ]);
-        return redirect()->route('admin');
+        return redirect()->route('users-index');
         
     }
 
@@ -62,7 +62,7 @@ class CompteController extends Controller
     public function show()
     {
         $users = DB::table('users')->get();
-        return view('users/admin', ['users' => $users]);
+        return view('users/index', ['users' => $users]);
     }
 
     /**
@@ -98,6 +98,6 @@ class CompteController extends Controller
         $users = DB::table('users')
         ->where('id','=',$id)
         ->delete();
-        return redirect()->route('admin');
+        return redirect()->route('users-index');
     }
 }

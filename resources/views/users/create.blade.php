@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Ajout utilisateur')
+
 @section('content')
 @auth
 @if (!Auth::guest() && Auth::user()->adv)
@@ -75,7 +77,7 @@
 								<button type="submit" class="btn btn-primary">
 									Valider
 								</button>
-								<a href="{{ route('admin') }}" class="btn btn-secondary">
+								<a href="{{ route('users-index') }}" class="btn btn-secondary">
 									Retour
 								</a>
 							</div>
