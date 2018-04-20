@@ -74,10 +74,14 @@ Route::get('/layout', function () {
     return view('layout');
 });
 
+Route::get('/', function(){
+	return view('welcome');
+});
+
 
 /*
 |--------------------------------------------------------------------------
-| route à vérifier
+| route à vérifier ensemble
 |--------------------------------------------------------------------------
 */
 
@@ -85,3 +89,17 @@ Route::get('/', function () {
     $dsoroots = \App\Dsoroot::all();
     return view('welcome')->with('dsoroots', $dsoroots);
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+//Gestion des utilisateurs par l'adv
+Route::get('/users/index', 'CompteController@show')->name('users-index');
+Route::post('/users/add', 'CompteController@create')->name('adduser');
+Route::get('/users/{id}/delete', 'CompteController@destroy')->name('delete');
+
+Route::get('/users/create', function () {
+    return view('/users/create');
+})->name('users-create-form');

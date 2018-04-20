@@ -15,6 +15,7 @@ class CreateDevisE2sTable extends Migration
     {
         Schema::create('devis_e2s', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamps();
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
             $table->string('ref_eti', 50);

@@ -15,6 +15,7 @@ class CreateDevisD6sTable extends Migration
     {
         Schema::create('devis_d6s', function (Blueprint $table) {
             $table->increments('id');
+            $table->timestamps();
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
 
