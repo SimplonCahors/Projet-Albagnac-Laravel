@@ -91,8 +91,8 @@
 				<label class="col-7 col-form-label" for="inlineFormCustomSelect">Enroulement</label>
 			</div>
 			<div class="container" id="btn-bottom-page">
-				<button type="button" class="btn btn-outline-primary grisfonce">Ajouter une étiquette</button>
-				<button type="button" class="btn btn-outline-primary vert">Valider</button>
+				<button type="submit" class="btn btn-outline-primary grisfonce">Ajouter une étiquette</button>
+				<button type="submit" class="btn btn-outline-primary vert">Valider</button>
 			</div>
 		</div>
 		
