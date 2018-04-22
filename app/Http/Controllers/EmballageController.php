@@ -29,7 +29,7 @@ class EmballageController extends Controller
     
      /*
     |--------------------------------------------------------------------------
-    | INDEX => affiche la liste des emballages | /emballages
+    | INDEX => affiche la "liste" des emballages | /emballages
     |--------------------------------------------------------------------------
     */
     public function index()
@@ -94,9 +94,11 @@ class EmballageController extends Controller
         $emballage->save();
 
         //redirect to the defined page
-        return redirect('/dso/1/emballages');
-    }
+        //return redirect('/dso/{idDso}/emballages');
+        //return view('dso.emballages.show');
+        return Redirect::action('UserController@profile', array('user' => 1));
 
+    }
 
     /*  // a voir pour refactoring de la fonction du haut "store"
        
@@ -133,6 +135,7 @@ class EmballageController extends Controller
         }
     */
 
+    
     /**
      * Display the specified resource.
      *
@@ -154,7 +157,8 @@ class EmballageController extends Controller
     */
      public function show(Emballage $idEmballage) 
      {
-         return view('dso.emballages.show', compact('idEmballage'));
+         $emballage->id = ($idEmballage);
+         return view('dso.emballages.show', compact('idEmballage', 'emballage'));
      }
 
     /**

@@ -17,6 +17,12 @@
 |--------------------------------------------------------------------------
 */
 
+
+Route::get('posts/{post}/comments/{comment}', function ($postId, $commentId) {
+    //
+});
+
+
 //infos-admin
 Route::get('/dso/{idDso}/devis/infos-admin', 'DsorootController@index')->name('infos-admin');
 Route::get('/dso/{idDso}/devis/infos-admin/create', 'DsorootController@create')->name('infos-admin_create');
@@ -25,8 +31,13 @@ Route::get('/dso/{idDso}/devis/infos-admin/create', 'DsorootController@create')-
 // emballages
 Route::get('/dso/{idDso}/emballages', 'EmballageController@index');
 Route::get('/dso/{idDso}/emballages/create', 'EmballageController@create');
-Route::get('/dso/{idDso}/emballages/{idEmballages}', 'EmballageController@show');
 Route::post('/dso/{idDso}/emballages', 'EmballageController@store');
+Route::get('/dso/{idDso}/emballages', function ($idDso) {
+    return view('addPage', ['idDso' => $idDso]);
+}) -> name('addPage');
+
+Route::get('/dso/{idDso}/emballages/{idEmballages}', 'EmballageController@show');
+Route::get('/dso/{idDso}/emballages/{idEmballages}', 'EmballageController@edit');
 
 
 // etiquettes

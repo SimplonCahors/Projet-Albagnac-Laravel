@@ -9,8 +9,9 @@
 @section('content')
   <section id="emballages">
 	<i class="material-icons">menu</i>
-	<form action="/dso/{idDso}/emballages/{idEmballage}" method="POST">
+	<form action="/dso/{idDso}/emballages" method="POST">
 		@csrf
+
 		<div id="left">
 			<div class="form-group row">
 				<div class="col-6">
@@ -24,7 +25,6 @@
 				</div>
 				<label for="ref_ext" class="col-6 col-form-label">Réf. Client</label>
 			</div>
-
 			<div class="card-header text-center">
 				DIMENSIONS
 			</div>
@@ -98,21 +98,12 @@
 				</div>
 				<label for="tolerance_dim" class="col-7 col-form-label">Tolérance dimensionnelle</label>
 			</div>
-
-			{{-- <div class="form-group row">
-				<div class="col-5">
-					<input type="text" name="id_dso value="15">
-				</div>"
-			</div> --}}
-
-
 			<div class="container" id="btn-bottom-page">
 				<button type="button" class="btn btn-outline-primary grisfonce">Ajouter un emballage</button>
 				<button type="submit" class="btn btn-outline-primary vert" name="">Valider</button>
 			</div>
 		</div>
-		
-	</form>
-	
+
+	</form>	
 </section>
 @endsection
