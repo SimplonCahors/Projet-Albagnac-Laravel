@@ -32,9 +32,9 @@ Route::get('/dso/{idDso}/devis/infos-admin/create', 'DsorootController@create')-
 Route::get('/dso/{idDso}/emballages', 'EmballageController@index');
 Route::get('/dso/{idDso}/emballages/create', 'EmballageController@create');
 Route::post('/dso/{idDso}/emballages', 'EmballageController@store');
-Route::get('/dso/{idDso}/emballages', function ($idDso) {
-    return view('addPage', ['idDso' => $idDso]);
-}) -> name('addPage');
+// Route::get('/dso/{idDso}/emballages', function ($idDso) {
+//     return view('addPage', ['idDso' => $idDso]);
+// }) -> name('addPage');
 
 Route::get('/dso/{idDso}/emballages/{idEmballages}', 'EmballageController@show');
 Route::get('/dso/{idDso}/emballages/{idEmballages}', 'EmballageController@edit');
@@ -85,8 +85,8 @@ Route::get('/layout', function () {
     return view('layout');
 });
 
-Route::get('/', function(){
-	return view('welcome');
+Route::get('/', function () {
+    return view('welcome');
 });
 
 
