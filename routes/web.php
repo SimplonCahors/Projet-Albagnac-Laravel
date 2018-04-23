@@ -89,6 +89,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/b', function () {
+    return view('dso/devis/b/create');
+});
+
+Route::get('/devis', function(){
+	return view('devis');
+});
+
 
 /*
 |--------------------------------------------------------------------------
