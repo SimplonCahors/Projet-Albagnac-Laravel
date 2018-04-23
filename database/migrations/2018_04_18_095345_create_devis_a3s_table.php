@@ -18,11 +18,11 @@ class CreateDevisA3sTable extends Migration
             $table->timestamps();
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
-            $table->string('nom_tech', 50);
-            $table->string('fonction_tech', 50);
-            $table->string('mail_tech', 50);
-            $table->string('tel_tech', 50);
-            $table->string('experience_tech', 50);
+            $table->string('nom_tech', 50)->nullable();
+            $table->string('fonction_tech', 50)->nullable();
+            $table->string('mail_tech', 50)->nullable();
+            $table->string('tel_tech', 50)->nullable();
+            $table->string('experience_tech', 50)->nullable();
         });
     }
 

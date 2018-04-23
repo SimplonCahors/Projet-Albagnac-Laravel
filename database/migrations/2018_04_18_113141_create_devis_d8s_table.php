@@ -19,8 +19,8 @@ class CreateDevisD8sTable extends Migration
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
 
-            $table->boolean('charge_albagnac');
-            $table->boolean('charge_client');
+            $table->boolean('charge_albagnac')->nullable();
+            $table->boolean('charge_client')->nullable();
 
         });
     }

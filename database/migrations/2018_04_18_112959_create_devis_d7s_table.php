@@ -19,10 +19,10 @@ class CreateDevisD7sTable extends Migration
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
 
-            $table->integer('quantite');
-            $table->boolean('cd');
-            $table->boolean('numerique');
-            $table->string('langue');
+            $table->integer('quantite')->nullable();
+            $table->boolean('cd')->nullable();
+            $table->boolean('numerique')->nullable();
+            $table->string('langue')->nullable();
         });
     }
 

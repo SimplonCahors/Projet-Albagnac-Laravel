@@ -19,22 +19,22 @@ class CreateDevisD1sTable extends Migration
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
 
-            $table->string('type_machine_amont');
-            $table->string('type_convoy_amont');
-            $table->string('transfert_amont');
-            $table->string('arrivee_prod_amont');
+            $table->string('type_machine_amont')->nullable();
+            $table->string('type_convoy_amont')->nullable();
+            $table->string('transfert_amont')->nullable();
+            $table->string('arrivee_prod_amont')->nullable();
 
-            $table->string('type_machine_aval');
-            $table->string('type_convoy_aval');
-            $table->string('transfert_aval');
-            $table->string('sortie_prod_aval');
+            $table->string('type_machine_aval')->nullable();
+            $table->string('type_convoy_aval')->nullable();
+            $table->string('transfert_aval')->nullable();
+            $table->string('sortie_prod_aval')->nullable();
 
-            $table->string('sens_machine');
-            $table->integer('cadence_souhaitee');
-            $table->string('milieu');
-            $table->integer('hauteur_convoyeur');
-            $table->integer('espace_au_sol');
-            $table->integer('temp_local');
+            $table->string('sens_machine')->nullable();
+            $table->integer('cadence_souhaitee')->nullable();
+            $table->string('milieu')->nullable();
+            $table->integer('hauteur_convoyeur')->nullable();
+            $table->integer('espace_au_sol')->nullable();
+            $table->integer('temp_local')->nullable();
         });
     }
 

@@ -18,17 +18,17 @@ class CreateEtiquettesTable extends Migration
             $table->timestamps();
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
-            $table->string('ref_eti', 50);
-            $table->integer('hauteur_eti');
-            $table->integer('largeur_eti');
-            $table->integer('diametre_eti');
-            $table->string('observation_eti', 200);
-            $table->string('photo_eti', 150);
-            $table->integer('hauteur_bobine');
-            $table->integer('diametre_bobine');
-            $table->integer('diametre_mandrin');
-            $table->integer('nbr_eti');
-            $table->string('enroulement', 150);
+            $table->string('ref_eti', 50)->nullable();
+            $table->integer('hauteur_eti')->nullable();
+            $table->integer('largeur_eti')->nullable();
+            $table->integer('diametre_eti')->nullable();
+            $table->string('observation_eti', 200)->nullable();
+            $table->string('photo_eti', 150)->nullable();
+            $table->integer('hauteur_bobine')->nullable();
+            $table->integer('diametre_bobine')->nullable();
+            $table->integer('diametre_mandrin')->nullable();
+            $table->integer('nbr_eti')->nullable();
+            $table->string('enroulement', 150)->nullable();
         });
     }
 
