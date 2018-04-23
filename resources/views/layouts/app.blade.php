@@ -60,7 +60,7 @@
         </ul>
     </nav>
     <!-- Pour intégrer la sous-nav uniquement sur les pages choisies, l'url entre les quotes -->
-    @if (Request::is('nouveau_dso') or Request::is('etiquettes') or Request::is('emballages'))
+    @if (Request::is('nouveau_dso') or Request::is('etiquettes') or Request::is('emballages') or Request::is('a'))
     @include('sous_nav')
     @endif
     <main>
