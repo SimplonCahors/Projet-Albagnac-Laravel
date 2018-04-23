@@ -1,0 +1,42 @@
+section#nouveau_dso{
+
+	form{
+		width: 80%;
+	}
+
+	.btn.btn-warning{
+		color: white;
+		text-decoration-color: white;
+		border-color: $jaune;
+	}
+
+	.btn.btn-warning:hover{
+		background: none;
+		color: $jaune;
+		border-color: $jaune;
+	}
+
+	// -------------------------MEDIA QUERIES-------------------------
+
+	@media screen and (max-device-width: 800px){
+
+		form{
+			width: 90%;
+		}
+
+	}
+
+	@media screen and (min-device-width: 1200px){
+		div.div_dso{
+			width: 100%;
+			margin-top: 30px;
+			justify-content: space-between;
+			display: flex;
+
+			#left, #right{
+				width: 35vw;
+			}
+		}
+
+	}
+}
