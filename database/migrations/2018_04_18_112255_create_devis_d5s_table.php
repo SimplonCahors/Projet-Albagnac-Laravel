@@ -19,10 +19,10 @@ class CreateDevisD5sTable extends Migration
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
 
-            $table->boolean('install_client');
-            $table->boolean('plan_prevention');
-            $table->boolean('mise_en_route');
-            $table->boolean('demande_certif_ext');
+            $table->boolean('install_client')->nullable();
+            $table->boolean('plan_prevention')->nullable();
+            $table->boolean('mise_en_route')->nullable();
+            $table->boolean('demande_certif_ext')->nullable();
         });
     }
 

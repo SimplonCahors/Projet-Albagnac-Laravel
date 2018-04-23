@@ -18,10 +18,10 @@ class CreateDevisE1sTable extends Migration
             $table->timestamps();
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
-            $table->string('type_materiel', 100);
-            $table->string('marque_materiel', 100);
-            $table->string('modele_materiel', 100);
-            $table->string('mise_route_materiel', 50);
+            $table->string('type_materiel', 100)->nullable();
+            $table->string('marque_materiel', 100)->nullable();
+            $table->string('modele_materiel', 100)->nullable();
+            $table->string('mise_route_materiel', 50)->nullable();
         });
     }
 

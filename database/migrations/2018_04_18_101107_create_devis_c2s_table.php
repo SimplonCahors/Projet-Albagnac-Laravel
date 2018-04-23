@@ -18,9 +18,9 @@ class CreateDevisC2sTable extends Migration
             $table->timestamps();
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
-            $table->string('matiere_eti', 20);
-            $table->string('type_eti', 20);
-            $table->integer('nbr_eti');
+            $table->string('matiere_eti', 20)->nullable();
+            $table->string('type_eti', 20)->nullable();
+            $table->integer('nbr_eti')->nullable();
         });
     }
 
