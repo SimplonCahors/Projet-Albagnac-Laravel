@@ -9,7 +9,8 @@
 @section('content')
   <section id="emballages">
 	<i class="material-icons">menu</i>
-	<form action="/dso/{idDso}/emballages" method="POST">
+
+	<form action="/dso/{{$idDso}}/emballages/create" method="POST">
 		@csrf
 
 		<div id="left">
