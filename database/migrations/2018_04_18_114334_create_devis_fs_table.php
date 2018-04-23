@@ -18,8 +18,8 @@ class CreateDevisFsTable extends Migration
             $table->timestamps();
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
-            $table->string('objet_rem', 100);
-            $table->text('descriptif_rem');
+            $table->string('objet_rem', 100)->nullable();
+            $table->text('descriptif_rem')->nullable();
         });
     }
 

@@ -18,9 +18,9 @@ class CreateDevisC1sTable extends Migration
             $table->timestamps();
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
-            $table->string('matiere_emb', 20);
-            $table->string('type_emb', 20);
-            $table->integer('nbr_emb');
+            $table->string('matiere_emb', 20)->nullable();
+            $table->string('type_emb', 20)->nullable();
+            $table->integer('nbr_emb')->nullable();
         });
     }
 

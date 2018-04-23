@@ -19,10 +19,10 @@ class CreateDevisD3sTable extends Migration
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
 
-            $table->string('tension_elec');
-            $table->string('reg_de_neutre');
-            $table->float('debit_m3h', 8, 2);
-            $table->float('pression_bar', 8, 2);
+            $table->string('tension_elec')->nullable();
+            $table->string('reg_de_neutre')->nullable();
+            $table->float('debit_m3h', 8, 2)->nullable();
+            $table->float('pression_bar', 8, 2)->nullable();
         });
     }
 

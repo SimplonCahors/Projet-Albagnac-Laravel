@@ -52,9 +52,9 @@ class EmballageController extends Controller
     | CREATE => affiche le formulaire emballages à remplir | /emballages/create
     |--------------------------------------------------------------------------
     */
-     public function create()
+     public function create($idDso)
     {
-        return view('dso.emballages.create');
+        return view('dso.emballages.create', ['idDso'=> $idDso]);
     }
 
     /**
@@ -94,9 +94,10 @@ class EmballageController extends Controller
         $emballage->save();
 
         //redirect to the defined page
-        //return redirect('/dso/{idDso}/emballages');
+        return redirect('/dso/'.$idDso.'/emballages');
+        return view('test', ['idDso'=> $idDso]);
         //return view('dso.emballages.show');
-        return Redirect::action('UserController@profile', array('user' => 1));
+        // return Redirect::action('UserController@profile', array('user' => 1));
 
     }
 

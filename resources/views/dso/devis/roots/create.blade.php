@@ -7,27 +7,27 @@
                         <div class="row">
                             <div class="col-md-6 mb-3">
 
-                                <label for="firstName">Nom commercial</label>
-                                <input type="text" class="form-control" id="nomCommercial" placeholder="" value="" required>
+                                <!-- <label for="firstName">Nom commercial</label>
+                                <input type="text" class="form-control" id="nomCommercial" placeholder="" value="" required> -->
 
-                                <label for="firstName">Date création de fiche</label>
-                                <input type="date" class="form-control" id="dateCreation" placeholder="" value="" required>
+                                <!-- <label for="firstName">Date création de fiche</label>
+                                <input type="date" class="form-control" id="dateCreation" placeholder="" value="" required> -->
+
+                                <!-- <hr class="mb-4"> -->
+                                
+                                <label for="date_demande">Date 1ère demande client</label>
+                                <input type="date" class="form-control" id="date_demande" name="date_demande" placeholder="" value="" required>
+
+                                <label for="date_rep">Date réponse souhaitée</label>
+                                <input type="date" class="form-control" id="date_rep" name="date_rep" placeholder="" value="" required>
 
                                 <hr class="mb-4">
                                 
-                                <label for="firstName">Date 1ère demande client</label>
-                                <input type="date" class="form-control" id="dateDemande" placeholder="" value="" required>
+                                <label for="date_envoi">Date d'envoi de l'offre</label>
+                                <input type="date" class="form-control" id="date_envoi" name="data_envoi" placeholder="" value="" required>
 
-                                <label for="firstName">Date réponse souhaitée</label>
-                                <input type="date" class="form-control" id="dateReponse" placeholder="" value="" required>
-
-                                <hr class="mb-4">
-                                
-                                <label for="firstName">Date d'envoi de l'offre</label>
-                                <input type="date" class="form-control" id="envoiOffre" placeholder="" value="" required>
-
-                                <label for="firstName">Date livraison souhaitée</label>
-                                <input type="date" class="form-control" id="dateLivraison" placeholder="" value="" required>
+                                <label for="date_livraison">Date livraison souhaitée</label>
+                                <input type="date" class="form-control" id="date_livraison" name="date_livraison" placeholder="" value="" required>
 
                                 
                                 <div class="py-3">
