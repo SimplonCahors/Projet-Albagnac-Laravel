@@ -10,19 +10,19 @@
   <section id="emballages">
 	<i class="material-icons">menu</i>
 
-	<form action="/dso/{{$idDso}}/emballages/" method="POST">
+	<form action="/dso/{{$idDso}}/emballages/{{ $idEmballage }}/edit/" method="POST">
 		@csrf
 
 		<div id="left">
 			<div class="form-group row">
 				<div class="col-6">
-					<input type="text" class="form-control" id="ref_int" name="ref_int">
+					<input type="text" class="form-control" id="ref_int" name="ref_int" value="{{ $data->ref_int }}">
 				</div>
 				<label for="ref_int" class="col-6 col-form-label">Réf. Interne</label>
 			</div>
 			<div class="form-group row">
 				<div class="col-6">
-					<input type="text" class="form-control" id="ref_ext" name="ref_ext">
+					<input type="text" class="form-control" id="ref_ext" name="ref_ext" value="{{ $data->ref_ext }}">
 				</div>
 				<label for="ref_ext" class="col-6 col-form-label">Réf. Client</label>
 			</div>
@@ -31,28 +31,28 @@
 			</div>
 			<div class="form-group row">
 				<div class="col-6">
-					<input type="number" class="form-control" id="forme" name="forme">
+					<input type="number" class="form-control" id="forme" name="forme" value="{{ $data->forme }}">
 				</div>
 				<label for="forme" class="col-6 col-form-label">Forme</label>
 			</div>
 			<div class="form-group row">
 				<div class="col-6">
-					<input type="number" class="form-control" id="hauteur" name="hauteur">
+					<input type="number" class="form-control" id="hauteur" name="hauteur" value="{{ $data->hauteur }}">
 				</div>
 				<label for="hauteur" class="col-6 col-form-label">Hauteur en mm </label>
 			</div>
 			<div class="form-group row">
 				<div class="col-6">
-					<input type="number" class="form-control" id="diametre_longueur" name="diametre_longueur">
+					<input type="number" class="form-control" id="diametre_longueur" name="diametre_longueur" value="{{ $data->diametre_longueur }}">
 				</div>
 				<label for="diametre_longueur" class="col-6 col-form-label">Diamètre en mm</label>
 			</div>
 			<div class="form-group">
-				<textarea class="form-control" id="observations" name="observations" rows="3" placeholder="Observations"></textarea>
+				<textarea class="form-control" id="observations" name="observations" rows="3" placeholder="Observations" value="{{ $data->observations }}"></textarea>
 			</div>
 			<div class="form-group">
 				<label for="url_photo">Ajouter une photo :</label>
-				<input type="file" class="form-control-file" id="url_photo" name="url_photo">
+				<input type="file" class="form-control-file" id="url_photo" name="url_photo" value="{{ $data->url_photo }}">
 			</div>
 			<div id="image-upload">
 				<img src="" >
