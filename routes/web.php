@@ -89,6 +89,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/devis', function(){
+	return view('devis');
+});
+
+
 /*====================================
 =            Routes devis            =
 ====================================*/
@@ -98,12 +103,12 @@ Route::get('/a', function () {
     return view('dso/devis/a/a');
 });
 
-// Route::post('/a', function () {
-//     return view('dso/devis/a/a');
-// });
-
+Route::get('/b', function () {
+    return view('dso/devis/b/create');
+});
 
 /*=====  End of Routes devis  ======*/
+
 
 
 
