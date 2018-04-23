@@ -10726,9 +10726,9 @@ section#nouveau_dso form {
 }
 
 section#nouveau_dso .btn.btn-warning {
-  color: white;
-  -webkit-text-decoration-color: white;
-          text-decoration-color: white;
+  color: #262626;
+  -webkit-text-decoration-color: #262626;
+          text-decoration-color: #262626;
   border-color: #FFC11F;
 }
 
