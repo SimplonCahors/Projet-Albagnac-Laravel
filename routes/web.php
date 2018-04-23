@@ -48,6 +48,17 @@ Route::get('/dso/{idDso}/etiquettes/create', 'EtiquetteController@create');
 Route::get('/dso/{idDso}/etiquettes/{idEtiquettes}', 'EtiquetteController@show');
 Route::post('/dso/{idDso}/etiquettes', 'EtiquetteController@store');
 
+// nouveau dso
+Route::get('/{idUser}/nouveau-dso', 'DsorootController@create');
+Route::post('/{idUser}/nouveau-dso', 'DsorootController@store');
+
+
+// Exemple eyetracking
+// Route::get('/add/page/{idBD}', function ($idBD) {
+//     return view('addPage', ['idBD' => $idBD]);
+// }) -> name('addPage');
+
+// Route::post('/add/page/{idBD}', 'PageController@create');
 
 /*
 |--------------------------------------------------------------------------

@@ -18,10 +18,10 @@ class CreateDsorootsTable extends Migration
             $table->timestamps();
             $table->unsignedInteger('id_user');
             $table->foreign('id_user')->references('id')->on('users');
-            $table->date('date_demande');
-            $table->date('date_rep');
-            $table->date('date_envoi');
-            $table->date('date_livraison');
+            $table->date('date_demande')->nullable();
+            $table->date('date_rep')->nullable();
+            $table->date('date_envoi')->nullable();
+            $table->date('date_livraison')->nullable();
         });
     }
 
