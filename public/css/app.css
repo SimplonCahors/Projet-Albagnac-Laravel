@@ -10907,3 +10907,24 @@ section#index .btn.btn-primary {
   margin-bottom: 30px;
 }
 
+section#a form {
+  width: 60%;
+}
+
+section#a div#accordion {
+  margin-bottom: 100px;
+}
+
+section#a .card-header {
+  background: #FFC11F;
+}
+
+section#a button.btn.btn-link {
+  color: #262626;
+  text-decoration: none;
+}
+
+section#a .btn.btn-warning {
+  margin-top: 50px;
+}
+

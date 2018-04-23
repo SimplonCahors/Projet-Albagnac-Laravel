@@ -1,0 +1,23 @@
+section#a{
+
+	form{
+		width: 60%;
+	}
+
+	div#accordion{
+		margin-bottom: 100px;
+	}
+
+	.card-header{
+		background: $jaune;
+	}
+
+	button.btn.btn-link{
+		color: $grisfonce;
+		text-decoration: none;
+	}
+
+	.btn.btn-warning{
+		margin-top: 50px;
+	}
+}
