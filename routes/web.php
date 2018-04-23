@@ -98,6 +98,10 @@ Route::get('/a', function () {
     return view('dso/devis/a/a');
 });
 
+// Route::post('/a', function () {
+//     return view('dso/devis/a/a');
+// });
+
 
 /*=====  End of Routes devis  ======*/
 

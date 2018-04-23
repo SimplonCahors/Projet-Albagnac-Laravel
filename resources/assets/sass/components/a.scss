@@ -17,7 +17,10 @@ section#a{
 		text-decoration: none;
 	}
 
-	.btn.btn-warning{
-		margin-top: 50px;
+	.btn.btn-primary{
+		background: $jaune;
+		border-color: $jaune;
+		color: $grisfonce;
+		margin-top: 40px;
 	}
 }
