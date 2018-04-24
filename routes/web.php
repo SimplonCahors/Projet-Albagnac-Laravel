@@ -30,8 +30,11 @@ Route::get('/dso/{idDso}/devis/infos-admin/create', 'DsorootController@create')-
 
 // emballages
 Route::get('/dso/{idDso}/emballages', 'EmballageController@index');
-Route::get('/dso/{idDso}/emballages/create', 'EmballageController@create');
+Route::get('/dso/{idDso}/emballages/create', 'EmballageController@create')->name('emballage-create');
+Route::get('/dso/{idDso}/emballages/{idEmballage}/edit', 'EmballageController@edit');
+Route::post('/dso/{idDso}/emballages/{idEmballage}/edit', 'EmballageController@update');
 Route::post('/dso/{idDso}/emballages', 'EmballageController@store');
+Route::get('/dso/{idDso}/emballages/{idEmballage}/destroy', 'EmballageController@destroy');
 // Route::get('/dso/{idDso}/emballages', function ($idDso) {
 //     return view('addPage', ['idDso' => $idDso]);
 // }) -> name('addPage');
@@ -48,6 +51,14 @@ Route::post('/dso/{idDso}/etiquettes/{idEtiquettes}/edit', 'EtiquetteController@
 Route::get('/dso/{idDso}/etiquettes/{idEtiquettes}', 'EtiquetteController@show');
 Route::post('/dso/{idDso}/etiquettes', 'EtiquetteController@store');
 
+// nouveau dso
+Route::get('/{idUser}/nouveau-dso', 'DsorootController@create');
+Route::post('/{idUser}/nouveau-dso', 'DsorootController@store');
+Route::get('/{idUser}/edit/{idDso}', 'DsorootController@edit');
+Route::post('/{$idUser}/edit/{$idDso}', 'DsorootController@update');
+
+// affichage liste dso sur acceuil
+Route::get('/{idUser}/accueil', 'DsorootController@index');
 
 /*
 |--------------------------------------------------------------------------
@@ -55,9 +66,9 @@ Route::post('/dso/{idDso}/etiquettes', 'EtiquetteController@store');
 |--------------------------------------------------------------------------
 */
 
-Route::get('/accueil', function () {
-    return view('accueil');
-});
+// Route::get('/accueil', function () {
+//     return view('accueil');
+// });
 
 Route::get('/archives', function () {
     return view('archives');
