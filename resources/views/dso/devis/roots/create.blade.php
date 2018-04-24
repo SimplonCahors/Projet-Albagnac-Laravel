@@ -3,13 +3,14 @@
 <div class="row">
                 <div class="col-md-8 order-md-1">
                     <h4 class="mb-3">NOUVEAU DSO</h4>
-                    <form class="needs-validation" method="post" action="#">
+                    <form class="needs-validation" method="post" action="/{{$idUser}}/nouveau-dso">
                         @csrf
                         <div class="row">
                             <div class="col-md-6 mb-3">
                                
-                                <label for="id_user">Nom commercial</label>
-                                <input type="text" class="form-control" id="id_user" name="id_user" placeholder=" " value="" required>
+                               <!-- Défini automatiquement par le compte -->
+                                <!-- <label for="id_user">Nom commercial</label>
+                                <input type="text" class="form-control" id="id_user" name="id_user" placeholder=" " value="" required> -->
 
                                 <!-- Champ généré automatiquement par le timestamp de Laravel -->
                                 <!-- <label for="firstName">Date création de fiche</label>
