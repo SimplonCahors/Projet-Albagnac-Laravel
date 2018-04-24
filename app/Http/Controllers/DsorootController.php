@@ -16,11 +16,11 @@ class DsorootController extends Controller
      */
     public function index()
     {
-        $dsoList = Dsoroot::all();
-        $idUser = Auth::user()->id ;
-        $users = User::all();
+        $dsoList = Dsoroot::all();   // va chercher toutes les infos de la table Dsoroot
+        $idUser = Auth::user()->id ;  // permet de recup l'id de l'utilisateur connecté
+        $users = User::all();   // permet de recup les infos de la table Users
 
-        $dsocom = Dsoroot::all()->where('id_user', $idUser);
+        $dsocom = Dsoroot::all()->where('id_user', $idUser);  // permet de recupérer les dso du com connecté
 
         // return view('accueil')->with('dsoList', $dsoList)->with('idUser', $idUser) ;
         return view('accueil', ['dsoList'=>$dsoList, 'idUser'=> $idUser, 'users'=>$users, 'dsocom'=>$dsocom]);
