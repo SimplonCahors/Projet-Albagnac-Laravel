@@ -17,7 +17,19 @@ section#a{
 		text-decoration: none;
 	}
 
-	.btn.btn-warning{
-		margin-top: 50px;
+	.btn.btn-primary{
+		background: $jaune;
+		border-color: $jaune;
+		color: $grisfonce;
+		margin-top: 40px;
+	}
+}
+
+@media all and (max-device-width: 800px) {
+	section#a{
+		form{
+			width: 95%;
+		}
+
 	}
 }

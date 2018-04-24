@@ -10924,7 +10924,16 @@ section#a button.btn.btn-link {
   text-decoration: none;
 }
 
-section#a .btn.btn-warning {
-  margin-top: 50px;
+section#a .btn.btn-primary {
+  background: #FFC11F;
+  border-color: #FFC11F;
+  color: #262626;
+  margin-top: 40px;
+}
+
+@media all and (max-device-width: 800px) {
+  section#a form {
+    width: 95%;
+  }
 }
 
