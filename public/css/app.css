@@ -10931,3 +10931,9 @@ section#a .btn.btn-primary {
   margin-top: 40px;
 }
 
+@media all and (max-device-width: 800px) {
+  section#a form {
+    width: 95%;
+  }
+}
+

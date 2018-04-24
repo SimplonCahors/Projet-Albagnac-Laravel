@@ -100,7 +100,7 @@ Route::get('/devis', function(){
 
 //a
 Route::get('/a', function () {
-    return view('dso/devis/a/a');
+    return view('dso/devis/a/create');
 });
 
 Route::get('/b', function () {
