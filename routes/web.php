@@ -49,6 +49,13 @@ Route::post('/dso/{idDso}/etiquettes', 'EtiquetteController@store');
 // nouveau dso
 Route::get('/{idUser}/nouveau-dso', 'DsorootController@create');
 Route::post('/{idUser}/nouveau-dso', 'DsorootController@store');
+Route::get('/{idUser}/edit/{idDso}', 'DsorootController@edit');
+Route::post('/{$idUser}/edit/{$idDso}', 'DsorootController@update');
+
+// affichage liste dso sur acceuil
+Route::get('/accueil', 'DsorootController@index');
+
+
 
 
 // Exemple eyetracking
@@ -64,9 +71,9 @@ Route::post('/{idUser}/nouveau-dso', 'DsorootController@store');
 |--------------------------------------------------------------------------
 */
 
-Route::get('/accueil', function () {
-    return view('accueil');
-});
+// Route::get('/accueil', function () {
+//     return view('accueil');
+// });
 
 Route::get('/archives', function () {
     return view('archives');
