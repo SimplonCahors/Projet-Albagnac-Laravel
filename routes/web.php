@@ -16,11 +16,8 @@
 | Bonnes routes
 |--------------------------------------------------------------------------
 */
+Auth::routes();
 
-
-Route::get('posts/{post}/comments/{comment}', function ($postId, $commentId) {
-    //
-});
 
 
 //infos-admin
@@ -46,19 +43,20 @@ Route::get('/dso/{idDso}/emballages/{idEmballages}', 'EmballageController@edit')
 // etiquettes
 Route::get('/dso/{idDso}/etiquettes', 'EtiquetteController@index');
 Route::get('/dso/{idDso}/etiquettes/create', 'EtiquetteController@create');
-Route::get('/dso/{idDso}/etiquettes/{idEtiquettes}/edit', 'EtiquetteController@edit');
-Route::post('/dso/{idDso}/etiquettes/{idEtiquettes}/edit', 'EtiquetteController@update');
 Route::get('/dso/{idDso}/etiquettes/{idEtiquettes}', 'EtiquetteController@show');
 Route::post('/dso/{idDso}/etiquettes', 'EtiquetteController@store');
 
 // nouveau dso
-Route::get('/{idUser}/nouveau-dso', 'DsorootController@create');
+Route::get('/{idUser}/nouveau-dso', 'DsorootController@create')->name('nouveau-dso');
 Route::post('/{idUser}/nouveau-dso', 'DsorootController@store');
 Route::get('/{idUser}/edit/{idDso}', 'DsorootController@edit');
 Route::post('/{$idUser}/edit/{$idDso}', 'DsorootController@update');
 
 // affichage liste dso sur acceuil
-Route::get('/{idUser}/accueil', 'DsorootController@index');
+Route::get('/accueil', 'DsorootController@index')->name('accueil');
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -70,36 +68,41 @@ Route::get('/{idUser}/accueil', 'DsorootController@index');
 //     return view('accueil');
 // });
 
-Route::get('/archives', function () {
-    return view('archives');
-});
+// Route::get('/archives', function () {
+//     return view('archives');
+// });
 
-Route::get('/combinaisons', function () {
-    return view('combinaisons');
-});
+// Route::get('/combinaisons', function () {
+//     return view('combinaisons');
+// });
 
 // Route::get('/etiquettes', function () {
 //     return view('etiquettes');
 // });
 
-Route::get('/emballages', function () {
-    return view('emballages');
-});
+// Route::get('/emballages', function () {
+//     return view('emballages');
+// });
 
-Route::get('/connexion', function () {
-    return view('connexion');
-})->name('connexion');
+// Route::get('/connexion', function () {
+//     return view('connexion');
+// })->name('connexion');
 
-Route::get('/nouveau_dso', function () {
-    return view('nouveau_dso');
-});
+// Route::get('/nouveau_dso', function () {
+//     return view('nouveau_dso');
+// });
 
-Route::get('/layout', function () {
-    return view('layout');
-});
+// Route::get('/layout', function () {
+//     return view('layout');
+// });
 
 Route::get('/', function () {
-    return view('welcome');
+    if (Auth::check()) {
+    return view('home');
+    }
+    else{
+        return view('layouts.app');
+    }
 });
 
 
@@ -109,12 +112,12 @@ Route::get('/', function () {
 |--------------------------------------------------------------------------
 */
 
-Route::get('/', function () {
-    $dsoroots = \App\Dsoroot::all();
-    return view('welcome')->with('dsoroots', $dsoroots);
-});
+// Route::get('/accueil', function () {
+//     $dsoroots = \App\Dsoroot::all();
+//     return view('accueil')->with('dsoroots', $dsoroots);
+// });
 
-Auth::routes();
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 

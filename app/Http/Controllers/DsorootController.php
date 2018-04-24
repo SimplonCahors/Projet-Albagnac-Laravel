@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Dsoroot;
+use App\User;
+use Auth;
 
 class DsorootController extends Controller
 {
@@ -12,10 +14,13 @@ class DsorootController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($idUser)
+    public function index()
     {
         $dsoList = Dsoroot::all();
-        return view('accueil')->with('dsoList', $dsoList)->with('idUser', $idUser) ;
+        $idUser = Auth::user()->id ;
+        $users = User::all();
+        // return view('accueil')->with('dsoList', $dsoList)->with('idUser', $idUser) ;
+        return view('accueil', ['dsoList'=>$dsoList, 'idUser'=> $idUser, 'users'=>$users]);
     }
 
     /**
