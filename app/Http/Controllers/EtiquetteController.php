@@ -73,7 +73,24 @@ class EtiquetteController extends Controller
 
      public function update($idDso, $idEtiquette, Request $request)
     {
-        $data = Etiquette::where('idEtiquette', $idEtiquette)->update($request->all());
-        return view('dso.etiquettes.update', ['data'=>$data, 'idDso'=>$idDso, 'idEtiquette'=>$idEtiquette]);
+        $etiquette = Etiquette::find($idEtiquette);
+        
+        //use the request data
+        $etiquette->id_dso = ($idDso);
+        $etiquette->ref_eti = request('ref_eti');
+        $etiquette->hauteur_eti = request('hauteur_eti');
+        $etiquette->largeur_eti = request('largeur_eti');
+        $etiquette->diametre_eti = request('diametre_eti');
+        $etiquette->observation_eti = request('observation_eti');
+        $etiquette->photo_eti = request('photo_eti');
+        $etiquette->hauteur_bobine = request('hauteur_bobine');
+        $etiquette->diametre_bobine = request('diametre_bobine');
+        $etiquette->diametre_mandrin = request('diametre_mandrin');
+        $etiquette->nbr_eti = request('nbr_eti');
+        $etiquette->enroulement = request('enroulement');
+        $etiquette->enroulement = request('enroulement');
+
+        //save it to the dbb
+        $etiquette->save();
     }
 }

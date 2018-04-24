@@ -10,7 +10,7 @@
 
 <section id="etiquettes">
 	<i class="material-icons">menu</i>
-	<form action="/dso/{{ $idDso }}/etiquettes/{{ $idEtiquette }}/update/" method="POST">
+	<form action="/dso/{{ $idDso }}/etiquettes/{{ $idEtiquette }}/edit/" method="POST">
 		 @csrf
 		<div id="left">
 			<div class="form-group row">
@@ -42,7 +42,7 @@
 				<label for="diametre_eti" class="col-6 col-form-label">Diamètre en mm</label>
 			</div>
 			<div class="form-group">
-				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Observations" name="observation_eti" value="{{ $data->observation_eti }}"></textarea>
+				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Observations" name="observation_eti">{{ $data->observation_eti }}</textarea>
 			</div>
 			<div class="form-group">
 				<label for="photo_eti">Ajouter une photo :</label>
@@ -83,8 +83,8 @@
 			</div>
 			<div class="form-group row">
 				<div class="col-5">
-					<select class="custom-select" id="enroulement" name="enroulement" value="{{ $data->enroulement }}">
-						<option selected>Choix</option>
+					<select class="custom-select" id="enroulement" name="enroulement">
+						<option selected>{{ $data->enroulement }}</option>
 						<option value="1">One</option>
 						<option value="2">Two</option>
 						<option value="3">Three</option>
