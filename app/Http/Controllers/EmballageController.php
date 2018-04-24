@@ -233,8 +233,10 @@ class EmballageController extends Controller
     | DESTROY => supprime les données dans la DBB | /emballages/id
     |--------------------------------------------------------------------------
     */
-    public function destroy($id)
+    public function destroy($idDso,$idEmballage)
     {
-        //
+        $emballage = Emballage::find($idEmballage)->delete(); 
+
+        return redirect('/dso/'.$idDso.'/emballages/');
     }
 }
