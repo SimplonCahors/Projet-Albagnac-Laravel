@@ -19,8 +19,11 @@ class DsorootController extends Controller
         $dsoList = Dsoroot::all();
         $idUser = Auth::user()->id ;
         $users = User::all();
+
+        $dsocom = Dsoroot::all()->where('id_user', $idUser);
+
         // return view('accueil')->with('dsoList', $dsoList)->with('idUser', $idUser) ;
-        return view('accueil', ['dsoList'=>$dsoList, 'idUser'=> $idUser, 'users'=>$users]);
+        return view('accueil', ['dsoList'=>$dsoList, 'idUser'=> $idUser, 'users'=>$users, 'dsocom'=>$dsocom]);
     }
 
     /**
