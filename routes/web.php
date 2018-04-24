@@ -30,7 +30,9 @@ Route::get('/dso/{idDso}/devis/infos-admin/create', 'DsorootController@create')-
 
 // emballages
 Route::get('/dso/{idDso}/emballages', 'EmballageController@index');
-Route::get('/dso/{idDso}/emballages/create', 'EmballageController@create');
+Route::get('/dso/{idDso}/emballages/create', 'EmballageController@create')->name('emballage-create');
+Route::get('/dso/{idDso}/emballages/{idEmballage}/edit', 'EmballageController@edit');
+Route::post('/dso/{idDso}/emballages/{idEmballage}/edit', 'EmballageController@update');
 Route::post('/dso/{idDso}/emballages', 'EmballageController@store');
 // Route::get('/dso/{idDso}/emballages', function ($idDso) {
 //     return view('addPage', ['idDso' => $idDso]);
