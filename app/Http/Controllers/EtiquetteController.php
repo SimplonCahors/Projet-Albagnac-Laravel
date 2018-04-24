@@ -55,8 +55,8 @@ class EtiquetteController extends Controller
 
          /*
     |--------------------------------------------------------------------------
-        | SHOW => affiche l'emballage spécifié | GET /emballages/id
-    |--------------------------------------------------------------------------
+        | SHOW => affiche l'emballage spécifié | GET /emballages/idDso
+ $idEtiquette,    |--------------------------------------------------------------------------
     */
 
      public function show(Etiquette $idEtiquette) 
@@ -64,4 +64,33 @@ class EtiquetteController extends Controller
          $etiquette->id = ($idEtiquette);
          return view('dso.etiquettes.show', compact('idEtiquette', 'etiquette'));
      }
+
+     public function edit($idDso, $idEtiquette) 
+     {
+        $data = Etiquette::find($idEtiquette);
+        return view('dso.etiquettes.edit', ['data'=>$data, 'idDso'=>$idDso, 'idEtiquette'=>$idEtiquette]);
+     }
+
+     public function update($idDso, $idEtiquette, Request $request)
+    {
+        $etiquette = Etiquette::find($idEtiquette);
+        
+        //use the request data
+        $etiquette->id_dso = ($idDso);
+        $etiquette->ref_eti = request('ref_eti');
+        $etiquette->hauteur_eti = request('hauteur_eti');
+        $etiquette->largeur_eti = request('largeur_eti');
+        $etiquette->diametre_eti = request('diametre_eti');
+        $etiquette->observation_eti = request('observation_eti');
+        $etiquette->photo_eti = request('photo_eti');
+        $etiquette->hauteur_bobine = request('hauteur_bobine');
+        $etiquette->diametre_bobine = request('diametre_bobine');
+        $etiquette->diametre_mandrin = request('diametre_mandrin');
+        $etiquette->nbr_eti = request('nbr_eti');
+        $etiquette->enroulement = request('enroulement');
+        $etiquette->enroulement = request('enroulement');
+
+        //save it to the dbb
+        $etiquette->save();
+    }
 }

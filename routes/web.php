@@ -46,6 +46,8 @@ Route::get('/dso/{idDso}/emballages/{idEmballages}', 'EmballageController@edit')
 // etiquettes
 Route::get('/dso/{idDso}/etiquettes', 'EtiquetteController@index');
 Route::get('/dso/{idDso}/etiquettes/create', 'EtiquetteController@create');
+Route::get('/dso/{idDso}/etiquettes/{idEtiquettes}/edit', 'EtiquetteController@edit');
+Route::post('/dso/{idDso}/etiquettes/{idEtiquettes}/edit', 'EtiquetteController@update');
 Route::get('/dso/{idDso}/etiquettes/{idEtiquettes}', 'EtiquetteController@show');
 Route::post('/dso/{idDso}/etiquettes', 'EtiquetteController@store');
 
@@ -56,17 +58,7 @@ Route::get('/{idUser}/edit/{idDso}', 'DsorootController@edit');
 Route::post('/{$idUser}/edit/{$idDso}', 'DsorootController@update');
 
 // affichage liste dso sur acceuil
-Route::get('/accueil', 'DsorootController@index');
-
-
-
-
-// Exemple eyetracking
-// Route::get('/add/page/{idBD}', function ($idBD) {
-//     return view('addPage', ['idBD' => $idBD]);
-// }) -> name('addPage');
-
-// Route::post('/add/page/{idBD}', 'PageController@create');
+Route::get('/{idUser}/accueil', 'DsorootController@index');
 
 /*
 |--------------------------------------------------------------------------
@@ -86,9 +78,9 @@ Route::get('/combinaisons', function () {
     return view('combinaisons');
 });
 
-Route::get('/etiquettes', function () {
-    return view('etiquettes');
-});
+// Route::get('/etiquettes', function () {
+//     return view('etiquettes');
+// });
 
 Route::get('/emballages', function () {
     return view('emballages');

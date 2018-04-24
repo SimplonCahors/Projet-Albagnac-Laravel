@@ -2,7 +2,7 @@
 @section('content')
 <div class="row">
                 <div class="col-md-8 order-md-1">
-                    <h4 class="mb-3">NOUVEAU DSO</h4>
+                    <h4 class="mb-3">DSO N° {{$idDso}}</h4>
                     <form class="needs-validation" method="post" action="/{{$idUser}}/edit/{{$idDso}}">  
                         @csrf
                         <div class="row">
