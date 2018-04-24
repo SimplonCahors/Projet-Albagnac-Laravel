@@ -20,31 +20,66 @@
 			<tbody>
 				<tr>
 					<th scope="row">Matériel imposé par le client</th>
-					<td><input type="" name=""></td>
-					<td><input type="" name=""></td>
-					<td><input type="" name=""></td>
-					<td><input type="" name=""></td>
+					<td>
+						<div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div>
+					</td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div>
+					</td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>
 				</tr>
 				<tr>
 					<th scope="row">Matériel imposé par le client</th>
-					<td><input type="" name=""></td>
-					<td><input type="" name=""></td>
-					<td><input type="" name=""></td>
-					<td><input type="" name=""></td>	
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>	
 				</tr>
 				<tr>
 					<th scope="row">Matériel imposé par le client</th>
-					<td><input type="" name=""></td>
-					<td><input type="" name=""></td>
-					<td><input type="" name=""></td>
-					<td><input type="" name=""></td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>
 				</tr>
 				<tr>
 					<th scope="row">Matériel imposé par le client</th>
-					<td><input type="" name=""></td>
-					<td><input type="" name=""></td>
-					<td><input type="" name=""></td>
-					<td><input type="" name=""></td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>
+					<td><div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div></td>
 				</tr>
 			</tbody>
 		</table>
