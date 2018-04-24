@@ -55,8 +55,8 @@ class EtiquetteController extends Controller
 
          /*
     |--------------------------------------------------------------------------
-        | SHOW => affiche l'emballage spécifié | GET /emballages/id
-    |--------------------------------------------------------------------------
+        | SHOW => affiche l'emballage spécifié | GET /emballages/idDso
+ $idEtiquette,    |--------------------------------------------------------------------------
     */
 
      public function show(Etiquette $idEtiquette) 
@@ -64,4 +64,16 @@ class EtiquetteController extends Controller
          $etiquette->id = ($idEtiquette);
          return view('dso.etiquettes.show', compact('idEtiquette', 'etiquette'));
      }
+
+     public function edit($idDso, $idEtiquette) 
+     {
+        $data = Etiquette::find($idEtiquette);
+        return view('dso.etiquettes.edit', ['data'=>$data, 'idDso'=>$idDso, 'idEtiquette'=>$idEtiquette]);
+     }
+
+     public function update($idDso, $idEtiquette, Request $request)
+    {
+        $data = Etiquette::where('idEtiquette', $idEtiquette)->update($request->all());
+        return view('dso.etiquettes.update', ['data'=>$data, 'idDso'=>$idDso, 'idEtiquette'=>$idEtiquette]);
+    }
 }

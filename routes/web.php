@@ -43,6 +43,8 @@ Route::get('/dso/{idDso}/emballages/{idEmballages}', 'EmballageController@edit')
 // etiquettes
 Route::get('/dso/{idDso}/etiquettes', 'EtiquetteController@index');
 Route::get('/dso/{idDso}/etiquettes/create', 'EtiquetteController@create');
+Route::get('/dso/{idDso}/etiquettes/{idEtiquettes}/edit', 'EtiquetteController@edit');
+Route::get('/dso/{idDso}/etiquettes/{idEtiquettes}/update', 'EtiquetteController@update');
 Route::get('/dso/{idDso}/etiquettes/{idEtiquettes}', 'EtiquetteController@show');
 Route::post('/dso/{idDso}/etiquettes', 'EtiquetteController@store');
 
@@ -65,9 +67,9 @@ Route::get('/combinaisons', function () {
     return view('combinaisons');
 });
 
-Route::get('/etiquettes', function () {
-    return view('etiquettes');
-});
+// Route::get('/etiquettes', function () {
+//     return view('etiquettes');
+// });
 
 Route::get('/emballages', function () {
     return view('emballages');
