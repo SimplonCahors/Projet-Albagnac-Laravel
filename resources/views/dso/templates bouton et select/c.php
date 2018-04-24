@@ -26,7 +26,7 @@
 
 <div class="Class__Input__Div">
     <label for="nbr_emb">Nombre d'emballage</label>
-    <input type="___" class="Class__Input" id="nbr_emb" name="nbr_emb">
+    <input type="number" class="Class__Input" id="nbr_emb" name="nbr_emb">
 </div>
 
 
@@ -59,5 +59,5 @@
 
 <div class="Class__Input__Div">
     <label for="nbr_eti">Nombre de l'étiquette</label>
-    <input type="___" class="Class__Input" id="nbr_eti" name="nbr_eti">
+    <input type="number" class="Class__Input" id="nbr_eti" name="nbr_eti">
 </div>
