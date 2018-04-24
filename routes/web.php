@@ -55,17 +55,7 @@ Route::get('/{idUser}/edit/{idDso}', 'DsorootController@edit');
 Route::post('/{$idUser}/edit/{$idDso}', 'DsorootController@update');
 
 // affichage liste dso sur acceuil
-Route::get('/accueil', 'DsorootController@index');
-
-
-
-
-// Exemple eyetracking
-// Route::get('/add/page/{idBD}', function ($idBD) {
-//     return view('addPage', ['idBD' => $idBD]);
-// }) -> name('addPage');
-
-// Route::post('/add/page/{idBD}', 'PageController@create');
+Route::get('/{idUser}/accueil', 'DsorootController@index');
 
 /*
 |--------------------------------------------------------------------------

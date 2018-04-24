@@ -23,7 +23,7 @@
 						<h5 class="card-header text-center">DSO n°{{$dso->id}}</h5>
 						<div class="card-body">
 							<h5 class="card-title">Infos sur le DSO</h5>
-							<a href="#" class="btn btn-outline-primary vert">Acceder au DSO</a>
+							<a href="/{{$idUser}}/edit/{{$dso->id}}" class="btn btn-outline-primary vert">Acceder au DSO</a>
 						</div>
 					</div>
 					</li>

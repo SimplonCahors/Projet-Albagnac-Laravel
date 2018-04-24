@@ -12,11 +12,10 @@ class DsorootController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($idUser)
     {
         $dsoList = Dsoroot::all();
-        return view('accueil')->with('dsoList', $dsoList) ;
-        // return view('dso.devis.roots.index'); // inutil
+        return view('accueil')->with('dsoList', $dsoList)->with('idUser', $idUser) ;
     }
 
     /**
@@ -39,12 +38,12 @@ class DsorootController extends Controller
     public function store(Request $request, $idUser)
     {
         
-        // $this->validate(request(), [
-        //     'date_demande' => 'required',
-        //     'date_rep' => 'required',
-        //     'date_envoi' => 'required',
-        //     'date_livraison' => 'required',
-        // ]);
+        $this->validate(request(), [
+            'date_demande' => 'required',
+            'date_rep' => 'required',
+            'date_envoi' => 'required',
+            'date_livraison' => 'required',
+        ]);
 
         //create a new emballage 
         $dsoRoot = new Dsoroot;
