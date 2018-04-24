@@ -21,6 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    @auth
     <div id="app">
         <nav id="nav_principale" class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -64,8 +65,13 @@
     @include('sous_nav')
     @endif
     <main>
+
         @yield('content')
+        
     </main>
 </div>
+@else
+ @include('auth.login')
+@endauth
 </body>
 </html>
