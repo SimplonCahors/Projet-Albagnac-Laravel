@@ -7,9 +7,10 @@
 @endsection
 
 @section('content')
+
 <section id="etiquettes">
 	<i class="material-icons">menu</i>
-	<form method="POST" action="#">
+	<form action="/dso/{{$idDso}}/etiquettes/" method="POST">
 		 @csrf
 		<div id="left">
 			<div class="form-group row">

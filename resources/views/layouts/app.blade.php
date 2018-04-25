@@ -21,6 +21,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    @auth
     <div id="app">
         <nav id="nav_principale" class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -60,12 +61,17 @@
         </ul>
     </nav>
     <!-- Pour intégrer la sous-nav uniquement sur les pages choisies, l'url entre les quotes -->
-    @if (Request::is('nouveau_dso') or Request::is('etiquettes') or Request::is('emballages'))
+    @if (Request::is('etiquettes') or Request::is('emballages') or Request::is('a'))
     @include('sous_nav')
     @endif
     <main>
+
         @yield('content')
+        
     </main>
 </div>
+@else
+ @include('auth.login')
+@endauth
 </body>
 </html>

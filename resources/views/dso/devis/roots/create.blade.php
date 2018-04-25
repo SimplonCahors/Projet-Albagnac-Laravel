@@ -1,41 +1,43 @@
 @extends('layouts.app')
+
+@section('title', 'Nouveau DSO')
+
 @section('content')
-<div class="row">
-                <div class="col-md-8 order-md-1">
-                    <h4 class="mb-3">NOUVEAU DSO</h4>
-                    <form class="needs-validation" method="post" action="admin-info">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
+<section id="nouveau_dso">
+	<form method="POST" action="#">
+		@csrf
+		<div class="div_dso">
+			<div id="left">
+				<div class="nouveau-dso form-group">
+					<label for="exampleInputEmail1">Date Première demande client :</label>
+					<input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" >
+				</div>
+				<div class="nouveau-dso form-group">
+					<label for="exampleInputPassword1">Date de la réponse souhaitée :</label>
+					<input type="date" class="form-control" id="exampleInputPassword1">
+				</div>
+				<div class="nouveau-dso form-group">
+					<label for="exampleInputEmail1">Date de l'envoi de l'offre :</label>
+					<input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				</div>
+				<div class="nouveau-dso form-group">
+					<label for="exampleInputPassword1">Date de livraison souhaitée :</label>
+					<input type="date" class="form-control" id="exampleInputPassword1">
+				</div>
+			</div>
 
-                                <label for="firstName">Nom commercial</label>
-                                <input type="text" class="form-control" id="nomCommercial" placeholder="" value="" required>
-
-                                <label for="firstName">Date création de fiche</label>
-                                <input type="date" class="form-control" id="dateCreation" placeholder="" value="" required>
-
-                                <hr class="mb-4">
-                                
-                                <label for="firstName">Date 1ère demande client</label>
-                                <input type="date" class="form-control" id="dateDemande" placeholder="" value="" required>
-
-                                <label for="firstName">Date réponse souhaitée</label>
-                                <input type="date" class="form-control" id="dateReponse" placeholder="" value="" required>
-
-                                <hr class="mb-4">
-                                
-                                <label for="firstName">Date d'envoi de l'offre</label>
-                                <input type="date" class="form-control" id="envoiOffre" placeholder="" value="" required>
-
-                                <label for="firstName">Date livraison souhaitée</label>
-                                <input type="date" class="form-control" id="dateLivraison" placeholder="" value="" required>
-
-                                
-                                <div class="py-3">
-                                    <button class="btn btn-primary btn-lg btn-block" type="submit">Continuer</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+			<div id="right">
+				<div class="nouveau-dso form-group">
+					<label for="exampleInputEmail1">Date création fiche :</label>
+					<input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+				</div>
+				<div class="nouveau-dso form-group">
+					<label for="exampleInputPassword1">Nom du commercial :</label>
+					<input type="text" class="form-control" id="exampleInputPassword1" required>
+				</div>
+				<button type="button" class="btn btn-warning" type="submit">Suivant ></button>
+			</div>
+		</div>
+	</form>
+</section>
 @endsection

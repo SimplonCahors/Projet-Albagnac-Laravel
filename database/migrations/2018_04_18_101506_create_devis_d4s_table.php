@@ -19,11 +19,11 @@ class CreateDevisD4sTable extends Migration
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
 
-            $table->boolean('controle_conformite');
-            $table->boolean('demande_fat');
-            $table->date('date_desiree_fat')->nullable();
-            $table->boolean('demande_cem');
-            $table->boolean('demande_certif_ext');
+            $table->boolean('controle_conformite')->nullable();
+            $table->boolean('demande_fat')->nullable();
+            $table->date('date_desiree_fat')->nullable()->nullable();
+            $table->boolean('demande_cem')->nullable();
+            $table->boolean('demande_certif_ext')->nullable();
         });
     }
 

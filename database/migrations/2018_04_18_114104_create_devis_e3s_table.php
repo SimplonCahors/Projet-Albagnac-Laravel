@@ -18,10 +18,10 @@ class CreateDevisE3sTable extends Migration
             $table->timestamps();
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
-            $table->string('ref_emb', 50);
-            $table->string('position_emb', 50);
-            $table->string('dimension_impression_emb', 20);
-            $table->string('rem_emb', 50);
+            $table->string('ref_emb', 50)->nullable();
+            $table->string('position_emb', 50)->nullable();
+            $table->string('dimension_impression_emb', 20)->nullable();
+            $table->string('rem_emb', 50)->nullable();
         });
     }
 

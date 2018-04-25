@@ -14,9 +14,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                     <p>{{ Auth::user()->name }} , vous êtes connecté </p>
+                    
 
-                    <a href="/accueil"> Accueil </a>
+                    <a href="{{ route('accueil') }}"> Aller vers l'acceuil </a>
                 </div>
             </div>
         </div>

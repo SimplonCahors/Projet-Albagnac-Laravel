@@ -18,10 +18,10 @@ class CreateDevisB2sTable extends Migration
             $table->timestamps();
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
-            $table->string('nbr_type_machines', 100);
-            $table->string('site_prod', 50);
-            $table->string('implantation_sites', 50);
-            $table->string('env_concurrentiel', 100);
+            $table->string('nbr_type_machines', 100)->nullable();
+            $table->string('site_prod', 50)->nullable();
+            $table->string('implantation_sites', 50)->nullable();
+            $table->string('env_concurrentiel', 100)->nullable();
         });
     }
 

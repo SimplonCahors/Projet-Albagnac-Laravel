@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Dsoroot;
+use App\User;
+use Auth;
 
 class DsorootController extends Controller
 {
@@ -13,17 +16,25 @@ class DsorootController extends Controller
      */
     public function index()
     {
-        return view('dso.devis.roots.index');
+        $dsoList = Dsoroot::all();   // va chercher toutes les infos de la table Dsoroot
+        $idUser = Auth::user()->id ;  // permet de recup l'id de l'utilisateur connecté
+        $users = User::all();   // permet de recup les infos de la table Users
+
+        $dsocom = Dsoroot::all()->where('id_user', $idUser);  // permet de recupérer les dso du com connecté
+
+        // return view('accueil')->with('dsoList', $dsoList)->with('idUser', $idUser) ;
+        return view('accueil', ['dsoList'=>$dsoList, 'idUser'=> $idUser, 'users'=>$users, 'dsocom'=>$dsocom]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
-    public function create()
+    public function create($idUser)
     {
-        return view('dso.devis.roots.create');
+        return view('dso.devis.roots.create')->with('idUser', $idUser) ;
     }
 
     /**
@@ -32,19 +43,31 @@ class DsorootController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $idUser)
     {
+        
         $this->validate(request(), [
-
-            'title' => 'required',
-            'body' => 'required'
+            'date_demande' => 'required',
+            'date_rep' => 'required',
+            'date_envoi' => 'required',
+            'date_livraison' => 'required',
         ]);
 
-        //create a new post using the request data and save it to the dbb
-        Dsoroot::create(request(['title', 'body']));
+        //create a new emballage 
+        $dsoRoot = new Dsoroot;
+
+        //use the request data
+        $dsoRoot->id_user = $idUser;
+        $dsoRoot->date_demande = request('date_demande');
+        $dsoRoot->date_rep = request('date_rep');
+        $dsoRoot->date_envoi = request('date_envoi');
+        $dsoRoot->date_livraison = request('date_livraison');
+
+        //save it to the dbb
+        $dsoRoot->save();
 
         //redirect to the home page
-        return redirect('/');
+        return redirect('/accueil');
     }
 
     /**
@@ -64,9 +87,10 @@ class DsorootController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($idUser, $idDso)
     {
-        //
+        $data = Dsoroot::find($idDso);
+        return view('dso.devis.roots.edit')->with('idUser', $idUser)->with('idDso', $idDso)->with('data', $data) ;
     }
 
     /**
@@ -76,9 +100,23 @@ class DsorootController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $idUser, $idDso)
     {
-        //
+
+        $dsoRoot = Dsoroot::find($idDso); // récupère le Dso à modifier
+
+        //use the request data
+        $dsoRoot->id_user = $idUser;
+        $dsoRoot->date_demande = request('date_demande');
+        $dsoRoot->date_rep = request('date_rep');
+        $dsoRoot->date_envoi = request('date_envoi');
+        $dsoRoot->date_livraison = request('date_livraison');
+
+        //save it to the dbb
+        $dsoRoot->save();
+
+        //redirect to the home page
+        return redirect('/');
     }
 
     /**

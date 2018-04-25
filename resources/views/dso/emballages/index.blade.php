@@ -1,14 +1,56 @@
 @extends('layouts.app')
 
-@section('title', 'Emballages')
+@section('title', 'Étiquettes')
 
 @section('sidebar')
-    @parent
+@parent    
 @endsection
 
 @section('content')
-  <section id="emballages">
-	<i class="material-icons">menu</i>
-	<h3>Bien envoyé à la base de donnée</h3>
+<section id="liste_etiquettes">
+	<div class="liste_etiqu">
+		<ul>
+			<li>
+				<div class="card">
+					<h5 class="card-header text-center">Emballage n°XXX</h5>
+					<div class="card-body">
+						<h5 class="card-title">Infos sur l'emballage</h5>
+						<div class="icons">
+							<a><i class="medium material-icons">create</i></a>
+							<a><i class="medium material-icons">delete</i></a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="card">
+					<h5 class="card-header text-center">Emballage n°XXX</h5>
+					<div class="card-body">
+						<h5 class="card-title">Infos sur l'emballage</h5>
+						<div class="icons">
+							<a><i class="medium material-icons">create</i></a>
+							<a><i class="medium material-icons">delete</i></a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="card">
+					<h5 class="card-header text-center">Emballage n°XXX</h5>
+					<div class="card-body">
+						<h5 class="card-title">Infos sur l'emballage</h5>
+						<div class="icons">
+							<a><i class="medium material-icons">create</i></a>
+							<a><i class="medium material-icons">delete</i></a>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="etiq_buttons">
+			<a role="button" class="btn btn-primary">Ajouter un emballage</a>
+			<a role="button" class="btn btn-primary">Suivant ></a>
+		</div>
+	</div>
 </section>
 @endsection

@@ -32,13 +32,17 @@ class EmballageController extends Controller
     | INDEX => affiche la "liste" des emballages | /emballages
     |--------------------------------------------------------------------------
     */
-    public function index()
+    public function index($idDso)
     {
         //fetch all post avec eloquent
         // $emballages = Emballage::all(); //fetch all avec le premier en premier
         // $emballages = Emballage::latest()->get(); //fetch all avec le dernier en premier
 
         // return view('dso.emballages.index', compact('emballages'));
+
+        $emballages = Emballage::all();
+
+        return view('dso.emballages.index', ['emballages'=>$emballages, 'idDso'=> $idDso]);
     }
 
     /**
@@ -52,9 +56,9 @@ class EmballageController extends Controller
     | CREATE => affiche le formulaire emballages à remplir | /emballages/create
     |--------------------------------------------------------------------------
     */
-     public function create()
+     public function create($idDso)
     {
-        return view('dso.emballages.create');
+        return view('dso.emballages.create', ['idDso'=> $idDso]);
     }
 
     /**
@@ -94,9 +98,9 @@ class EmballageController extends Controller
         $emballage->save();
 
         //redirect to the defined page
-        //return redirect('/dso/{idDso}/emballages');
+        return redirect('/dso/'.$idDso.'/emballages/');
         //return view('dso.emballages.show');
-        return Redirect::action('UserController@profile', array('user' => 1));
+        // return Redirect::action('UserController@profile', array('user' => 1));
 
     }
 
@@ -171,9 +175,10 @@ class EmballageController extends Controller
     |--------------------------------------------------------------------------
     | EDIT => affiche le formulaire pour éditer les données de la DBB | GET /emballages/id/edit
     |--------------------------------------------------------------------------
-    */public function edit($id)
+    */public function edit($idDso , $idEmballage)
     {
-        //
+        $data = Emballage::find($idEmballage);
+         return view('dso.emballages.edit', ['data'=>$data, 'idDso'=> $idDso, 'idEmballage'=>$idEmballage]);
     }
 
 
@@ -191,9 +196,27 @@ class EmballageController extends Controller
     | UPDATE => actualise les données dans la DBB | (submit) PATCH /emballages/id
     |--------------------------------------------------------------------------
     */
-     public function update(Request $request, $id)
+     public function update($idDso, Request $request, $idEmballage)
     {
-        //
+        $update = Emballage::find($idEmballage);
+
+        $update->ref_int = request('ref_int');
+        $update->ref_ext = request('ref_ext');
+        $update->forme = request('forme');
+        $update->diametre_longueur = request('diametre_longueur');
+        $update->hauteur = request('hauteur');
+        $update->observations = request('observations');
+        $update->url_photo = request('url_photo');
+        $update->plein_vide = request('plein_vide');
+        $update->temp_produit = request('temp_produit');
+        $update->poids_prod = request('poids_prod');
+        $update->matiere = request('matiere');
+        $update->niveau_deform = request('niveau_deform');
+        $update->tolerance_dim = request('tolerance_dim');
+
+        $update->save();
+
+         return redirect('/dso/'.$idDso.'/emballages/');
     }
 
 
@@ -210,8 +233,10 @@ class EmballageController extends Controller
     | DESTROY => supprime les données dans la DBB | /emballages/id
     |--------------------------------------------------------------------------
     */
-    public function destroy($id)
+    public function destroy($idDso,$idEmballage)
     {
-        //
+        $emballage = Emballage::find($idEmballage)->delete(); 
+
+        return redirect('/dso/'.$idDso.'/emballages/');
     }
 }

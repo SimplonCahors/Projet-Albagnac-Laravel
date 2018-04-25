@@ -19,10 +19,10 @@ class CreateDevisD6sTable extends Migration
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
 
-            $table->boolean('sur_machine');
-            $table->boolean('en_salle');
-            $table->integer('nombre_jours');
-            $table->integer('nombre_personnes');
+            $table->boolean('sur_machine')->nullable();
+            $table->boolean('en_salle')->nullable();
+            $table->integer('nombre_jours')->nullable();
+            $table->integer('nombre_personnes')->nullable();
         });
     }
 

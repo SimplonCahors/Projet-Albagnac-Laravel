@@ -19,10 +19,10 @@ class CreateDevisD2sTable extends Migration
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
 
-            $table->string('comm_machine_amont');
-            $table->string('comm_machine_aval');
-            $table->string('coupure_bourrage');
-            $table->string('descriptif');
+            $table->string('comm_machine_amont')->nullable();
+            $table->string('comm_machine_aval')->nullable();
+            $table->string('coupure_bourrage')->nullable();
+            $table->string('descriptif')->nullable();
 
         });
     }
