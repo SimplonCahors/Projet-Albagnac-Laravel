@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DevisE1 extends Model
+class DevisA extends Model
 {
-    //
+    protected $table = 'devis_a1s';
 }
