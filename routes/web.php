@@ -66,6 +66,8 @@ Route::get('/emballages/liste', function () {
 
 Route::get('/dso/{idDso}/devis/a/create', 'DevisAController@create')->name('devis-a-create');
 
+Route::get('/dso/{idDso}/devis/a/store', 'DevisAController@create')->name('devis-a-store');
+
 Route::get('/dso/{idDso}/devis/b/create', 'DevisBController@create')->name('devis-b-create');
 
 Route::get('/dso/{idDso}/devis/c', function () {
