@@ -55,10 +55,8 @@ class DevisAController extends Controller
         $devisA3->save();
 
         //redirect to the defined page
-        //return redirect('/dso/{idDso}/emballages');
-        //return view('dso.emballages.show');
-       // return Redirect::action('UserController@profile', array('user' => 1));
-
+        return redirect()->route('devis-b-create', ['idDso' => $idDso]);
+        
     }
 
     public function edit($idDso, $idDevisA1, $idDevisA2, $idDevisA3) 

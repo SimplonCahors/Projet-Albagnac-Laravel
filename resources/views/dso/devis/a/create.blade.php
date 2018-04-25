@@ -92,94 +92,94 @@
 						
 					</div>
 
-						
-					</div>
+					
 				</div>
-				<div class="card">
+			</div>
+			<div class="card">
 
-					<div class="card-header" id="headingTwo">
-						<h5 class="mb-0">
-							<a role="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								CONTACT COMMERCIAL
-							</a>
-						</h5>
-					</div>
-
-					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-						<div class="card-body">
-
-							<div class="a form-group">
-								<label for="nom_commercial">Nom :</label>
-								<input type="text" class="form-control" id="nom_commercial" name="nom_commercial">
-							</div>
-
-							<div class="a form-group">
-								<label for="fonction_commercial">Fonction :</label>
-								<input type="text" class="form-control" id="fonction_commercial" name="fonction_commercial">
-							</div>
-
-							<div class="a form-group">
-								<label for="mail_commercial">Email :</label>
-								<input type="email" class="form-control" id="mail_commercial" name="mail_commercial">
-							</div>
-
-							<div class="a form-group">
-								<label for="tel_commercial">Téléphone :</label>
-								<input type="tel" class="form-control" id="tel_commercial" name="tel_commercial">
-							</div>
-
-							<div class="a form-group">
-								<label for="experience_commercial">Expérience :</label>
-								<input type="text" class="form-control" id="experience_commercial" name="experience_commercial">
-							</div>
-
-						</div>
-					</div>
+				<div class="card-header" id="headingTwo">
+					<h5 class="mb-0">
+						<a role="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							CONTACT COMMERCIAL
+						</a>
+					</h5>
 				</div>
 
-				<div class="card">
-					<div class="card-header" id="headingThree">
-						<h5 class="mb-0">
-							<a role="button"  class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-								CONTACT TECHNIQUE
-							</a>
-						</h5>
-					</div>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+					<div class="card-body">
 
-					<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-						<div class="card-body">
-							
-							<div class="a form-group">
-								<label for="nom_tech">Nom :</label>
-								<input type="text" class="form-control" id="nom_tech" name="nom_tech">
-							</div>
-
-							<div class="a form-group">
-								<label for="fonction_tech">Fonction :</label>
-								<input type="text" class="form-control" id="fonction_tech" name="fonction_tech">
-							</div>
-
-							<div class="a form-group">
-								<label for="mail_tech">Email :</label>
-								<input type="email" class="form-control" id="mail_tech" name="mail_tech">
-							</div>
-
-							<div class="a form-group">
-								<label for="tel_tech">Téléphone :</label>
-								<input type="tel" class="form-control" id="tel_tech" name="tel_tech">
-							</div>
-
-							<div class="a form-group">
-								<label for="experience_tech">Expérience :</label>
-								<input type="text" class="form-control" id="experience_tech" name="experience_tech">
-							</div>
-
+						<div class="a form-group">
+							<label for="nom_commercial">Nom :</label>
+							<input type="text" class="form-control" id="nom_commercial" name="nom_commercial">
 						</div>
+
+						<div class="a form-group">
+							<label for="fonction_commercial">Fonction :</label>
+							<input type="text" class="form-control" id="fonction_commercial" name="fonction_commercial">
+						</div>
+
+						<div class="a form-group">
+							<label for="mail_commercial">Email :</label>
+							<input type="email" class="form-control" id="mail_commercial" name="mail_commercial">
+						</div>
+
+						<div class="a form-group">
+							<label for="tel_commercial">Téléphone :</label>
+							<input type="tel" class="form-control" id="tel_commercial" name="tel_commercial">
+						</div>
+
+						<div class="a form-group">
+							<label for="experience_commercial">Expérience :</label>
+							<input type="text" class="form-control" id="experience_commercial" name="experience_commercial">
+						</div>
+
 					</div>
 				</div>
 			</div>
-			<button type="button" class="btn btn-primary" type="submit">Valider ></button>
+
+			<div class="card">
+				<div class="card-header" id="headingThree">
+					<h5 class="mb-0">
+						<a role="button"  class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+							CONTACT TECHNIQUE
+						</a>
+					</h5>
+				</div>
+
+				<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+					<div class="card-body">
+						
+						<div class="a form-group">
+							<label for="nom_tech">Nom :</label>
+							<input type="text" class="form-control" id="nom_tech" name="nom_tech">
+						</div>
+
+						<div class="a form-group">
+							<label for="fonction_tech">Fonction :</label>
+							<input type="text" class="form-control" id="fonction_tech" name="fonction_tech">
+						</div>
+
+						<div class="a form-group">
+							<label for="mail_tech">Email :</label>
+							<input type="email" class="form-control" id="mail_tech" name="mail_tech">
+						</div>
+
+						<div class="a form-group">
+							<label for="tel_tech">Téléphone :</label>
+							<input type="tel" class="form-control" id="tel_tech" name="tel_tech">
+						</div>
+
+						<div class="a form-group">
+							<label for="experience_tech">Expérience :</label>
+							<input type="text" class="form-control" id="experience_tech" name="experience_tech">
+						</div>
+
+					</div>
+				</div>
+			</div>
 		</div>
-	</form>
+		<button class="btn btn-primary" type="submit">Valider ></button>
+	</div>
+</form>
 </section>
 @endsection

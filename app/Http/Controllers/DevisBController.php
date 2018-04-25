@@ -10,7 +10,7 @@ class DevisBController extends Controller
 {
     public function create($idDso)
     {
-        return view('dso.devisB.create', ['idDso'=> $idDso]);
+        return view('devis-b-create', ['idDso'=> $idDso]);
     }
 
     public function store($idDso, Request $request) 

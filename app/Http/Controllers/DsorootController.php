@@ -69,7 +69,7 @@ class DsorootController extends Controller
 
         $idDso = $dsoRoot->id;
         //redirect to the home page
-        return redirect()->route('devis-a', ['idDso' => $idDso]);
+        return redirect()->route('devis-a-create', ['idDso' => $idDso]);
     }
 
     /**
