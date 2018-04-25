@@ -62,7 +62,7 @@ Route::get('/emballages/liste', function () {
 //a
 Route::get('/dso/{idDso}/devis/a', function () {
     return view('dso.devis.a.create');
-});
+})->name('devis-a');
 
 Route::get('/dso/{idDso}/devis/b', function () {
     return view('dso.devis.b.create');

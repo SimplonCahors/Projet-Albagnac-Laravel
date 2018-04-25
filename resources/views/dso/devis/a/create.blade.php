@@ -3,6 +3,7 @@
 @section('title', 'Devis')
 
 @section('content')
+@include('sous_nav')
 <section id="a">
 
 	<form method="POST" action="">
@@ -12,7 +13,7 @@
 				<div class="card-header" id="headingOne">
 					<h5 class="mb-0">
 						<a role="button"  class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							INFORMATIONS ADMINISTRATIVES DU DEMANDEUR
+							INFORMATIONS ADMINISTRATIVES DU DEMANDEUR {{$idDso}}
 						</a>
 					</h5>
 				</div>
