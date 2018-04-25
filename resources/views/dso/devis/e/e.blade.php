@@ -7,7 +7,7 @@
 	<form method="POST" action="#">
 		@csrf
 		<table class="table table-bordered">
-			<thead>
+			<thead class="thead-dark">
 				<tr>
 					<th scope="col"></th>
 					<th scope="col">Type</th>
@@ -25,61 +25,93 @@
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
 						</div>
 					</td>
-					<td><div>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
 						</div>
 					</td>
-					<td><div>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>
-					<td><div>
+						</div>
+					</td>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>
+						</div>
+					</td>
 				</tr>
+
 				<tr>
 					<th scope="row">Matériel imposé par le client</th>
-					<td><div>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>
-					<td><div>
+						</div>
+					</td>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>
-					<td><div>
+						</div>
+					</td>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>
-					<td><div>
+						</div>
+					</td>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>	
+						</div>
+					</td>	
 				</tr>
+
 				<tr>
 					<th scope="row">Matériel imposé par le client</th>
-					<td><div>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>
-					<td><div>
+						</div>
+					</td>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>
-					<td><div>
+						</div>
+					</td>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>
-					<td><div>
+						</div>
+					</td>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>
+						</div>
+					</td>
 				</tr>
+
 				<tr>
 					<th scope="row">Matériel imposé par le client</th>
-					<td><div>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>
-					<td><div>
+						</div>
+					</td>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>
-					<td><div>
+						</div>
+					</td>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>
-					<td><div>
+						</div>
+					</td>
+					<td>
+						<div>
 							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div></td>
+						</div>
+					</td>
 				</tr>
 			</tbody>
 		</table>
@@ -89,7 +121,6 @@
 		<table class="table table-bordered">
 			<thead class="thead-dark">
 				<tr>
-
 					<th scope="col">référence étiquette</th>
 					<th scope="col">Positionde l'étiquette<br /> à imprimer sur l'emballage</th>
 					<th scope="col">Définition de<br /> la zone d'impression</th>
@@ -97,9 +128,7 @@
 				</tr>
 			</thead>
 			<tbody>
-
 				<tr>
-
 					<td>
 						<div class="input-group mb-3">
 							<div class="input-group-prepend">
@@ -138,30 +167,35 @@
 							<input type="text" class="form-control" aria-describedby="basic-addon1">
 						</div>
 					</td>
-					<td><div class="input-group mb-3">
+					<td>
+						<div class="input-group mb-3">
 						<input type="text" class="form-control"  aria-describedby="basic-addon1"></td>
-						<td>
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Dimension(mm x mm)</span>
-								</div>
-								<input type="text" class="form-control"  aria-describedby="basic-addon1">
+					<td>
+						<div class="input-group mb-3">
+							<div class="input-group-prepend">
+								<span class="input-group-text" id="basic-addon1">Dimension(mm x mm)</span>
 							</div>
+							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						</div>
 						</td>
+
 						<td>
 							<div class="input-group">
 								<textarea class="form-control"></textarea>
-							</div></td>	
+							</div>
+						</td>	
 						</tr>
 						<tr>
-
-							<td><div class="input-group mb-3">
+							<td>
+								<div class="input-group mb-3">
 								<div class="input-group-prepend">
 									<span class="input-group-text" id="basic-addon1">ETI n°</span>
 								</div>
 								<input type="text" class="form-control"  aria-describedby="basic-addon1">
-							</div></td>
-							<td><div class="input-group mb-3">
+							</div>
+						</td>
+							<td>
+								<div class="input-group mb-3">
 								<input type="text" class="form-control"  aria-describedby="basic-addon1"></td>
 								<td>
 									<div class="input-group mb-3">
