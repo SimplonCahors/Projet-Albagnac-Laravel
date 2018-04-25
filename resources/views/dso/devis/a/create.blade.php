@@ -13,7 +13,7 @@
 				<div class="card-header" id="headingOne">
 					<h5 class="mb-0">
 						<a role="button"  class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							INFORMATIONS ADMINISTRATIVES DU DEMANDEUR {{$idDso}}
+							INFORMATIONS ADMINISTRATIVES DU DEMANDEUR 
 						</a>
 					</h5>
 				</div>
