@@ -7,6 +7,8 @@
 @endsection
 
 @section('content')
+@include('sous_nav')
+
 <section id="liste_etiquettes">
 	<div class="liste_etiqu">
 		<ul>

@@ -59,7 +59,6 @@ Route::get('/emballages/liste', function () {
 Route::get('/dso/{idDso}/devis/a/create', 'DevisAController@create')->name('devis-a-create');
 Route::post('/dso/{idDso}/devis/a/', 'DevisAController@store')->name('devis-a-store');
 
-
 //Devis B
 Route::get('/dso/{idDso}/devis/b/create', 'DevisBController@create')->name('devis-b-create');
 
