@@ -66,8 +66,10 @@ class DsorootController extends Controller
         //save it to the dbb
         $dsoRoot->save();
 
+
+        $idDso = $dsoRoot->id;
         //redirect to the home page
-        return redirect('/accueil');
+        return redirect('/dso/'.$idDso.'/devis/a');
     }
 
     /**

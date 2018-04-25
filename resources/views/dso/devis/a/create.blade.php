@@ -3,7 +3,9 @@
 @section('title', 'Devis')
 
 @section('content')
+@include('sous_nav')
 <section id="a">
+
 	<form method="POST" action="">
 		@csrf
 		<div id="accordion">
