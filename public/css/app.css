@@ -10770,6 +10770,34 @@ section#liste_etiquettes div.liste_etiqu div.etiq_buttons {
           justify-content: space-between;
 }
 
+@media all and (max-device-width: 800px) {
+  section#liste_etiquettes div.card {
+    width: 90vw;
+  }
+
+  section#liste_etiquettes div.etiq_buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  section#liste_etiquettes div.etiq_buttons a {
+    margin-bottom: 20px;
+  }
+
+  section#liste_etiquettes div.liste_etiqu ul li div.card div.card-body {
+    width: 100%;
+    padding: 10px;
+  }
+
+  section#liste_etiquettes div.liste_etiqu ul li div.card div.card-body h5.card-title {
+    margin: 5px;
+    font-size: 15px;
+    width: 100%;
+  }
+}
+
 section#nouveau_dso form {
   width: 80%;
 }
