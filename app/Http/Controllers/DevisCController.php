@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\DevisC;
+use App\DevisC1;
+use App\DevisC2;
 
 class DevisCController extends Controller
 {
