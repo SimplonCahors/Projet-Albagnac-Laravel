@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\DevisA;
+use App\DevisA1;
+use App\DevisA2;
+use App\DevisA3;
 
 class DevisAController extends Controller
 {

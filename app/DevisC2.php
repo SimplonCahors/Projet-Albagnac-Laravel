@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class DevisB extends Model
+class DevisC2 extends Model
 {
     //
 }
