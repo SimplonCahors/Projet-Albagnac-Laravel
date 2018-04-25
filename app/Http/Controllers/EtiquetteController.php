@@ -7,6 +7,25 @@ use App\Etiquette;
 
 class EtiquetteController extends Controller
 {
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    
+     /*
+    |--------------------------------------------------------------------------
+    | INDEX => affiche la "liste" des etiquettes 
+    |--------------------------------------------------------------------------
+    */
+    public function index($idDso)
+    {
+        $etiquettes= Etiquette::all()->where('id_dso', $idDso);
+
+        return view('dso.etiquettes.index', ['etiquettes'=>$etiquettes, 'idDso'=> $idDso]);
+    }
+
+
 	     /*
     |--------------------------------------------------------------------------
     | CREATE => affiche le formulaire emballages à remplir | /emballages/create

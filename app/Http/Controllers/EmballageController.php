@@ -34,12 +34,6 @@ class EmballageController extends Controller
     */
     public function index($idDso)
     {
-        //fetch all post avec eloquent
-        // $emballages = Emballage::all(); //fetch all avec le premier en premier
-        // $emballages = Emballage::latest()->get(); //fetch all avec le dernier en premier
-
-        // return view('dso.emballages.index', compact('emballages'));
-
         $emballages = Emballage::all()->where('id_dso', $idDso);
 
         return view('dso.emballages.index', ['emballages'=>$emballages, 'idDso'=> $idDso]);
@@ -100,46 +94,7 @@ class EmballageController extends Controller
         //redirect to the defined page
         
         return redirect()->route('emballage-index', ['idDso' => $idDso]);
-        //return view('dso.emballages.show');
-        // return Redirect::action('UserController@profile', array('user' => 1));
-
     }
-
-    /*  // a voir pour refactoring de la fonction du haut "store"
-       
-        public function store() { // envoie à BDD POST /emballages
-
-            // validation de Laravel avec require
-            $this->validate(request($idDso), [
-                
-                //  'ref_int' => 'required',
-                //  'ref_ext' => 'required',
-            ]);
-            //create a new post using the request data and save it to the dbb
-            // Emballage::create(request(['title', 'body']));
-            Emballage::create(request([
-
-                'idDso',
-                'ref_int',
-                'ref_ext',
-                'forme',
-                'diametre_longueur',
-                'hauteur',
-                'observations',
-                'url_photo',
-                'plein_vide',
-                'temp_produit',
-                'poids_prod',
-                'matiere',
-                'niveau_deform',
-                'tolerance_dim'
-                ]));
-
-            //redirect to the home page
-            return redirect('/dso/1/emballages/1');
-        }
-    */
-
     
     /**
      * Display the specified resource.

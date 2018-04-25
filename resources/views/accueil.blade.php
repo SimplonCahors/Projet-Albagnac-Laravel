@@ -9,7 +9,7 @@
 @section('content')
 <section id="p-accueil">
 	<div id="btn-accueil">
-		<a href="{!! route('nouveau-dso', ['idUser' => $idUser]) !!}" class="btn btn-outline-primary jaune" role="button">Nouveau DSO</a>
+		<a href="{{ route('dso-create') }}" class="btn btn-outline-primary jaune" role="button">Nouveau DSO</a>
 		<button type="submit" class="btn btn-outline-primary rouge">Archives DSO</button>
 	</div>    
 	<div id="liste-accueil">

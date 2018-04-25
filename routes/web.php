@@ -10,13 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// login
 Auth::routes();
 
+// affichage liste dso sur acceuil
+Route::get('/accueil', 'DsorootController@index')->name('accueil');
 
-//infos-admin
-Route::get('/dso/{idDso}/devis/infos-admin', 'DsorootController@index')->name('infos-admin');
-Route::get('/dso/{idDso}/devis/infos-admin/create', 'DsorootController@create')->name('infos-admin_create');
+// nouveau dso
+Route::get('/nouveau-dso', 'DsorootController@create')->name('dso-create');
+Route::post('/nouveau-dso', 'DsorootController@store');
+Route::get('/edit/{idDso}', 'DsorootController@edit')->name('dso-edit');
+Route::post('/edit/{$idDso}', 'DsorootController@update');
 
 
 // emballages
@@ -37,14 +41,7 @@ Route::get('/dso/{idDso}/etiquettes/{idEtiquette}/edit', 'EtiquetteController@ed
 Route::post('/dso/{idDso}/etiquettes/{idEtiquette}/edit', 'EtiquetteController@update')->name('etiquette-update');
 Route::get('/dso/{idDso}/etiquettes/{idEtiquette}/destroy', 'EtiquetteController@destroy')->name('etiquette-destroy');
 
-// nouveau dso
-Route::get('/{idUser}/nouveau-dso', 'DsorootController@create')->name('nouveau-dso');
-Route::post('/{idUser}/nouveau-dso', 'DsorootController@store');
-Route::get('/{idUser}/edit/{idDso}', 'DsorootController@edit');
-Route::post('/{$idUser}/edit/{$idDso}', 'DsorootController@update');
 
-// affichage liste dso sur acceuil
-Route::get('/accueil', 'DsorootController@index')->name('accueil');
 
 Route::get('/etiquettes/liste', function () {
     return view('dso/etiquettes/index');
@@ -58,14 +55,12 @@ Route::get('/emballages/liste', function () {
 /*====================================
 =            Routes devis            =
 ====================================*/
-
-//a
-// Route::get('/dso/{idDso}/devis/a', function () {
-//     return view('dso.devis.a.create');
-// });
-
+//Devis A
 Route::get('/dso/{idDso}/devis/a/create', 'DevisAController@create')->name('devis-a-create');
+Route::post('/dso/{idDso}/devis/a/', 'DevisAController@store')->name('devis-a-store');
 
+
+//Devis B
 Route::get('/dso/{idDso}/devis/b/create', 'DevisBController@create')->name('devis-b-create');
 
 Route::get('/dso/{idDso}/devis/c', function () {

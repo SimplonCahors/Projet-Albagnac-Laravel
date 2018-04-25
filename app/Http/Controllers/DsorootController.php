@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Dsoroot;
 use App\User;
 use Auth;
@@ -32,9 +33,10 @@ class DsorootController extends Controller
      * @return \Illuminate\Http\Response
      * 
      */
-    public function create($idUser)
+    public function create()
     {
-        return view('dso.devis.roots.create')->with('idUser', $idUser) ;
+        $today = date("Y-m-d");
+        return view('dso.devis.roots.create', ['today'=>$today]) ;
     }
 
     /**
@@ -43,7 +45,7 @@ class DsorootController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $idUser)
+    public function store(Request $request)
     {
         
         $this->validate(request(), [
@@ -57,7 +59,7 @@ class DsorootController extends Controller
         $dsoRoot = new Dsoroot;
 
         //use the request data
-        $dsoRoot->id_user = $idUser;
+        $dsoRoot->id_user = Auth::user()->id;
         $dsoRoot->date_demande = request('date_demande');
         $dsoRoot->date_rep = request('date_rep');
         $dsoRoot->date_envoi = request('date_envoi');

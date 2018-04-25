@@ -4,7 +4,7 @@
 
 @section('content')
 <section id="nouveau_dso">
-	<form method="POST" action="/{{$idUser}}/nouveau-dso">
+	<form method="POST" action="{{ action('DsorootController@store') }}">
 		@csrf
 		<div class="div_dso">
 			<div id="left">
@@ -14,7 +14,7 @@
 
 				</div>
 				<div class="nouveau-dso form-group">
-					<<label for="date_rep">Date réponse souhaitée</label>
+					<label for="date_rep">Date réponse souhaitée</label>
 					<input type="date" class="form-control" id="date_rep" name="date_rep" placeholder="" value="" required>
 				</div>
 				<div class="nouveau-dso form-group">
@@ -30,11 +30,11 @@
 			<div id="right">
 				<div class="nouveau-dso form-group">
 					<label for="exampleInputEmail1">Date création fiche :</label>
-					<input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+					<input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{ $today }}" disabled>
 				</div>
 				<div class="nouveau-dso form-group">
 					<label for="exampleInputPassword1">Nom du commercial :</label>
-					<input type="text" class="form-control" id="exampleInputPassword1" >
+					<input type="text" class="form-control" id="exampleInputPassword1" value="{{ Auth::user()->name }}" disabled>
 				</div>
 				<button class="btn btn-warning" type="submit">Continuer</button>
 			</div>

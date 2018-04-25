@@ -6,7 +6,7 @@
 @include('sous_nav')
 <section id="a">
 
-	<form method="POST" action="">
+	<form method="POST" action="{{ action('DevisAController@store', ['idDso'=> $idDso]) }}">
 		@csrf
 		<div id="accordion">
 			<div class="card">
