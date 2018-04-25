@@ -40,7 +40,7 @@ class EmballageController extends Controller
 
         // return view('dso.emballages.index', compact('emballages'));
 
-        $emballages = Emballage::all();
+        $emballages = Emballage::all()->where('id_dso', $idDso);
 
         return view('dso.emballages.index', ['emballages'=>$emballages, 'idDso'=> $idDso]);
     }
