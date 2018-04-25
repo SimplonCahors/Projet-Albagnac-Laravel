@@ -3,7 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\DevisD;
+use App\DevisD1;
+use App\DevisD2;
+use App\DevisD3;
+use App\DevisD4;
+use App\DevisD5;
+use App\DevisD6;
+use App\DevisD7;
+use App\DevisD8;
+
 
 class DevisDController extends Controller
 {
