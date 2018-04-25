@@ -115,6 +115,9 @@ Route::get('/b', function () {
     return view('dso/devis/b/create');
 });
 
+Route::get('/e', function(){
+	return view('dso/devis/e/e');
+});
 /*=====  End of Routes devis  ======*/
 
 
