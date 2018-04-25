@@ -1,23 +1,56 @@
 @extends('layouts.app')
 
-@section('title', 'Emballages')
+@section('title', 'Étiquettes')
 
 @section('sidebar')
-@parent
+@parent    
 @endsection
 
 @section('content')
-<section id="emballages">    
-	<ul>
-		<a href="/dso/{{ $idDso }}/emballages/create/">Ajouter un emballage</a>
-		@foreach($emballages as $emballage)
-		<li>{{ $emballage->ref_int }}</li>
-		<a href="/dso/{{ $idDso }}/emballages/{{ $emballage->id }}/edit">edit du n°{{ $emballage->id }}</a>
-		<a href="/dso/{{ $idDso }}/emballages/{{ $emballage->id }}/destroy">delete du n°{{ $emballage->id }}</a>
-		@endforeach
-	</ul>
-
-
-
+<section id="liste_etiquettes">
+	<div class="liste_etiqu">
+		<ul>
+			<li>
+				<div class="card">
+					<h5 class="card-header text-center">Emballage n°XXX</h5>
+					<div class="card-body">
+						<h5 class="card-title">Infos sur l'emballage</h5>
+						<div class="icons">
+							<a><i class="medium material-icons">create</i></a>
+							<a><i class="medium material-icons">delete</i></a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="card">
+					<h5 class="card-header text-center">Emballage n°XXX</h5>
+					<div class="card-body">
+						<h5 class="card-title">Infos sur l'emballage</h5>
+						<div class="icons">
+							<a><i class="medium material-icons">create</i></a>
+							<a><i class="medium material-icons">delete</i></a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="card">
+					<h5 class="card-header text-center">Emballage n°XXX</h5>
+					<div class="card-body">
+						<h5 class="card-title">Infos sur l'emballage</h5>
+						<div class="icons">
+							<a><i class="medium material-icons">create</i></a>
+							<a><i class="medium material-icons">delete</i></a>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<div class="etiq_buttons">
+			<a role="button" class="btn btn-primary">Ajouter un emballage</a>
+			<a role="button" class="btn btn-primary">Suivant </a>
+		</div>
+	</div>
 </section>
 @endsection
