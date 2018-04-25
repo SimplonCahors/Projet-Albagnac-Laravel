@@ -47,11 +47,11 @@ Route::post('/{$idUser}/edit/{$idDso}', 'DsorootController@update');
 Route::get('/accueil', 'DsorootController@index')->name('accueil');
 
 Route::get('/etiquettes/liste', function () {
-    return view('liste_etiquettes');
+    return view('dso/etiquettes/index');
 });
 
 Route::get('/emballages/liste', function () {
-    return view('liste_emballages');
+    return view('dso/emballages/index');
 });
 
 

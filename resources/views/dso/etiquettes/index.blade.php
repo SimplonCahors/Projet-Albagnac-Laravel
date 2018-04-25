@@ -14,7 +14,7 @@
 				<div class="card">
 					<h5 class="card-header text-center">Étiquette n°XXX</h5>
 					<div class="card-body">
-						<h5 class="card-title">Infos sur l'étiquette</h5>
+						<div><h5 class="card-title">Infos sur l'étiquette</h5></div>
 						<div class="icons">
 							<a><i class="medium material-icons">create</i></a>
 							<a><i class="medium material-icons">delete</i></a>
@@ -26,7 +26,7 @@
 				<div class="card">
 					<h5 class="card-header text-center">Étiquette n°XXX</h5>
 					<div class="card-body">
-						<h5 class="card-title">Infos sur l'étiquette</h5>
+						<div><h5 class="card-title">Infos sur l'étiquette</h5></div>
 						<div class="icons">
 							<a><i class="medium material-icons">create</i></a>
 							<a><i class="medium material-icons">delete</i></a>
@@ -38,7 +38,7 @@
 				<div class="card">
 					<h5 class="card-header text-center">Étiquette n°XXX</h5>
 					<div class="card-body">
-						<h5 class="card-title">Infos sur l'étiquette</h5>
+						<div><h5 class="card-title">Infos sur l'étiquette</h5></div>
 						<div class="icons">
 							<a><i class="medium material-icons">create</i></a>
 							<a><i class="medium material-icons">delete</i></a>

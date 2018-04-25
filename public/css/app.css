@@ -10721,26 +10721,41 @@ section#etiquettes div#btn-bottom-page .grisfonce:hover {
   }
 }
 
-section#liste_etiquettes div.liste_etiqu ul {
+section#liste_etiquettes div.liste_etiqu ul,
+section#liste_etiquettes div.liste_emball ul,
+section#liste_emballages div.liste_etiqu ul,
+section#liste_emballages div.liste_emball ul {
   padding: 0;
 }
 
-section#liste_etiquettes div.liste_etiqu li {
+section#liste_etiquettes div.liste_etiqu li,
+section#liste_etiquettes div.liste_emball li,
+section#liste_emballages div.liste_etiqu li,
+section#liste_emballages div.liste_emball li {
   list-style: none;
   margin-bottom: 10px;
 }
 
-section#liste_etiquettes div.liste_etiqu a.btn.btn-primary {
+section#liste_etiquettes div.liste_etiqu a.btn.btn-primary,
+section#liste_etiquettes div.liste_emball a.btn.btn-primary,
+section#liste_emballages div.liste_etiqu a.btn.btn-primary,
+section#liste_emballages div.liste_emball a.btn.btn-primary {
   background: #FFC11F;
   border-color: #FFC11F;
   color: #262626;
 }
 
-section#liste_etiquettes div.liste_etiqu .card-header {
+section#liste_etiquettes div.liste_etiqu .card-header,
+section#liste_etiquettes div.liste_emball .card-header,
+section#liste_emballages div.liste_etiqu .card-header,
+section#liste_emballages div.liste_emball .card-header {
   background: #FFC11F;
 }
 
-section#liste_etiquettes div.liste_etiqu .card-body {
+section#liste_etiquettes div.liste_etiqu .card-body,
+section#liste_etiquettes div.liste_emball .card-body,
+section#liste_emballages div.liste_etiqu .card-body,
+section#liste_emballages div.liste_emball .card-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10750,7 +10765,10 @@ section#liste_etiquettes div.liste_etiqu .card-body {
   width: 40vw;
 }
 
-section#liste_etiquettes div.liste_etiqu .card-body .icons {
+section#liste_etiquettes div.liste_etiqu .card-body .icons,
+section#liste_etiquettes div.liste_emball .card-body .icons,
+section#liste_emballages div.liste_etiqu .card-body .icons,
+section#liste_emballages div.liste_emball .card-body .icons {
   margin-left: 20px;
   width: 30%;
   display: -webkit-box;
@@ -10760,7 +10778,14 @@ section#liste_etiquettes div.liste_etiqu .card-body .icons {
       justify-content: space-around;
 }
 
-section#liste_etiquettes div.liste_etiqu div.etiq_buttons {
+section#liste_etiquettes div.liste_etiqu div.etiq_buttons,
+section#liste_etiquettes div.liste_etiqu div.emball_buttons,
+section#liste_etiquettes div.liste_emball div.etiq_buttons,
+section#liste_etiquettes div.liste_emball div.emball_buttons,
+section#liste_emballages div.liste_etiqu div.etiq_buttons,
+section#liste_emballages div.liste_etiqu div.emball_buttons,
+section#liste_emballages div.liste_emball div.etiq_buttons,
+section#liste_emballages div.liste_emball div.emball_buttons {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -10768,6 +10793,47 @@ section#liste_etiquettes div.liste_etiqu div.etiq_buttons {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media all and (max-device-width: 800px) {
+  section#liste_etiquettes div.card,
+  section#liste_emballages div.card {
+    width: 90vw;
+  }
+
+  section#liste_etiquettes div.etiq_buttons,
+  section#liste_etiquettes div.emball_buttons,
+  section#liste_emballages div.etiq_buttons,
+  section#liste_emballages div.emball_buttons {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  section#liste_etiquettes div.etiq_buttons a,
+  section#liste_etiquettes div.emball_buttons a,
+  section#liste_emballages div.etiq_buttons a,
+  section#liste_emballages div.emball_buttons a {
+    margin-bottom: 20px;
+  }
+
+  section#liste_etiquettes div.liste_etiqu ul li div.card div.card-body,
+  section#liste_etiquettes div.liste_emball ul li div.card div.card-body,
+  section#liste_emballages div.liste_etiqu ul li div.card div.card-body,
+  section#liste_emballages div.liste_emball ul li div.card div.card-body {
+    width: 100%;
+    padding: 10px;
+  }
+
+  section#liste_etiquettes div.liste_etiqu ul li div.card div.card-body h5.card-title,
+  section#liste_etiquettes div.liste_emball ul li div.card div.card-body h5.card-title,
+  section#liste_emballages div.liste_etiqu ul li div.card div.card-body h5.card-title,
+  section#liste_emballages div.liste_emball ul li div.card div.card-body h5.card-title {
+    margin: 5px;
+    font-size: 15px;
+    width: 100%;
+  }
 }
 
 section#nouveau_dso form {
