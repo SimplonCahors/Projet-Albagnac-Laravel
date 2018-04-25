@@ -98,7 +98,8 @@ class EmballageController extends Controller
         $emballage->save();
 
         //redirect to the defined page
-        return redirect('/dso/'.$idDso.'/emballages/');
+        
+        return redirect()->route('emballage-index', ['idDso' => $idDso]);
         //return view('dso.emballages.show');
         // return Redirect::action('UserController@profile', array('user' => 1));
 
@@ -216,7 +217,7 @@ class EmballageController extends Controller
 
         $update->save();
 
-         return redirect('/dso/'.$idDso.'/emballages/');
+        return redirect()->route('emballage-index', ['idDso' => $idDso]);
     }
 
 
@@ -237,6 +238,6 @@ class EmballageController extends Controller
     {
         $emballage = Emballage::find($idEmballage)->delete(); 
 
-        return redirect('/dso/'.$idDso.'/emballages/');
+        return redirect()->route('emballage-index', ['idDso' => $idDso]);
     }
 }
