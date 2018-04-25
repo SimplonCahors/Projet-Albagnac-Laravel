@@ -1,6 +1,6 @@
-section#liste_etiquettes{
+section#liste_etiquettes, section#liste_emballages{
 	
-	div.liste_etiqu{
+	div.liste_etiqu, div.liste_emball{
 
 		ul{
 			padding: 0;
@@ -35,7 +35,7 @@ section#liste_etiquettes{
 
 		}
 
-		div.etiq_buttons{
+		div.etiq_buttons, div.emball_buttons{
 			width: 100%;
 			display: flex;
 			justify-content: space-between;
@@ -44,19 +44,19 @@ section#liste_etiquettes{
 }
 
 @media all and (max-device-width: 800px) {
-	section#liste_etiquettes{
+	section#liste_etiquettes, section#liste_emballages{
 		div.card{
 			width: 90vw;
 		}
 
-		div.etiq_buttons{
+		div.etiq_buttons, div.emball_buttons{
 			flex-direction: column;
 			a{
 				margin-bottom: 20px;
 			}
 		}
 
-		div.liste_etiqu ul li div.card div.card-body{
+		div.liste_etiqu ul li div.card div.card-body, div.liste_emball ul li div.card div.card-body{
 			width: 100%;
 			padding: 10px;
 

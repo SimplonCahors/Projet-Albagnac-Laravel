@@ -7,8 +7,8 @@
 @endsection
 
 @section('content')
-<section id="liste_etiquettes">
-	<div class="liste_etiqu">
+<section id="liste_emballages">
+	<div class="liste_emball">
 		<ul>
 			<li>
 				<div class="card">
@@ -47,7 +47,7 @@
 				</div>
 			</li>
 		</ul>
-		<div class="etiq_buttons">
+		<div class="emball_buttons">
 			<a role="button" class="btn btn-primary">Ajouter un emballage</a>
 			<a role="button" class="btn btn-primary">Suivant ></a>
 		</div>
