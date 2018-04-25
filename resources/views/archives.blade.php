@@ -19,10 +19,10 @@
 				<button id="trierpar">TRIER PAR</button>
 				<select class="custom-select" id="inputGroupSelect01">
 					<option selected>Commercial</option>
-					<option value="1">Dante</option>
-					<option value="1">Virgil</option>
-					<option value="2">Pluton</option>
-					<option value="3">MacGyver</option>
+					<option value="1">OBRY W.</option>
+					<option value="2">BLANC P.</option>
+					<option value="3">GUERRA C.</option>
+					<option value="4">DECHAPPE P.</option>
 				</select>
 				<select class="custom-select" id="inputGroupSelect02">
 					<option selected>Date</option>
