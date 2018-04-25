@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="/accueil">Accueil</a>
+                    <a href="{{ route('accueil') }}">Accueil</a>
                     <a href="/etiquettes">Etiquettes</a>
                     <a href="/emballages">Emballages</a>
                     <a href="/archives">Archives</a>
