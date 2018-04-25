@@ -53,23 +53,23 @@ class EtiquetteController extends Controller
 
     }
 
+     public function edit($idDso, $idEtiquette) 
+     {
+        $data = Etiquette::find($idEtiquette);
+        return view('dso.etiquettes.edit', ['data'=>$data, 'idDso'=>$idDso, 'idEtiquette'=>$idEtiquette]);
+     }
+
          /*
     |--------------------------------------------------------------------------
         | SHOW => affiche l'emballage spécifié | GET /emballages/idDso
  $idEtiquette,    |--------------------------------------------------------------------------
     */
-
      public function show(Etiquette $idEtiquette) 
      {
          $etiquette->id = ($idEtiquette);
          return view('dso.etiquettes.show', compact('idEtiquette', 'etiquette'));
      }
 
-     public function edit($idDso, $idEtiquette) 
-     {
-        $data = Etiquette::find($idEtiquette);
-        return view('dso.etiquettes.edit', ['data'=>$data, 'idDso'=>$idDso, 'idEtiquette'=>$idEtiquette]);
-     }
 
      public function update($idDso, $idEtiquette, Request $request)
     {
@@ -93,4 +93,11 @@ class EtiquetteController extends Controller
         //save it to the dbb
         $etiquette->save();
     }
+
+    public function destroy($idDso, $idEtiquette) 
+     {
+        $etiquette = Etiquette::find($idEtiquette)->delete(); 
+
+        return redirect('/dso/'.$idDso.'/emballages/');
+     }
 }
