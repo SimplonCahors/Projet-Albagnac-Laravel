@@ -19,6 +19,7 @@ class CreateDevisD7sTable extends Migration
             $table->unsignedInteger('id_dso');
             $table->foreign('id_dso')->references('id')->on('dsoroots');
 
+            $table->boolean('papier')->nullable();
             $table->integer('quantite')->nullable();
             $table->boolean('cd')->nullable();
             $table->boolean('numerique')->nullable();

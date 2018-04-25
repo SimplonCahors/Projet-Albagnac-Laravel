@@ -1,0 +1,35 @@
+section#a{
+
+	form{
+		width: 60%;
+	}
+
+	div#accordion{
+		margin-bottom: 100px;
+	}
+
+	.card-header{
+		background: $jaune;
+	}
+
+	button.btn.btn-link{
+		color: $grisfonce;
+		text-decoration: none;
+	}
+
+	.btn.btn-primary{
+		background: $jaune;
+		border-color: $jaune;
+		color: $grisfonce;
+		margin-top: 40px;
+	}
+}
+
+@media all and (max-device-width: 800px) {
+	section#a{
+		form{
+			width: 95%;
+		}
+
+	}
+}

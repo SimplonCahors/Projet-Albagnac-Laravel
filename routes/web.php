@@ -46,12 +46,47 @@ Route::post('/{$idUser}/edit/{$idDso}', 'DsorootController@update');
 // affichage liste dso sur acceuil
 Route::get('/accueil', 'DsorootController@index')->name('accueil');
 
+Route::get('/etiquettes/liste', function () {
+    return view('liste_etiquettes');
+});
+
+Route::get('/emballages/liste', function () {
+    return view('liste_emballages');
+});
+
+
+/*====================================
+=            Routes devis            =
+====================================*/
+
+//a
+Route::get('/a', function () {
+    return view('dso/devis/a/create');
+});
+
+Route::get('/b', function () {
+    return view('dso/devis/b/create');
+});
+
+Route::get('/e', function(){
+	return view('dso/devis/e/e');
+});
+/*=====  End of Routes devis  ======*/
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| route à vérifier ensemble
+|--------------------------------------------------------------------------
+*/
 
 
 // Route qui permet de sécurisé le site -> demande de connexion si user non connecté
 Route::get('/', function () {
     if (Auth::check()) {
-    return view('home');
+        return view('home');
     }
     else{
         return view('layouts.app');
