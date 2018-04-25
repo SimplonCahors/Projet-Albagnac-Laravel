@@ -73,6 +73,14 @@ Route::get('/emballages', function () {
     return view('emballages');
 });
 
+Route::get('/etiquettes/liste', function () {
+    return view('liste_etiquettes');
+});
+
+Route::get('/emballages/liste', function () {
+    return view('liste_emballages');
+});
+
 Route::get('/connexion', function () {
     return view('connexion');
 })->name('connexion');

@@ -10721,6 +10721,55 @@ section#etiquettes div#btn-bottom-page .grisfonce:hover {
   }
 }
 
+section#liste_etiquettes div.liste_etiqu ul {
+  padding: 0;
+}
+
+section#liste_etiquettes div.liste_etiqu li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+section#liste_etiquettes div.liste_etiqu a.btn.btn-primary {
+  background: #FFC11F;
+  border-color: #FFC11F;
+  color: #262626;
+}
+
+section#liste_etiquettes div.liste_etiqu .card-header {
+  background: #FFC11F;
+}
+
+section#liste_etiquettes div.liste_etiqu .card-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 40vw;
+}
+
+section#liste_etiquettes div.liste_etiqu .card-body .icons {
+  margin-left: 20px;
+  width: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+section#liste_etiquettes div.liste_etiqu div.etiq_buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 section#nouveau_dso form {
   width: 80%;
 }

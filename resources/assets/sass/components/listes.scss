@@ -1,0 +1,44 @@
+section#liste_etiquettes{
+	
+	div.liste_etiqu{
+
+		ul{
+			padding: 0;
+		}
+
+		li{
+			list-style: none;
+			margin-bottom: 10px;
+
+		}
+		a.btn.btn-primary{
+			background: $jaune;
+			border-color: $jaune;
+			color: $grisfonce;
+		}
+
+		.card-header{
+			background: $jaune;
+		}
+
+		.card-body{
+			display: flex;
+			justify-content: space-between;
+			width: 40vw;
+
+			.icons{
+				margin-left: 20px;
+				width: 30%;
+				display: flex;
+				justify-content: space-around;
+			}
+
+		}
+
+		div.etiq_buttons{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+}
