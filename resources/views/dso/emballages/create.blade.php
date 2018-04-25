@@ -1,109 +1,122 @@
 @extends('layouts.app')
 
-@section('title', 'Emballages')
+@section('title', 'Étiquettes')
 
 @section('sidebar')
-    @parent
+@parent    
 @endsection
 
 @section('content')
-  <section id="emballages">
+<section id="etiquettes">
 	<i class="material-icons">menu</i>
-	<form action="/dso/{idDso}/emballages" method="POST">
-		@csrf
-
+	<form action="/dso/{{$idDso}}/etiquettes/" method="POST">
+		 @csrf
 		<div id="left">
+
 			<div class="form-group row">
 				<div class="col-6">
-					<input type="text" class="form-control" id="ref_int" name="ref_int">
+					<input type="text" class="form-control" id="ref_eti" name="ref_eti">
 				</div>
-				<label for="ref_int" class="col-6 col-form-label">Réf. Interne</label>
+				<label for="ref_eti" class="col-6 col-form-label">Réf. Étiquette</label>
 			</div>
-			<div class="form-group row">
-				<div class="col-6">
-					<input type="text" class="form-control" id="ref_ext" name="ref_ext">
-				</div>
-				<label for="ref_ext" class="col-6 col-form-label">Réf. Client</label>
-			</div>
+
 			<div class="card-header text-center">
 				DIMENSIONS
 			</div>
+
 			<div class="form-group row">
 				<div class="col-6">
-					<input type="number" class="form-control" id="forme" name="forme">
+					<input type="number" class="form-control" id="hauteur_eti" min="0" name="hauteur_eti">
 				</div>
-				<label for="forme" class="col-6 col-form-label">Forme</label>
+				<label for="hauteur_eti" class="col-6 col-form-label">Hauteur en mm</label>
 			</div>
+
 			<div class="form-group row">
 				<div class="col-6">
-					<input type="number" class="form-control" id="hauteur" name="hauteur">
+					<input type="number" class="form-control" id="largeur_eti" min="0" name="largeur_eti">
 				</div>
-				<label for="hauteur" class="col-6 col-form-label">Hauteur en mm </label>
+				<label for="largeur_eti" class="col-6 col-form-label">Largeur en mm</label>
 			</div>
+
 			<div class="form-group row">
 				<div class="col-6">
-					<input type="number" class="form-control" id="diametre_longueur" name="diametre_longueur">
+					<input type="number" class="form-control" id="diametre_eti" min="0" name="diametre_eti">
 				</div>
-				<label for="diametre_longueur" class="col-6 col-form-label">Diamètre en mm</label>
+				<label for="diametre_eti" class="col-6 col-form-label">Diamètre en mm</label>
 			</div>
+
 			<div class="form-group">
-				<textarea class="form-control" id="observations" name="observations" rows="3" placeholder="Observations"></textarea>
+				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Observations" name="observation_eti"></textarea>
 			</div>
+
 			<div class="form-group">
-				<label for="url_photo">Ajouter une photo :</label>
-				<input type="file" class="form-control-file" id="url_photo" name="url_photo">
+				<label for="photo_eti">Ajouter une photo :</label>
+				<input type="file" class="form-control-file" id="photo_eti" name="photo_eti">
 			</div>
 			<div id="image-upload">
-				<img src="" >
+				<img src="">
 			</div>
+
 		</div>
 
 		<div id="right">
-			<div class="card-header text-center">
-				CARACTÉRISTIQUES
-			</div>
-			<div class="form-group row">
-				<div class="col-5">
-					<input type="text" class="form-control" id="plein_vide" name="plein_vide">
-				</div>
-				<label for="plein_vide" class="col-7 col-form-label">Produits plein ou vides</label>
-			</div>
-			<div class="form-group row">
-				<div class="col-5">
-					<input type="number" class="form-control" id="temp_produit" name="temp_produit">
-				</div>
-				<label for="temp_produit" class="col-7 col-form-label">Température produit en °C</label>
-			</div>
-			<div class="form-group row">
-				<div class="col-5">
-					<input type="number" class="form-control" id="poids_prod" name="poids_prod">
-				</div>
-				<label for="poids_prod" class="col-7 col-form-label">Poids produit en g</label>
-			</div>
-			<div class="form-group row">
-				<div class="col-5">
-					<input type="text" class="form-control" id="matiere" name="matiere">
-				</div>
-				<label for="matiere" class="col-7 col-form-label">Matière</label>
-			</div>
-			<div class="form-group row">
-				<div class="col-5">
-					<input type="text" class="form-control" id="niveau_deform" name="niveau_deform">
-				</div>
-				<label for="niveau_deform" class="col-7 col-form-label">Déformation</label>
-			</div>
-			<div class="form-group row">
-				<div class="col-5">
-					<input type="text" class="form-control" id="tolerance_dim" name="tolerance_dim">
-				</div>
-				<label for="tolerance_dim" class="col-7 col-form-label">Tolérance dimensionnelle</label>
-			</div>
-			<div class="container" id="btn-bottom-page">
-				<button type="button" class="btn btn-outline-primary grisfonce">Ajouter un emballage</button>
-				<button type="submit" class="btn btn-outline-primary vert" name="">Valider</button>
-			</div>
-		</div>
 
-	</form>	
+			<div class="card-header text-center">
+				BOBINES
+			</div>
+
+			<div class="form-group row">
+				<div class="col-5">
+					<input type="number" class="form-control" id="hauteur_bobine" min="0" name="hauteur_bobine">
+				</div>
+				<label for="hauteur_bobine" class="col-7 col-form-label">Hauteur (H)</label>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-5">
+					<input type="number" class="form-control" id="diametre_bobine" min="0" name="diametre_bobine">
+				</div>
+				<label for="diametre_bobine" class="col-7 col-form-label">Diamètre bobine (D)</label>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-5">
+					<input type="number" class="form-control" id="diametre_mandrin" min="0" name="diametre_mandrin">
+				</div>
+				<label for="diametre_mandrin" class="col-7 col-form-label">Diamètre mandrin (d)</label>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-5">
+					<input type="number" class="form-control" id="nbr_eti" min="0" name="nbr_eti">
+				</div>
+				<label for="nbr_eti" class="col-7 col-form-label">Nombre d'étiquettes</label>
+			</div>
+
+			<div class="form-group row">
+				<div class="col-5">
+					<select class="custom-select" id="enroulement" name="enroulement">
+						<option selected>Choix</option>
+						<option value="1">E1 : tête en avant (ET)</option>
+						<option value="2">E2 : pied en avant (EP)</option>
+						<option value="3">E3 : tête à droite (ED)</option>
+						<option value="4">E4 : tête à gauche (EG)</option>
+						<option value="5">I1 : tête en avant (IT)</option>
+						<option value="6">I2 : pied en avant (IP)</option>
+						<option value="7">I3 : tête à droite (ID)</option>
+						<option value="8">I4 : tête à gauche (IG)</option>
+					</select>
+				</div>
+				<label class="col-7 col-form-label" for="enroulement">Enroulement</label>
+			</div>
+
+			<div class="container" id="btn-bottom-page">
+				<button type="submit" class="btn btn-outline-primary grisfonce">Ajouter une étiquette</button>
+				<button type="submit" class="btn btn-outline-primary vert">Valider</button>
+			</div>
+
+		</div>
+	</form>
+	
 </section>
 @endsection
