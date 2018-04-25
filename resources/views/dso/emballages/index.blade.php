@@ -49,7 +49,7 @@
 		</ul>
 		<div class="etiq_buttons">
 			<a role="button" class="btn btn-primary">Ajouter un emballage</a>
-			<a role="button" class="btn btn-primary">Suivant </a>
+			<a role="button" class="btn btn-primary">Suivant ></a>
 		</div>
 	</div>
 </section>
