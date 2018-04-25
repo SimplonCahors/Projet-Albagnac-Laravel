@@ -5,9 +5,9 @@
     <select class="Class__Select" id="matiere_emb" name="matiere_emb">
         <option selected>Thème</option>
         <option value="1">Value1</option>
-        <option value="1">Value2</option>
-        <option value="2">Value3</option>
-        <option value="3">Value4</option>
+        <option value="2">Value2</option>
+        <option value="3">Value3</option>
+        <option value="4">Value4</option>
     </select>
 </div>
 
@@ -17,9 +17,9 @@
     <select class="Class__Select" id="type_emb" name="type_emb">
         <option selected>Thème</option>
         <option value="1">Value1</option>
-        <option value="1">Value2</option>
-        <option value="2">Value3</option>
-        <option value="3">Value4</option>
+        <option value="2">Value2</option>
+        <option value="3">Value3</option>
+        <option value="4">Value4</option>
     </select>
 </div>
 
@@ -38,9 +38,9 @@
     <select class="Class__Select" id="matiere_eti" name="matiere_eti">
         <option selected>Thème</option>
         <option value="1">Value1</option>
-        <option value="1">Value2</option>
-        <option value="2">Value3</option>
-        <option value="3">Value4</option>
+        <option value="2">Value2</option>
+        <option value="3">Value3</option>
+        <option value="4">Value4</option>
     </select>
 </div>
 
@@ -50,9 +50,9 @@
     <select class="Class__Select" id="type_eti" name="type_eti">
         <option selected>Thème</option>
         <option value="1">Value1</option>
-        <option value="1">Value2</option>
-        <option value="2">Value3</option>
-        <option value="3">Value4</option>
+        <option value="2">Value2</option>
+        <option value="3">Value3</option>
+        <option value="4">Value4</option>
     </select>
 </div>
 

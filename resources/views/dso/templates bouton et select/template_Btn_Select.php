@@ -12,9 +12,9 @@
     <select class="Class__Select" id="__OO__" name="__OO__">
         <option selected>Choisir</option>
         <option value="1">Value1</option>
-        <option value="1">Value2</option>
-        <option value="2">Value3</option>
-        <option value="3">Value4</option>
+        <option value="2">Value2</option>
+        <option value="3">Value3</option>
+        <option value="4">Value4</option>
     </select>
 </div>
 
