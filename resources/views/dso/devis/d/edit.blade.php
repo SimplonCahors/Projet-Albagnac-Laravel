@@ -8,6 +8,7 @@
 	@include('breadcrumb')
 
 	<section id="a">
+
 		<form method="POST" action="">
 			@csrf
 
@@ -239,13 +240,11 @@
 				<div class="card">
 
 					<div class="card-header" id="headingThree">
-
 						<h5 class="mb-0">
 							<a role="button"  class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
 								MODE DE CONTRÔLE DEMANDÉ PAR LE CLIENT
 							</a>
 						</h5>
-
 					</div>
 
 					<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
@@ -303,13 +302,11 @@
 				<div class="card">
 
 					<div class="card-header" id="headingFour">
-
 						<h5 class="mb-0">
 							<a role="button"  class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 								INSTALLATION ET MISE EN ROUTE
 							</a>
 						</h5>
-
 					</div>
 
 					<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
@@ -362,13 +359,11 @@
 				<div class="card">
 
 					<div class="card-header" id="headingFive">
-
 						<h5 class="mb-0">
 							<a role="button"  class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
 								FORMATION
 							</a>
 						</h5>
-
 					</div>
 
 					<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
@@ -413,13 +408,11 @@
 				<div class="card">
 
 					<div class="card-header" id="headingSix">
-
 						<h5 class="mb-0">
 							<a role="button"  class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
 								NOTICE
 							</a>
 						</h5>
-
 					</div>
 
 					<div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
@@ -485,13 +478,11 @@
 				<div class="card">
 
 					<div class="card-header" id="headingSeven">
-
 						<h5 class="mb-0">
 							<a role="button"  class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
 								TRANSPORT
 							</a>
 						</h5>
-
 					</div>
 
 					<div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
@@ -523,6 +514,9 @@
 				<button type="button" class="btn btn-primary" type="submit">Valider ></button>
 
 			</div>
+
 		</form>
+
 	</section>
+	
 @endsection
