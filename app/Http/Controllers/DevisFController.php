@@ -14,18 +14,7 @@ class DevisFController extends Controller
 
     public function store($idDso, Request $request) 
     {
-        $devisF = new DevisF;
-
-        $devisF->id_dso = ($idDso);
-        $devisF->objet_rem = request('objet_rem');
-        $devisF->descriptif_rem = request('descriptif_rem');
-
-        $devisF->save();
-
-        //redirect to the defined page
-        //return redirect('/dso/{idDso}/emballages');
-        //return view('dso.emballages.show');
-       // return Redirect::action('UserController@profile', array('user' => 1));
+        
     }
 
     public function edit($idDso, $idDevisF) 
