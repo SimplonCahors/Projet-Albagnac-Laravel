@@ -67,7 +67,7 @@ class DevisAController extends Controller
 
     public function update($idDso, $idDevisA1, $idDevisA2, $idDevisA3, Request $request)
     {
-        $devisA1 = DevisA::find($idDevisA1);
+        $devisA1 = DevisA1::find($idDevisA1);
 
         $devisA1->id_dso = ($idDso);
         $devisA1->nom_client = request('nom_client');
@@ -83,7 +83,7 @@ class DevisAController extends Controller
 
         $devisA1->save();
 
-        $devisA2 = DevisA::find($idDevisA2);
+        $devisA2 = DevisA2::find($idDevisA2);
 
         $devisA2->id_dso = ($idDso);
         $devisA2->nom_commercial = request('nom_commercial');
@@ -94,7 +94,7 @@ class DevisAController extends Controller
 
         $devisA2->save();
 
-        $devisA3 = DevisA::find($idDevisA3);
+        $devisA3 = DevisA3::find($idDevisA3);
 
         $devisA3->id_dso = ($idDso);
         $devisA3->nom_tech = request('nom_tech');

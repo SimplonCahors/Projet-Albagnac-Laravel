@@ -47,7 +47,7 @@ class DevisCController extends Controller
 
     public function update($idDso, $idDevisC1, $idDevisC2, Request $request)
     {
-        $devisC1 = DevisC::find($idDevisC1);
+        $devisC1 = DevisC1::find($idDevisC1);
 
         $devisC1->id_dso = ($idDso);
         $devisC1->matiere_emb = request('matiere_emb');
@@ -56,7 +56,7 @@ class DevisCController extends Controller
 
         $devisC1->save();
 
-        $devisC2 = DevisC::find($idDevisC2);
+        $devisC2 = DevisC2::find($idDevisC2);
 
         $devisC2->id_dso = ($idDso);
         $devisC2->matiere_eti = request('matiere_eti');
