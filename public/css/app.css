@@ -10905,6 +10905,19 @@ section#sous_nav a {
   }
 }
 
+nav#breadcrumb_devis ol {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+nav#breadcrumb_devis ol li.breadcrumb-item a {
+  color: #262626;
+}
+
 section#emballages i {
   color: white;
   position: absolute;
