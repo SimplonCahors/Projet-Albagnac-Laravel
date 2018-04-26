@@ -56,30 +56,38 @@ Route::get('/emballages/liste', function () {
 =            Routes devis            =
 ====================================*/
 //Devis A
+
 Route::get('/dso/{idDso}/devis/a/edit', 'DevisAController@edit')->name('devis-a-edit');
 Route::post('/dso/{idDso}/devis/a/', 'DevisAController@update')->name('devis-a-update');
 
 //Devis B
-Route::get('/dso/{idDso}/devis/b/create', 'DevisBController@create')->name('devis-b-create');
 
-Route::get('/dso/{idDso}/devis/c', function () {
-    return view('dso.devis.c.edit');
-});
+Route::get('/dso/{idDso}/devis/b/edit', 'DevisBController@edit')->name('devis-b-edit');
+Route::post('/dso/{idDso}/devis/b/', 'DevisBController@update')->name('devis-b-update');
 
-Route::get('/dso/{idDso}/devis/d', function () {
-    return view('dso.devis.d.create');
-});
+//Devis C
 
-Route::get('/dso/{idDso}/devis/e', function () {
-    return view('dso.devis.e.create');
-});
+Route::get('/dso/{idDso}/devis/c/edit', 'DevisCController@edit')->name('devis-c-edit');
+Route::post('/dso/{idDso}/devis/c/', 'DevisCController@update')->name('devis-c-update');
 
+//Devis D
 
-// Route test front pour blade devis f :
-Route::get('/f', function () {
-    return view('dso.devis.f.edit');
-});
+Route::get('/dso/{idDso}/devis/d/edit', 'DevisDController@edit')->name('devis-d-edit');
+Route::post('/dso/{idDso}/devis/d/', 'DevisDController@update')->name('devis-d-update');
+
+//Devis E
+
+Route::get('/dso/{idDso}/devis/e/edit', 'DevisEController@edit')->name('devis-e-edit');
+Route::post('/dso/{idDso}/devis/e/', 'DevisEController@update')->name('devis-e-update');
+
+//Devis F
+
+Route::get('/dso/{idDso}/devis/f/edit', 'DevisFController@edit')->name('devis-f-edit');
+Route::post('/dso/{idDso}/devis/f/', 'DevisFController@update')->name('devis-f-update');
+
 /*=====  End of Routes devis  ======*/
+
+
 
 
 
