@@ -7,6 +7,9 @@ use Illuminate\Support\Carbon;
 use App\Dsoroot;
 use App\User;
 use Auth;
+use App\DevisA1;
+use App\DevisA2;
+use App\DevisA3;
 
 class DsorootController extends Controller
 {
@@ -68,8 +71,25 @@ class DsorootController extends Controller
         //save it to the dbb
         $dsoRoot->save();
 
-
         $idDso = $dsoRoot->id;
+        // save DevisA1
+        $devisA1 = new DevisA1;
+
+        $devisA1->id_dso = ($idDso);
+        $devisA1->nom_client = request('nom_client');
+        $devisA1->adresse_client = request('adresse_client');
+        $devisA1->tel_client = request('tel_client');
+        $devisA1->fax_client = request('fax_client');
+        $devisA1->pays_client = request('pays_client');
+        $devisA1->categorie_client = request('categorie_client');
+        $devisA1->secteur_client = request('secteur_client');
+        $devisA1->sousecteur_client = request('sousecteur_client');
+        $devisA1->type_client = request('type_client');
+        $devisA1->siret_client = request('siret_client');
+
+        $devisA1->save();
+
+
         //redirect to the home page
         return redirect()->route('devis-a-create', ['idDso' => $idDso]);
     }
