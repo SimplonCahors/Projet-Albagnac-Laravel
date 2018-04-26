@@ -10,13 +10,17 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+// login
 Auth::routes();
 
+// affichage liste dso sur acceuil
+Route::get('/accueil', 'DsorootController@index')->name('accueil');
 
-//infos-admin
-Route::get('/dso/{idDso}/devis/infos-admin', 'DsorootController@index')->name('infos-admin');
-Route::get('/dso/{idDso}/devis/infos-admin/create', 'DsorootController@create')->name('infos-admin_create');
+// nouveau dso
+Route::get('/nouveau-dso', 'DsorootController@create')->name('dso-create');
+Route::post('/nouveau-dso', 'DsorootController@store');
+Route::get('/edit/{idDso}', 'DsorootController@edit')->name('dso-edit');
+Route::post('/edit/{$idDso}', 'DsorootController@update');
 
 
 // emballages
@@ -37,41 +41,53 @@ Route::get('/dso/{idDso}/etiquettes/{idEtiquette}/edit', 'EtiquetteController@ed
 Route::post('/dso/{idDso}/etiquettes/{idEtiquette}/edit', 'EtiquetteController@update')->name('etiquette-update');
 Route::get('/dso/{idDso}/etiquettes/{idEtiquette}/destroy', 'EtiquetteController@destroy')->name('etiquette-destroy');
 
-// nouveau dso
-Route::get('/{idUser}/nouveau-dso', 'DsorootController@create')->name('nouveau-dso');
-Route::post('/{idUser}/nouveau-dso', 'DsorootController@store');
-Route::get('/{idUser}/edit/{idDso}', 'DsorootController@edit');
-Route::post('/{$idUser}/edit/{$idDso}', 'DsorootController@update');
 
-// affichage liste dso sur acceuil
-Route::get('/accueil', 'DsorootController@index')->name('accueil');
 
 Route::get('/etiquettes/liste', function () {
-    return view('liste_etiquettes');
+    return view('dso/etiquettes/index');
 });
 
 Route::get('/emballages/liste', function () {
-    return view('liste_emballages');
+    return view('dso/emballages/index');
 });
 
 
 /*====================================
 =            Routes devis            =
 ====================================*/
+//Devis A
 
-//a
-Route::get('/a', function () {
-    return view('dso/devis/a/create');
-});
+Route::get('/dso/{idDso}/devis/a/edit', 'DevisAController@edit')->name('devis-a-edit');
+Route::post('/dso/{idDso}/devis/a/', 'DevisAController@update')->name('devis-a-update');
 
-Route::get('/b', function () {
-    return view('dso/devis/b/create');
-});
+//Devis B
 
-Route::get('/e', function(){
-	return view('dso/devis/e/e');
-});
+Route::get('/dso/{idDso}/devis/b/edit', 'DevisBController@edit')->name('devis-b-edit');
+Route::post('/dso/{idDso}/devis/b/', 'DevisBController@update')->name('devis-b-update');
+
+//Devis C
+
+Route::get('/dso/{idDso}/devis/c/edit', 'DevisCController@edit')->name('devis-c-edit');
+Route::post('/dso/{idDso}/devis/c/', 'DevisCController@update')->name('devis-c-update');
+
+//Devis D
+
+Route::get('/dso/{idDso}/devis/d/edit', 'DevisDController@edit')->name('devis-d-edit');
+Route::post('/dso/{idDso}/devis/d/', 'DevisDController@update')->name('devis-d-update');
+
+//Devis E
+
+Route::get('/dso/{idDso}/devis/e/edit', 'DevisEController@edit')->name('devis-e-edit');
+Route::post('/dso/{idDso}/devis/e/', 'DevisEController@update')->name('devis-e-update');
+
+//Devis F
+
+Route::get('/dso/{idDso}/devis/f/edit', 'DevisFController@edit')->name('devis-f-edit');
+Route::post('/dso/{idDso}/devis/f/', 'DevisFController@update')->name('devis-f-update');
+
 /*=====  End of Routes devis  ======*/
+
+
 
 
 

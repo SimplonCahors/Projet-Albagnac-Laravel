@@ -39,22 +39,23 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('accueil') }}"> Accueil </a> 
+                        @auth
+                        @if (!Auth::guest() && Auth::user()->adv)
+                        <a class="dropdown-item" href="{{ route('users-index') }}">Gestion utilisateurs</a>
+                        @else
+
+                        @endif 
+                        @endauth
                         <a class="dropdown-item" href="{{ route('logout') }}"
                         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
+                        Se déconnecter
                     </a>
 
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
-                    @auth
-                    @if (!Auth::guest() && Auth::user()->adv)
-                    <a class="dropdown-item" href="{{ route('users-index') }}">Gestion utilisateurs</a>
-                    @else
-
-                    @endif 
-                    @endauth
                 </div>
             </li>
             @endguest

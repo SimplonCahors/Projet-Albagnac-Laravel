@@ -22,6 +22,8 @@ class CreateDsorootsTable extends Migration
             $table->date('date_rep')->nullable();
             $table->date('date_envoi')->nullable();
             $table->date('date_livraison')->nullable();
+            $table->boolean('termine')->nullable();
+            $table->boolean('valide')->nullable();
         });
     }
 

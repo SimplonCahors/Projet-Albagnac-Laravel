@@ -1,0 +1,8 @@
+nav#breadcrumb_devis ol{
+	display: flex;
+	justify-content: center;
+
+	li.breadcrumb-item a{
+		color: $grisfonce;
+	}
+}
