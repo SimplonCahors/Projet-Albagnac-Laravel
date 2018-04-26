@@ -3,6 +3,8 @@
 @section('title', 'Devis')
 
 @section('content')
+@include('sous_nav')
+@include('breadcrumb')
 <section id="a">
 	<form method="POST" action="">
 		@csrf
