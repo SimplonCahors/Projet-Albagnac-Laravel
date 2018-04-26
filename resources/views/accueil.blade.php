@@ -30,7 +30,7 @@
 							@endif
 							@endforeach
 						</h5>
-						<a href="/{{$dso->id_user}}/edit/{{$dso->id}}" class="btn btn-outline-primary vert">Acceder au DSO</a>
+						<a href="{{ route('dso-edit', ['idDso' => $dso->id]) }}" class="btn btn-outline-primary vert">Acceder au DSO</a>
 					</div>
 				</div>
 			</li>
@@ -49,7 +49,7 @@
 							@endif
 							@endforeach
 						</h5>
-						<a href="/{{$dso->id_user}}/edit/{{$dso->id}}" class="btn btn-outline-primary vert">Acceder au DSO</a>
+						<a href="{{ route('dso-edit', ['idDso' => $dso->id]) }}" class="btn btn-outline-primary vert">Acceder au DSO</a>
 					</div>
 				</div>
 			</li>
