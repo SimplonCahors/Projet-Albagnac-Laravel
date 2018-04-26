@@ -16,6 +16,9 @@ Auth::routes();
 // affichage liste dso sur acceuil
 Route::get('/accueil', 'DsorootController@index')->name('accueil');
 
+//archives
+Route::get('/archives', 'ArchivesController@index')->name('archives');
+
 // nouveau dso
 Route::get('/nouveau-dso', 'DsorootController@create')->name('dso-create');
 Route::post('/nouveau-dso', 'DsorootController@store');
@@ -44,11 +47,11 @@ Route::get('/dso/{idDso}/etiquettes/{idEtiquette}/destroy', 'EtiquetteController
 
 
 Route::get('/etiquettes/liste', function () {
-    return view('dso/etiquettes/index');
+	return view('dso/etiquettes/index');
 });
 
 Route::get('/emballages/liste', function () {
-    return view('dso/emballages/index');
+	return view('dso/emballages/index');
 });
 
 
@@ -101,12 +104,12 @@ Route::post('/dso/{idDso}/devis/f/', 'DevisFController@update')->name('devis-f-u
 
 // Route qui permet de sécurisé le site -> demande de connexion si user non connecté
 Route::get('/', function () {
-    if (Auth::check()) {
-        return view('home');
-    }
-    else{
-        return view('layouts.app');
-    }
+	if (Auth::check()) {
+		return view('home');
+	}
+	else{
+		return view('layouts.app');
+	}
 });
 
 //Gestion des utilisateurs par l'adv
@@ -115,7 +118,7 @@ Route::post('/users/add', 'CompteController@create')->name('adduser');
 Route::get('/users/{id}/delete', 'CompteController@destroy')->name('delete');
 
 Route::get('/users/create', function () {
-    return view('/users/create');
+	return view('/users/create');
 })->name('users-create-form');
 
 
