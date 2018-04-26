@@ -9,7 +9,7 @@ class DevisFController extends Controller
 {
     public function create($idDso)
     {
-        return view('dso.devisF.create', ['idDso'=> $idDso]);
+        
     }
 
     public function store($idDso, Request $request) 
@@ -17,20 +17,22 @@ class DevisFController extends Controller
         
     }
 
-    public function edit($idDso, $idDevisF) 
+    public function edit($idDso) 
     {
-        $data = DevisF::find($idDevisF);
-        return view('dso.devisF.edit', ['data'=>$data, 'idDso'=>$idDso, 'idDevisF'=>$idDevisF]);
+        $data = DevisF::where('id_dso', $idDso)->first();
+        return view('dso.devis.f.edit', ['data'=>$data, 'idDso'=>$idDso]);
     }
 
-    public function update($idDso, $idDevisF, Request $request)
+    public function update($idDso, Request $request)
     {
-        $devisF = DevisF::find($idDevisF);
+        $devisF = DevisF::where('id_dso', $idDso)->first();
 
         $devisF->id_dso = ($idDso);
         $devisF->objet_rem = request('objet_rem');
         $devisF->descriptif_rem = request('descriptif_rem');
 
         $devisF->save();
+
+        return redirect()->route('devis-f-edit', ['idDso' => $idDso]);
     }
 }

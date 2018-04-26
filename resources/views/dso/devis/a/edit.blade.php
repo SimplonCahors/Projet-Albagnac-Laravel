@@ -7,7 +7,7 @@
 @include('breadcrumb')
 <section id="a">
 
-	<form method="POST" action="{{ action('DevisAController@store', ['idDso'=> $idDso]) }}">
+	<form method="POST" action="{{ action('DevisAController@update', [$idDso]) }}">
 		@csrf
 		<div id="accordion">
 			<div class="card">
@@ -24,51 +24,51 @@
 
 						<div class="a form-group">
 							<label for="nom_client">Nom du client :</label>
-							<input type="text" class="form-control" id="nom_client" name="nom_client">
+							<input type="text" class="form-control" id="nom_client" name="nom_client" value="{{ $data1->nom_client }}">
 						</div>
 
 						<div class="a form-group">
 							<label for="adresse_client">Adresse postale :</label>
-							<input type="text" class="form-control" id="adresse_client" name="adresse_client">
+							<input type="text" class="form-control" id="adresse_client" name="adresse_client"  value="{{ $data1->adresse_client }}">
 						</div>
 
 						<div class="a form-group">
 							<label for="tel_client">Téléphone :</label>
-							<input type="tel" class="form-control" id="tel_client" name="tel_client">
+							<input type="tel" class="form-control" id="tel_client" name="tel_client"  value="{{ $data1->tel_client }}">
 						</div>
 
 						<div class="a form-group">
 							<label for="fax_client">Fax :</label>
-							<input type="tel" class="form-control" id="fax_client" name="fax_client">
+							<input type="tel" class="form-control" id="fax_client" name="fax_client"  value="{{ $data1->fax_client }}">
 						</div>
 						
 						<div class="a form-group">
 							<label for="pays_client">Pays :</label>
-							<input type="text" class="form-control" id="pays_client" name="pays_client">
+							<input type="text" class="form-control" id="pays_client" name="pays_client"  value="{{ $data1->pays_client }}">
 						</div>
 						
 						<div class="a form-group">
 							<label for="categorie_client">Catégorie</label>
 							<select class="form-control" id="categorie_client" name="categorie_client">
-								<option selected>Choisir</option>
-								<option value="1">Client</option>
-								<option value="2">Revendeur</option>
+								<option selected>{{ $data1->categorie_client }}</option>
+								<option value="Client">Client</option>
+								<option value="Revendeur">Revendeur</option>
 							</select>
 						</div>
 
 						<div class="a form-group">
 							<label for="secteur_client">Secteur</label>
 							<select class="form-control" id="secteur_client" name="secteur_client">
-								<option selected>Choisir</option>
-								<option value="1">VINICOLE</option>
-								<option value="2">INDUSTRIE</option>
+								<option selected>{{ $data1->serveur_client }}</option>
+								<option value="VINICOLE">VINICOLE</option>
+								<option value="INDUSTRIE">INDUSTRIE</option>
 							</select>
 						</div>
 
 						<div class="a form-group">
 							<label for="sousecteur_client">Sous secteur</label>
 							<select class="form-control" id="sousecteur_client" name="sousecteur_client">
-								<option selected>Choisir</option>
+								<option selected>{{ $data1->sousecteur_client }}</option>
 								<option value="1">Agro-alimentaire</option>
 								<option value="2">Cosmétique</option>
 								<option value="3">Chimie</option>
@@ -80,7 +80,7 @@
 						<div class="a form-group">
 							<label for="type_client">Type client</label>
 							<select class="form-control" id="type_client" name="type_client">
-								<option selected>Choisir</option>
+								<option selected>{{ $data1->type_client }}</option>
 								<option value="1">Nouveau</option>
 								<option value="2">Existant</option>
 							</select>
@@ -88,7 +88,7 @@
 						
 						<div class="a form-group">
 							<label for="siret_client">SIRET :</label>
-							<input type="tel" class="form-control" id="siret_client" name="siret_client">
+							<input type="tel" class="form-control" id="siret_client" name="siret_client" value="{{ $data1->siret_client }}">
 						</div>
 						
 					</div>
@@ -111,27 +111,27 @@
 
 						<div class="a form-group">
 							<label for="nom_commercial">Nom :</label>
-							<input type="text" class="form-control" id="nom_commercial" name="nom_commercial">
+							<input type="text" class="form-control" id="nom_commercial" name="nom_commercial" value="{{ $data2->nom_commercial }}">
 						</div>
 
 						<div class="a form-group">
 							<label for="fonction_commercial">Fonction :</label>
-							<input type="text" class="form-control" id="fonction_commercial" name="fonction_commercial">
+							<input type="text" class="form-control" id="fonction_commercial" name="fonction_commercial" value="{{ $data2->fonction_commercial }}">
 						</div>
 
 						<div class="a form-group">
 							<label for="mail_commercial">Email :</label>
-							<input type="email" class="form-control" id="mail_commercial" name="mail_commercial">
+							<input type="email" class="form-control" id="mail_commercial" name="mail_commercial" value="{{ $data2->mail_commercial }}">
 						</div>
 
 						<div class="a form-group">
 							<label for="tel_commercial">Téléphone :</label>
-							<input type="tel" class="form-control" id="tel_commercial" name="tel_commercial">
+							<input type="tel" class="form-control" id="tel_commercial" name="tel_commercial" value="{{ $data2->tel_commercial }}">
 						</div>
 
 						<div class="a form-group">
 							<label for="experience_commercial">Expérience :</label>
-							<input type="text" class="form-control" id="experience_commercial" name="experience_commercial">
+							<input type="text" class="form-control" id="experience_commercial" name="experience_commercial" value="{{ $data2->experience_commercial }}">
 						</div>
 
 					</div>

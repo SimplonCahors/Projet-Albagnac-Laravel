@@ -12,7 +12,7 @@ class DevisEController extends Controller
 {
     public function create($idDso)
     {
-        return view('dso.devisE.create', ['idDso'=> $idDso]);
+       
     }
 
     public function store($idDso, Request $request) 
@@ -20,15 +20,17 @@ class DevisEController extends Controller
        
     }
 
-    public function edit($idDso, $idDevisE1, $idDevisE2, $idDevisE3) 
+    public function edit($idDso) 
     {
-        $data = DevisE::find($idDevisE1, $idDevisE2, $idDevisE3);
-        return view('dso.devisE.edit', ['data'=>$data, 'idDso'=>$idDso, 'idDevisE1'=>$idDevisE1, 'idDevisE2'=>$idDevisE2, 'idDevisE3'=>$idDevisE3]);
+        $data1 = DevisE1::where('id_dso', $idDso)->first();
+        $data2 = DevisE2::where('id_dso', $idDso)->first();
+        $data3 = DevisE3::where('id_dso', $idDso)->first();
+        return view('dso.devis.e.edit', ['data1'=>$data1,'data2'=>$data2,'data3'=>$data3, 'idDso'=>$idDso]);
     }
 
-    public function update($idDso, $idDevisE1, $idDevisE2, $idDevisE3, Request $request)
+    public function update($idDso, Request $request)
     {
-        $devisE1 = DevisE1::find($idDevisE1);
+        $devisE1 = DevisE1::where('id_dso', $idDso)->first();
 
         $devisE1->id_dso = ($idDso);
         $devisE1->type_materiel = request('type_materiel');
@@ -38,7 +40,7 @@ class DevisEController extends Controller
 
         $devisE1->save();
 
-        $devisE2 = DevisE2::find($idDevisE2);
+        $devisE2 = DevisE2::where('id_dso', $idDso)->first();
 
         $devisE2->id_dso = ($idDso);
         $devisE2->ref_eti = request('ref_eti');
@@ -48,7 +50,7 @@ class DevisEController extends Controller
 
         $devisE2->save();
 
-        $devisE3 = DevisE3::find($idDevisE3);
+        $devisE3 = DevisE3::where('id_dso', $idDso)->first();
 
         $devisE3->id_dso = ($idDso);
         $devisE2->ref_emb = request('ref_emb');
@@ -57,5 +59,7 @@ class DevisEController extends Controller
         $devisE2->rem_emb = request('rem_emb');
 
         $devisE3->save();
+
+        return redirect()->route('devis-e-edit', ['idDso' => $idDso]);
     }
 }
