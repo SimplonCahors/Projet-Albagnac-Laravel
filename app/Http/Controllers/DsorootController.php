@@ -327,10 +327,10 @@ class DsorootController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($idUser, $idDso)
+    public function edit($idDso)
     {
         $data = Dsoroot::find($idDso);
-        return view('dso.devis.roots.edit')->with('idUser', $idUser)->with('idDso', $idDso)->with('data', $data) ;
+        return view('dso.devis.roots.edit')->with('idDso', $idDso)->with('data', $data) ;
     }
 
     /**

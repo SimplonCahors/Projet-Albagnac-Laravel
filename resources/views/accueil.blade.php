@@ -10,7 +10,7 @@
 <section id="p-accueil">
 	<div id="btn-accueil">
 		<a href="{{ route('dso-create') }}" class="btn btn-outline-primary jaune" role="button">Nouveau DSO</a>
-		<button type="submit" class="btn btn-outline-primary rouge">Archives DSO</button>
+		<a href="{{ route('archives') }}" role="button" class="btn btn-outline-primary rouge">Archives DSO</a>
 	</div>    
 	<div id="liste-accueil">
 		<h3>DSO en cours :</h3>
@@ -30,7 +30,7 @@
 							@endif
 							@endforeach
 						</h5>
-						<a href="/{{$dso->id_user}}/edit/{{$dso->id}}" class="btn btn-outline-primary vert">Acceder au DSO</a>
+						<a href="{{ route('dso-edit', ['idDso' => $dso->id]) }}" class="btn btn-outline-primary vert">Acceder au DSO</a>
 					</div>
 				</div>
 			</li>
@@ -49,7 +49,7 @@
 							@endif
 							@endforeach
 						</h5>
-						<a href="/{{$dso->id_user}}/edit/{{$dso->id}}" class="btn btn-outline-primary vert">Acceder au DSO</a>
+						<a href="{{ route('dso-edit', ['idDso' => $dso->id]) }}" class="btn btn-outline-primary vert">Acceder au DSO</a>
 					</div>
 				</div>
 			</li>

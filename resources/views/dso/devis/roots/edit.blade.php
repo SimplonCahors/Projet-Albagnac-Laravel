@@ -3,7 +3,7 @@
 <div class="row">
                 <div class="col-md-8 order-md-1">
                     <h4 class="mb-3">DSO N° {{$idDso}}</h4>
-                    <form class="needs-validation" method="post" action="/{{$idUser}}/edit/{{$idDso}}">  
+                    <form class="needs-validation" method="post" action="{{ action('DsorootController@edit', [$idDso]) }}">  
                         @csrf
                         <div class="row">
                             <div class="col-md-6 mb-3">
