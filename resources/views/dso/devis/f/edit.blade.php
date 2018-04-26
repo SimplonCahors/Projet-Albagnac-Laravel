@@ -6,7 +6,7 @@
 
 <section id="a">
 
-	<form method="POST" action="XXXXXXX">
+	<form method="POST" action="{{ action('DevisFController@update', [$idDso]) }}">
 		@csrf
 		<div id="accordion">
 			<div class="card">
@@ -23,12 +23,12 @@
 
 						<div class="a form-group">
 							<label for="objet_rem">Objet :</label>
-							<input type="text" class="form-control" id="objet_rem" name="objet_rem">
+							<input type="text" class="form-control" id="objet_rem" name="objet_rem" value="{{ $data->objet_rem }}">
 						</div>
 
                         <div class="nouveau-dso form-group">
                             <label for="descriptif_rem">Descriptif :</label>
-                            <textarea type="text" class="form-control" id="descriptif_rem" name="descriptif_rem" required></textarea>
+                            <textarea type="text" class="form-control" id="descriptif_rem" name="descriptif_rem" required>{{ $data->descriptif_rem }}</textarea>
 					    </div>
                         <div class="container" id="btn-bottom-page">
 							<button type="submit" class="btn btn-outline-primary grisfonce">Ajouter une remarque</button>

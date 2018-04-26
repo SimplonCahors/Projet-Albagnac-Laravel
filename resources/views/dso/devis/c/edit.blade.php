@@ -4,7 +4,7 @@
 
 @section('content')
 <section id="a">
-	<form method="POST" action="">
+	<form method="POST" action="{{ action('DevisCController@update', [$idDso]) }}">
 		@csrf
 		<div id="accordion">
 			<div class="card">
@@ -22,7 +22,7 @@
 						<div class="a form-group">
 							<label for="matiere_emb">Matière de l'emballage</label>
 							<select class="form-control" id="matiere_emb" name="matiere_emb">
-								<option selected>Choisir</option>
+								<option selected>{{ $data1->matiere_emb }}</option>
 								<option value="Métal">Métal</option>
 								<option value="Plastique">Plastique</option>
 								<option value="Verre">Verre</option>
@@ -33,7 +33,7 @@
 						<div class="a form-group">
 							<label for="type_emb">Type d'emballage</label>
 							<select class="form-control" id="type_emb" name="type_emb">
-								<option selected>Choisir</option>
+								<option selected>{{ $data1->type_emb }}</option>
 								<option value="Cylindrique">Cylindrique</option>
 								<option value="Carré">Carré</option>
 								<option value="Barquette">Barquette</option>
@@ -47,7 +47,7 @@
 
 						<div class="a form-group">
 							<label for="nbr_emb">Nombre d'emballages :</label>
-							<input type="number" min="0" class="form-control" id="nbr_emb" name="nbr_emb">
+							<input type="number" min="0" class="form-control" id="nbr_emb" name="nbr_emb" value="{{ $data1->nbr_emb }}">
 						</div>
 						<div class="container" id="btn-bottom-page">
 							<button type="submit" class="btn btn-outline-primary grisfonce">Ajouter un emballage</button>
@@ -73,7 +73,7 @@
 						<div class="a form-group">
 							<label for="matiere_eti">Matière de l'étiquette</label>
 							<select class="form-control" id="matiere_eti" name="matiere_eti">
-								<option selected>Choisir</option>
+								<option selected>{{ $data2->matiere_eti }}</option>
 								<option value="Opaque">Opaque</option>
 								<option value="Transparente">Transparente</option>
 							</select>
@@ -82,7 +82,7 @@
 						<div class="a form-group">
 							<label for="type_eti">Type d'étiquette</label>
 							<select class="form-control" id="type_eti" name="type_eti">
-								<option selected>Choisir</option>
+								<option selected>{{ $data2->type_eti }}</option>
 								<option value="Collerette entourante">Collerette entourante</option>
 								<option value="Collerette">Collerette</option>
 								<option value="Corp">Corp</option>
@@ -98,7 +98,7 @@
 						</div>
 						<div class="a form-group">
 							<label for="nbr_eti">Nombre d'étiquettes :</label>
-							<input type="number" min="0" class="form-control" id="nbr_eti" name="nbr_eti">
+							<input type="number" min="0" class="form-control" id="nbr_eti" name="nbr_eti" value="{{ $data2->nbr_eti }}">
 						</div>
 						<div class="container" id="btn-bottom-page">
 							<button type="submit" class="btn btn-outline-primary grisfonce">Ajouter une étiquette</button>
