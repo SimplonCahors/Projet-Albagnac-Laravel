@@ -56,8 +56,8 @@ Route::get('/emballages/liste', function () {
 =            Routes devis            =
 ====================================*/
 //Devis A
-Route::get('/dso/{idDso}/devis/a/create', 'DevisAController@create')->name('devis-a-create');
-Route::post('/dso/{idDso}/devis/a/', 'DevisAController@store')->name('devis-a-store');
+Route::get('/dso/{idDso}/devis/a/edit', 'DevisAController@edit')->name('devis-a-edit');
+Route::post('/dso/{idDso}/devis/a/', 'DevisAController@update')->name('devis-a-update');
 
 //Devis B
 Route::get('/dso/{idDso}/devis/b/create', 'DevisBController@create')->name('devis-b-create');

@@ -11,7 +11,7 @@ class DevisAController extends Controller
 {
     public function create($idDso)
     {
-        return view('dso.devis.a.create', ['idDso'=> $idDso]);
+      
     }
 
     public function store($idDso, Request $request) 
@@ -19,15 +19,16 @@ class DevisAController extends Controller
 
     }
 
-    public function edit($idDso, $idDevisA1, $idDevisA2, $idDevisA3) 
+    public function edit($idDso) 
     {
-        $data = DevisA::find($idDevisA1, $idDevisA2, $idDevisA3);
-        return view('dso.devisA.edit', ['data'=>$data, 'idDso'=>$idDso, 'idDevisA1'=>$idDevisA1, 'idDevisA2'=>$idDevisA2, 'idDevisA3'=>$idDevisA3]);
+        $data = DevisA1::where('id_dso', $idDso)->first();
+        return view('dso.devis.a.edit', ['data'=>$data, 'idDso'=>$idDso]);
     }
 
-    public function update($idDso, $idDevisA1, $idDevisA2, $idDevisA3, Request $request)
+    public function update($idDso, Request $request)
     {
-        $devisA1 = DevisA1::find($idDevisA1);
+        
+        $devisA1 = DevisA1::where('id_dso', $idDso)->first();
 
         $devisA1->id_dso = ($idDso);
         $devisA1->nom_client = request('nom_client');
@@ -43,27 +44,29 @@ class DevisAController extends Controller
 
         $devisA1->save();
 
-        $devisA2 = DevisA2::find($idDevisA2);
+        // $devisA2 = DevisA2::find($idDso);
 
-        $devisA2->id_dso = ($idDso);
-        $devisA2->nom_commercial = request('nom_commercial');
-        $devisA2->fonction_commercial = request('fonction_commercial');
-        $devisA2->mail_commercial = request('mail_commercial');
-        $devisA2->tel_commercial = request('tel_commercial');
-        $devisA2->experience_commercial = request('experience_commercial');
+        // $devisA2->id_dso = ($idDso);
+        // $devisA2->nom_commercial = request('nom_commercial');
+        // $devisA2->fonction_commercial = request('fonction_commercial');
+        // $devisA2->mail_commercial = request('mail_commercial');
+        // $devisA2->tel_commercial = request('tel_commercial');
+        // $devisA2->experience_commercial = request('experience_commercial');
 
-        $devisA2->save();
+        // $devisA2->save();
 
-        $devisA3 = DevisA3::find($idDevisA3);
+        // $devisA3 = DevisA3::find($idDso);
 
-        $devisA3->id_dso = ($idDso);
-        $devisA3->nom_tech = request('nom_tech');
-        $devisA3->fonction_tech = request('fonction_tech');
-        $devisA3->mail_tech = request('mail_tech');
-        $devisA3->tel_tech = request('tel_tech');
-        $devisA3->experience_tech = request('experience_tech');
+        // $devisA3->id_dso = ($idDso);
+        // $devisA3->nom_tech = request('nom_tech');
+        // $devisA3->fonction_tech = request('fonction_tech');
+        // $devisA3->mail_tech = request('mail_tech');
+        // $devisA3->tel_tech = request('tel_tech');
+        // $devisA3->experience_tech = request('experience_tech');
 
-        $devisA3->save();
+        // $devisA3->save();
+
+        return redirect()->route('devis-a-edit', ['idDso' => $idDso]);
 
     }
 }

@@ -6,7 +6,7 @@
 @include('sous_nav')
 <section id="a">
 
-	<form method="POST" action="{{ action('DevisAController@store', ['idDso'=> $idDso]) }}">
+	<form method="POST" action="{{ action('DevisAController@update', [$idDso]) }}">
 		@csrf
 		<div id="accordion">
 			<div class="card">
@@ -23,7 +23,7 @@
 
 						<div class="a form-group">
 							<label for="nom_client">Nom du client :</label>
-							<input type="text" class="form-control" id="nom_client" name="nom_client">
+							<input type="text" class="form-control" id="nom_client" name="nom_client" value="{{ $data->nom_client }}">
 						</div>
 
 						<div class="a form-group">
