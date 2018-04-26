@@ -15,32 +15,7 @@ class DevisBController extends Controller
 
     public function store($idDso, Request $request) 
     {
-        $devisB1 = new DevisB1;
-
-        $devisB1->id_dso = ($idDso);
-        $devisB1->besoin = request('besoin');
-        $devisB1->rem_besoin = request('rem_besoin');
-        $devisB1->fournisseur_actuel = request('fournisseur_actuel');
-        $devisB1->nom_concurrent = request('nom_concurrent');
-        $devisB1->type_concurrent = request('type_concurrent');
-        $devisB1->rem_concurrent = request('rem_concurrent');
-
-        $devisB1->save();
-
-        $devisB2 = new DevisB2;
-
-        $devisB2->id_dso = ($idDso);
-        $devisB2->nbr_type_machines = request('nbr_type_machines');
-        $devisB2->site_prod = request('site_prod');
-        $devisB2->implantation_sites = request('implantation_sites');
-        $devisB2->env_concurrentiel = request('env_concurrentiel');
-
-        $devisB2->save();
-
-        //redirect to the defined page
-        //return redirect('/dso/{idDso}/emballages');
-        //return view('dso.emballages.show');
-       // return Redirect::action('UserController@profile', array('user' => 1));
+        
     }
 
     public function edit($idDso, $idDevisB1, $idDevisB2) 

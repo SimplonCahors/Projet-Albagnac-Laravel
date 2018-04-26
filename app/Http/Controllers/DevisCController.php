@@ -15,28 +15,7 @@ class DevisCController extends Controller
 
     public function store($idDso, Request $request) 
     {
-        $devisC1 = new DevisC1;
-
-        $devisC1->id_dso = ($idDso);
-        $devisC1->matiere_emb = request('matiere_emb');
-        $devisC1->type_emb = request('type_emb');
-        $devisC1->nbr_emb = request('nbr_emb');
-
-        $devisC1->save();
-
-        $devisC2 = new DevisC2;
-
-        $devisC2->id_dso = ($idDso);
-        $devisC2->matiere_eti = request('matiere_eti');
-        $devisC2->type_eti = request('type_eti');
-        $devisC2->nbr_eti = request('nbr_eti');
-
-        $devisC2->save();
-
-        //redirect to the defined page
-        //return redirect('/dso/{idDso}/emballages');
-        //return view('dso.emballages.show');
-       // return Redirect::action('UserController@profile', array('user' => 1));
+        
     }
 
     public function edit($idDso, $idDevisC1, $idDevisC2) 
