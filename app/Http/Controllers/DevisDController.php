@@ -12,20 +12,17 @@ use App\DevisD6;
 use App\DevisD7;
 use App\DevisD8;
 
-
 class DevisDController extends Controller
 {
     public function create($idDso)
     {
-        
     }
 
-    public function store($idDso, Request $request) 
+    public function store($idDso, Request $request)
     {
-        
     }
 
-    public function edit($idDso) 
+    public function edit($idDso)
     {
         $data1 = DevisD1::where('id_dso', $idDso)->first();
         $data2 = DevisD2::where('id_dso', $idDso)->first();
@@ -39,7 +36,7 @@ class DevisDController extends Controller
         return view('dso.devis.d.edit', ['data1'=>$data1,'data2'=>$data2,'data3'=>$data3, 'data4'=>$data4, 'data5'=>$data5, 'data6'=>$data6, 'data7'=>$data7, 'data8'=>$data8, 'idDso'=>$idDso]);
     }
 
-     public function update($idDso, Request $request)
+    public function update($idDso, Request $request)
     {
         $devisD1 = DevisD1::where('id_dso', $idDso)->first();
 
@@ -115,6 +112,7 @@ class DevisDController extends Controller
         $devisD7 = DevisD7::where('id_dso', $idDso)->first();
 
         $devisD7->id_dso = ($idDso);
+        $devisD7->papier = request('papier');
         $devisD7->quantite = request('quantite');
         $devisD7->cd = request('cd');
         $devisD7->numerique = request('numerique');

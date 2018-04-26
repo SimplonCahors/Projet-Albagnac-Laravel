@@ -117,6 +117,6 @@ class EtiquetteController extends Controller
      {
         $etiquette = Etiquette::find($idEtiquette)->delete(); 
 
-        return redirect('/dso/'.$idDso.'/emballages/');
+        return redirect('/dso/'.$idDso.'/etiquette/');
      }
 }
