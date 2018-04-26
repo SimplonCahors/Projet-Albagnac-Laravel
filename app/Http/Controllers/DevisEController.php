@@ -21,20 +21,62 @@ class DevisEController extends Controller
 
 public function create($idDso)
 {
+    return view('dso.devis.e.create', ['idDso'=> $idDso]);
 
 }
 
 public function store($idDso, Request $request) 
 {
+    //create a new emballage 
+    $devisE1 = new DevisE1;
 
+    //use the request data
+    $devisE1->id_dso = ($idDso);
+    $devisE1->type_materiel = request('type_materiel');
+    $devisE1->marque_materiel = request('marque_materiel');
+    $devisE1->modele_materiel = request('modele_materiel');
+    $devisE1->mise_route_materiel = request('mise_route_materiel');
+
+    //save it to the dbb
+    $devisE1->save();
+
+     //create a new emballage 
+    $devisE2 = new DevisE2;
+
+    //use the request data
+    $devisE2->id_dso = ($idDso);
+    $devisE2->type_materiel = request('type_materiel');
+    $devisE2->marque_materiel = request('marque_materiel');
+    $devisE2->modele_materiel = request('modele_materiel');
+    $devisE2->mise_route_materiel = request('mise_route_materiel');
+
+    //save it to the dbb
+    $devisE2->save();
+
+    //create a new emballage 
+    $devisE3 = new DevisE3;
+
+    //use the request data
+    $devisE3->id_dso = ($idDso);
+    $devisE3->type_materiel = request('type_materiel');
+    $devisE3->marque_materiel = request('marque_materiel');
+    $devisE3->modele_materiel = request('modele_materiel');
+    $devisE3->mise_route_materiel = request('mise_route_materiel');
+
+    //save it to the dbb
+    $devisE3->save();
+
+    //redirect to the defined page
+    return redirect()->route('devis-e-index', ['idDso' => $idDso]);
 }
 
-public function edit($idDso) 
+public function edit($idDso, $idDevisE1) 
 {
-    $data1 = DevisE1::where('id_dso', $idDso)->first();
-    $data2 = DevisE2::where('id_dso', $idDso)->first();
-    $data3 = DevisE3::where('id_dso', $idDso)->first();
-    return view('dso.devis.e.edit', ['data1'=>$data1,'data2'=>$data2,'data3'=>$data3, 'idDso'=>$idDso]);
+    $data1 = DevisE1::find($idDevisE1);
+    // $data2 = DevisE2::where('id_dso', $idDso)->first();
+    // $data3 = DevisE3::where('id_dso', $idDso)->first();
+    // return view('dso.devis.e.edit', ['data1'=>$data1,'data2'=>$data2,'data3'=>$data3, 'idDso'=>$idDso]);
+    return view('dso.devis.e.edit', ['data1'=>$data1, 'idDevisE1'=>$idDevisE1, 'idDso'=>$idDso]);
 }
 
 public function update($idDso, Request $request)
@@ -69,6 +111,25 @@ public function update($idDso, Request $request)
 
     $devisE3->save();
 
-    return redirect()->route('devis-e-edit', ['idDso' => $idDso]);
+    return redirect()->route('devis-e-index', ['idDso' => $idDso]);
 }
+
+public function destroyE1($idDso,$idDevisE1)
+{
+    $devisE1 = DevisE1::find($idDevisE1)->delete(); 
+    return redirect()->route('devis-e-index', ['idDso' => $idDso]);
+}
+
+public function destroyE2($idDso,$idDevisE2)
+{
+    $devisE2 = DevisE2::find($idDevisE2)->delete(); 
+    return redirect()->route('devis-e-index', ['idDso' => $idDso]);
+}
+
+public function destroyE3($idDso,$idDevisE3)
+{
+    $devisE3 = DevisE3::find($idDevisE3)->delete(); 
+    return redirect()->route('devis-e-index', ['idDso' => $idDso]);
+}
+
 }

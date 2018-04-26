@@ -79,8 +79,8 @@ Route::post('/dso/{idDso}/devis/d/', 'DevisDController@update')->name('devis-d-u
 Route::get('/dso/{idDso}/devis/e', 'DevisEController@index')->name('devis-e-index');
 Route::get('/dso/{idDso}/devis/e/create', 'DevisEController@create')->name('devis-e-create');
 Route::post('/dso/{idDso}/devis/e/store', 'DevisEController@store')->name('devis-e-store');
-Route::post('/dso/{idDso}/devis/e/edit', 'DevisEController@edit')->name('devis-e-edit');
-Route::get('/dso/{idDso}/devis/e/update', 'DevisEController@update')->name('devis-e-update');
+Route::get('/dso/{idDso}/devis/e/{idDevisE1}/edit', 'DevisEController@edit')->name('devis-e-edit');
+Route::post('/dso/{idDso}/devis/e/update', 'DevisEController@update')->name('devis-e-update');
 Route::get('/dso/{idDso}/devis/e/destroy', 'DevisEController@destroy')->name('devis-e-destroy');
 
 //Devis F

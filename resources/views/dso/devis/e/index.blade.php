@@ -15,12 +15,12 @@
 			@foreach($devisE1 as $devisx)
 			<li>
 				<div class="card">
-					<h5 class="card-header text-center">Emballage n°{{ $devisx->id }}</h5>
+					<h5 class="card-header text-center">DevisE1 n°{{ $devisx->id }}</h5>
 					<div class="card-body">
-						<h5 class="card-title">Infos sur l'emballage</h5>
+						<h5 class="card-title">Infos sur le devis</h5>
 						<div class="icons">
-							<a  href="/dso/{{ $idDso }}/emballages/{{ $devisx->id }}/edit"><i class="medium material-icons">create</i></a>
-							<a href="/dso/{{ $idDso }}/emballages/{{ $devisx->id }}/destroy"><i class="medium material-icons">delete</i></a>
+							<a  href="{!! route('devis-e-edit', ['idDso'=>$idDso, 'idDevisE1'=>$devisx->id]) !!}"><i class="medium material-icons">create</i></a>
+							<a href="/dso/{{ $idDso }}/emballages/{{ $devisx->id }}/destroyE1"><i class="medium material-icons">delete</i></a>
 						</div>
 					</div>
 				</div>
