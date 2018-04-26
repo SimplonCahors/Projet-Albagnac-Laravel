@@ -93,7 +93,7 @@
 							
 							<div class="a form-group">
 								<label for="siret_client">SIRET :</label>
-								<input type="number" class="form-control" name="siret_client" value="{{ $data1->siret_client }}">
+								<input type="text" class="form-control" name="siret_client" maxlength="14" value="{{ $data1->siret_client }}">
 							</div>
 							
 						</div>
