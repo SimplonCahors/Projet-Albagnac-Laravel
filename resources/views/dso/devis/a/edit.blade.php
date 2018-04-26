@@ -74,11 +74,11 @@
 								<label for="sousecteur_client">Sous secteur</label>
 								<select class="form-control" name="sousecteur_client">
 									<option selected>{{ $data1->sousecteur_client }}</option>
-									<option value="1">Agro-alimentaire</option>
-									<option value="2">Cosmétique</option>
-									<option value="3">Chimie</option>
-									<option value="4">Vinicole</option>
-									<option value="5">Autres secteurs</option>
+									<option value="Agro-alimentaire">Agro-alimentaire</option>
+									<option value="Cosmétique">Cosmétique</option>
+									<option value="Chimie">Chimie</option>
+									<option value="Vinicole">Vinicole</option>
+									<option value="Autres secteurs">Autres secteurs</option>
 								</select>
 							</div>
 
@@ -86,14 +86,14 @@
 								<label for="type_client">Type client</label>
 								<select class="form-control" name="type_client">
 									<option selected>{{ $data1->type_client }}</option>
-									<option value="1">Nouveau</option>
-									<option value="2">Existant</option>
+									<option value="Nouveau">Nouveau</option>
+									<option value="Existant">Existant</option>
 								</select>
 							</div>
 							
 							<div class="a form-group">
 								<label for="siret_client">SIRET :</label>
-								<input type="tel" class="form-control" name="siret_client" value="{{ $data1->siret_client }}">
+								<input type="number" class="form-control" name="siret_client" value="{{ $data1->siret_client }}">
 							</div>
 							
 						</div>
