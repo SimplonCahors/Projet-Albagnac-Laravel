@@ -56,7 +56,7 @@ class DevisEController extends Controller
 
     public function update($idDso, $idDevisE1, $idDevisE2, $idDevisE3, Request $request)
     {
-        $devisE1 = DevisE::find($idDevisE1);
+        $devisE1 = DevisE1::find($idDevisE1);
 
         $devisE1->id_dso = ($idDso);
         $devisE1->type_materiel = request('type_materiel');
@@ -66,7 +66,7 @@ class DevisEController extends Controller
 
         $devisE1->save();
 
-        $devisE2 = DevisE::find($idDevisE2);
+        $devisE2 = DevisE2::find($idDevisE2);
 
         $devisE2->id_dso = ($idDso);
         $devisE2->ref_eti = request('ref_eti');
@@ -76,7 +76,7 @@ class DevisEController extends Controller
 
         $devisE2->save();
 
-        $devisE3 = DevisE::find($idDevisE3);
+        $devisE3 = DevisE3::find($idDevisE3);
 
         $devisE3->id_dso = ($idDso);
         $devisE2->ref_emb = request('ref_emb');

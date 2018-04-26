@@ -120,7 +120,7 @@ class DevisDController extends Controller
 
      public function update($idDso, $idDevisD1, $idDevisD2, $idDevisD3, $idDevisD4, $idDevisD5, $idDevisD6, $idDevisD7, $idDevisD8, Request $request)
     {
-        $devisD1 = DevisD::find($idDevisD1);
+        $devisD1 = DevisD1::find($idDevisD1);
 
         $devisD1->id_dso = ($idDso);
         $devisD1->type_machine_amont = request('type_machine_amont');
@@ -140,7 +140,7 @@ class DevisDController extends Controller
 
         $devisD1->save();
 
-        $devisD2 = DevisD::find($idDevisD2);
+        $devisD2 = DevisD2::find($idDevisD2);
 
         $devisD2->id_dso = ($idDso);
         $devisD2->comm_machine_amont = request('comm_machine_amont');
@@ -150,7 +150,7 @@ class DevisDController extends Controller
 
         $devisD2->save();
 
-        $devisD3 = DevisD::find($idDevisD3);
+        $devisD3 = DevisD3::find($idDevisD3);
 
         $devisD3->id_dso = ($idDso);
         $devisD3->tension_elec = request('tension_elec');
@@ -160,7 +160,7 @@ class DevisDController extends Controller
 
         $devisD3->save();
 
-        $devisD4 = DevisD::find($idDevisD4);
+        $devisD4 = DevisD4::find($idDevisD4);
 
         $devisD4->id_dso = ($idDso);
         $devisD4->controle_conformite = request('controle_conformite');
@@ -171,7 +171,7 @@ class DevisDController extends Controller
 
         $devisD4->save();
 
-        $devisD5 = DevisD::find($idDevisD5);
+        $devisD5 = DevisD5::find($idDevisD5);
 
         $devisD5->id_dso = ($idDso);
         $devisD5->install_client = request('install_client');
@@ -181,7 +181,7 @@ class DevisDController extends Controller
 
         $devisD5->save();
 
-        $devisD6 = DevisD::find($idDevisD6);
+        $devisD6 = DevisD6::find($idDevisD6);
 
         $devisD6->id_dso = ($idDso);
         $devisD6->sur_machine = request('sur_machine');
@@ -191,7 +191,7 @@ class DevisDController extends Controller
 
         $devisD6->save();
 
-        $devisD7 = DevisD::find($idDevisD7);
+        $devisD7 = DevisD7::find($idDevisD7);
 
         $devisD7->id_dso = ($idDso);
         $devisD7->quantite = request('quantite');
@@ -201,7 +201,7 @@ class DevisDController extends Controller
 
         $devisD7->save();
 
-        $devisD8 = DevisD::find($idDevisD8);
+        $devisD8 = DevisD8::find($idDevisD8);
 
         $devisD8->id_dso = ($idDso);
         $devisD8->charge_albagnac = request('charge_albagnac');

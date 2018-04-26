@@ -51,7 +51,7 @@ class DevisBController extends Controller
 
     public function update($idDso, $idDevisB1, $idDevisB2, Request $request)
     {
-        $devisB1 = DevisB::find($idDevisB1);
+        $devisB1 = DevisB1::find($idDevisB1);
 
         $devisB1->id_dso = ($idDso);
         $devisB1->besoin = request('besoin');
@@ -63,7 +63,7 @@ class DevisBController extends Controller
 
         $devisB1->save();
 
-        $devisB2 = DevisB::find($idDevisB2);
+        $devisB2 = DevisB2::find($idDevisB2);
 
         $devisB2->id_dso = ($idDso);
         $devisB2->nbr_type_machines = request('nbr_type_machines');
