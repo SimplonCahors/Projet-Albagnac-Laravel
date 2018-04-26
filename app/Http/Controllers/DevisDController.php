@@ -17,7 +17,7 @@ class DevisDController extends Controller
 {
     public function create($idDso)
     {
-        return view('dso.devisD.create', ['idDso'=> $idDso]);
+        
     }
 
     public function store($idDso, Request $request) 
@@ -25,15 +25,23 @@ class DevisDController extends Controller
         
     }
 
-    public function edit($idDso, $idDevisD1, $idDevisD2, $idDevisD3, $idDevisD4, $idDevisD5, $idDevisD6, $idDevisD7, $idDevisD8) 
+    public function edit($idDso) 
     {
-        $data = DevisD::find($idDevisD1, $idDevisD2, $idDevisD3, $idDevisD4, $idDevisD5, $idDevisD6, $idDevisD7, $idDevisD8);
-        return view('dso.devisD.edit', ['data'=>$data, 'idDso'=>$idDso, 'idDevisD1'=>$idDevisD1, 'idDevisD2'=>$idDevisD2, 'idDevisD3'=>$idDevisD3, 'idDevisD4'=>$idDevisD4, 'idDevisD5'=>$idDevisD5, 'idDevisD6'=>$idDevisD6, 'idDevisD7'=>$idDevisD7, 'idDevisD8'=>$idDevisD8]);
+        $data1 = DevisD1::where('id_dso', $idDso)->first();
+        $data2 = DevisD2::where('id_dso', $idDso)->first();
+        $data3 = DevisD3::where('id_dso', $idDso)->first();
+        $data4 = DevisD4::where('id_dso', $idDso)->first();
+        $data5 = DevisD5::where('id_dso', $idDso)->first();
+        $data6 = DevisD6::where('id_dso', $idDso)->first();
+        $data7 = DevisD7::where('id_dso', $idDso)->first();
+        $data8 = DevisD8::where('id_dso', $idDso)->first();
+
+        return view('dso.devis.d.edit', ['data1'=>$data1,'data2'=>$data2,'data3'=>$data3, 'data4'=>$data4, 'data5'=>$data5, 'data6'=>$data6, 'data7'=>$data7, 'data8'=>$data8, 'idDso'=>$idDso]);
     }
 
-     public function update($idDso, $idDevisD1, $idDevisD2, $idDevisD3, $idDevisD4, $idDevisD5, $idDevisD6, $idDevisD7, $idDevisD8, Request $request)
+     public function update($idDso, Request $request)
     {
-        $devisD1 = DevisD1::find($idDevisD1);
+        $devisD1 = DevisD1::where('id_dso', $idDso)->first();
 
         $devisD1->id_dso = ($idDso);
         $devisD1->type_machine_amont = request('type_machine_amont');
@@ -53,7 +61,7 @@ class DevisDController extends Controller
 
         $devisD1->save();
 
-        $devisD2 = DevisD2::find($idDevisD2);
+        $devisD2 = DevisD2::where('id_dso', $idDso)->first();
 
         $devisD2->id_dso = ($idDso);
         $devisD2->comm_machine_amont = request('comm_machine_amont');
@@ -63,7 +71,7 @@ class DevisDController extends Controller
 
         $devisD2->save();
 
-        $devisD3 = DevisD3::find($idDevisD3);
+        $devisD3 = DevisD3::where('id_dso', $idDso)->first();
 
         $devisD3->id_dso = ($idDso);
         $devisD3->tension_elec = request('tension_elec');
@@ -73,7 +81,7 @@ class DevisDController extends Controller
 
         $devisD3->save();
 
-        $devisD4 = DevisD4::find($idDevisD4);
+        $devisD4 = DevisD4::where('id_dso', $idDso)->first();
 
         $devisD4->id_dso = ($idDso);
         $devisD4->controle_conformite = request('controle_conformite');
@@ -84,7 +92,7 @@ class DevisDController extends Controller
 
         $devisD4->save();
 
-        $devisD5 = DevisD5::find($idDevisD5);
+        $devisD5 = DevisD5::where('id_dso', $idDso)->first();
 
         $devisD5->id_dso = ($idDso);
         $devisD5->install_client = request('install_client');
@@ -94,7 +102,7 @@ class DevisDController extends Controller
 
         $devisD5->save();
 
-        $devisD6 = DevisD6::find($idDevisD6);
+        $devisD6 = DevisD6::where('id_dso', $idDso)->first();
 
         $devisD6->id_dso = ($idDso);
         $devisD6->sur_machine = request('sur_machine');
@@ -104,7 +112,7 @@ class DevisDController extends Controller
 
         $devisD6->save();
 
-        $devisD7 = DevisD7::find($idDevisD7);
+        $devisD7 = DevisD7::where('id_dso', $idDso)->first();
 
         $devisD7->id_dso = ($idDso);
         $devisD7->quantite = request('quantite');
@@ -114,12 +122,14 @@ class DevisDController extends Controller
 
         $devisD7->save();
 
-        $devisD8 = DevisD8::find($idDevisD8);
+        $devisD8 = DevisD8::where('id_dso', $idDso)->first();
 
         $devisD8->id_dso = ($idDso);
         $devisD8->charge_albagnac = request('charge_albagnac');
         $devisD8->charge_client = request('charge_client');
 
         $devisD8->save();
+
+        return redirect()->route('devis-d-edit', ['idDso' => $idDso]);
     }
 }

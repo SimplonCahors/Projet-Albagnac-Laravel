@@ -10,7 +10,7 @@ class DevisBController extends Controller
 {
     public function create($idDso)
     {
-        return view('devis-b-create', ['idDso'=> $idDso]);
+        
     }
 
     public function store($idDso, Request $request) 
@@ -18,15 +18,16 @@ class DevisBController extends Controller
         
     }
 
-    public function edit($idDso, $idDevisB1, $idDevisB2) 
+    public function edit($idDso) 
     {
-        $data = DevisB::find($idDevisB1, $idDevisB2);
-        return view('dso.devisB.edit', ['data'=>$data, 'idDso'=>$idDso, 'idDevisB1'=>$idDevisB1, 'idDevisB2'=>$idDevisB2]);
+        $data1 = DevisB1::where('id_dso', $idDso)->first();
+        $data2 = DevisB2::where('id_dso', $idDso)->first();
+        return view('dso.devis.b.edit', ['data1'=>$data1,'data2'=>$data2, 'idDso'=>$idDso]);
     }
 
-    public function update($idDso, $idDevisB1, $idDevisB2, Request $request)
+    public function update($idDso, Request $request)
     {
-        $devisB1 = DevisB1::find($idDevisB1);
+        $devisB1 = DevisB1::where('id_dso', $idDso)->first();
 
         $devisB1->id_dso = ($idDso);
         $devisB1->besoin = request('besoin');
@@ -38,7 +39,7 @@ class DevisBController extends Controller
 
         $devisB1->save();
 
-        $devisB2 = DevisB2::find($idDevisB2);
+        $devisB2 = DevisB2::where('id_dso', $idDso)->first();
 
         $devisB2->id_dso = ($idDso);
         $devisB2->nbr_type_machines = request('nbr_type_machines');
@@ -47,6 +48,8 @@ class DevisBController extends Controller
         $devisB2->env_concurrentiel = request('env_concurrentiel');
 
         $devisB2->save();
+
+        return redirect()->route('devis-b-edit', ['idDso' => $idDso]);
 
     }
 }

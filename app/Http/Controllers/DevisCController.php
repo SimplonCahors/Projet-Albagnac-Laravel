@@ -10,7 +10,7 @@ class DevisCController extends Controller
 {
     public function create($idDso)
     {
-        return view('dso.devisC.create', ['idDso'=> $idDso]);
+        
     }
 
     public function store($idDso, Request $request) 
@@ -18,15 +18,16 @@ class DevisCController extends Controller
         
     }
 
-    public function edit($idDso, $idDevisC1, $idDevisC2) 
+    public function edit($idDso) 
     {
-        $data = DevisC::find($idDevisC1, $idDevisC2);
-        return view('dso.devisC.edit', ['data'=>$data, 'idDso'=>$idDso, 'idDevisC1'=>$idDevisC1, 'idDevisC2'=>$idDevisC2]);
+        $data1 = DevisC1::where('id_dso', $idDso)->first();
+        $data2 = DevisC2::where('id_dso', $idDso)->first();
+        return view('dso.devis.c.edit', ['data1'=>$data1,'data2'=>$data2,'idDso'=>$idDso]);
     }
 
-    public function update($idDso, $idDevisC1, $idDevisC2, Request $request)
+    public function update($idDso, Request $request)
     {
-        $devisC1 = DevisC1::find($idDevisC1);
+        $devisC1 = DevisC1::where('id_dso', $idDso)->first();
 
         $devisC1->id_dso = ($idDso);
         $devisC1->matiere_emb = request('matiere_emb');
@@ -35,7 +36,7 @@ class DevisCController extends Controller
 
         $devisC1->save();
 
-        $devisC2 = DevisC2::find($idDevisC2);
+        $devisC2 = DevisC2::where('id_dso', $idDso)->first();
 
         $devisC2->id_dso = ($idDso);
         $devisC2->matiere_eti = request('matiere_eti');
@@ -43,5 +44,7 @@ class DevisCController extends Controller
         $devisC2->nbr_eti = request('nbr_eti');
 
         $devisC2->save();
+
+        return redirect()->route('devis-c-edit', ['idDso' => $idDso]);
     }
 }
