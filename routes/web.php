@@ -73,6 +73,12 @@ Route::get('/dso/{idDso}/devis/d', function () {
 Route::get('/dso/{idDso}/devis/e', function () {
     return view('dso.devis.e.create');
 });
+
+
+// Route test front pour blade devis f :
+Route::get('/f', function () {
+    return view('dso.devis.f.edit');
+});
 /*=====  End of Routes devis  ======*/
 
 
