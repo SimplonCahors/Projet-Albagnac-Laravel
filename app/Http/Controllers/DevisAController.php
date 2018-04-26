@@ -16,7 +16,7 @@ class DevisAController extends Controller
 
     public function store($idDso, Request $request) 
     {
-        
+
     }
 
     public function edit($idDso) 

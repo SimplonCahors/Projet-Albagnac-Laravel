@@ -63,7 +63,7 @@ Route::post('/dso/{idDso}/devis/a/', 'DevisAController@update')->name('devis-a-u
 Route::get('/dso/{idDso}/devis/b/create', 'DevisBController@create')->name('devis-b-create');
 
 Route::get('/dso/{idDso}/devis/c', function () {
-    return view('dso.devis.c.create');
+    return view('dso.devis.c.edit');
 });
 
 Route::get('/dso/{idDso}/devis/d', function () {
