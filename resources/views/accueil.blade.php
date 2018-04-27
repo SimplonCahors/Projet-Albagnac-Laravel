@@ -11,7 +11,36 @@
 	<div id="btn-accueil">
 		<a href="{{ route('dso-create') }}" class="btn btn-outline-primary jaune" role="button">Nouveau DSO</a>
 		<a href="{{ route('archives') }}" role="button" class="btn btn-outline-primary rouge">Archives DSO</a>
-	</div>    
+	</div>
+
+		<div id="liste-accueil">
+		<h3>DSO à valider :</h3>
+
+		<ul id="list-DSO">
+			@if (!Auth::guest() && Auth::user()->adv)
+				@foreach ($dsotermine as $dso)
+					<li>
+						<div class="card">
+							<h5 class="card-header text-center">DSO n°{{$dso->id}}</h5>
+							<div class="card-body">
+								<h5 class="card-title">
+									@foreach ($users as $user)
+										@if( $dso->id_user === $user->id)
+											<p>Nom du COM : {{ $user->name }}</p>
+											<p>Autres infos à venir </p>
+										@endif
+									@endforeach
+								</h5>
+								<a href="{{ route('dso-edit', ['idDso' => $dso->id]) }}" class="btn btn-outline-primary vert">Acceder au DSO</a>
+							</div>
+						</div>
+					</li>
+				@endforeach
+			@endif
+		</ul>
+	</div>
+
+
 	<div id="liste-accueil">
 		<h3>DSO en cours :</h3>
 

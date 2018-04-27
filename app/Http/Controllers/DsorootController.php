@@ -42,8 +42,10 @@ class DsorootController extends Controller
 
         $dsocom = Dsoroot::all()->where('id_user', $idUser);  // permet de recupérer les dso du com connecté
 
+        $dsotermine =Dsoroot::all()->where('termine', true)->where('valide', false);// permet de recupérer les dso terminé pour l'adv 
+
         // return view('accueil')->with('dsoList', $dsoList)->with('idUser', $idUser) ;
-        return view('accueil', ['dsoList'=>$dsoList, 'idUser'=> $idUser, 'users'=>$users, 'dsocom'=>$dsocom]);
+        return view('accueil', ['dsoList'=>$dsoList, 'idUser'=> $idUser, 'users'=>$users, 'dsocom'=>$dsocom, 'dsotermine'=>$dsotermine]);
     }
 
     /**
