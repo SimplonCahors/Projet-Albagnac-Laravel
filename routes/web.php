@@ -13,8 +13,16 @@
 // login
 Auth::routes();
 
-// affichage liste dso sur acceuil
+// affichage liste dso sur accueil
 Route::get('/accueil', 'DsorootController@index')->name('accueil');
+
+
+
+Route::post('/dso/{idDso}/valide', 'DsorootController@dsovalide')->name('valide');
+Route::post('/dso/{idDso}/termine', 'DsorootController@dsotermine')->name('termine');
+
+//archives
+Route::get('/archives', 'ArchivesController@index')->name('archives');
 
 // nouveau dso
 Route::get('/nouveau-dso', 'DsorootController@create')->name('dso-create');
@@ -103,8 +111,7 @@ Route::post('/dso/{idDso}/devis/f/', 'DevisFController@update')->name('devis-f-u
 Route::get('/', function () {
     if (Auth::check()) {
         return view('home');
-    }
-    else{
+    } else {
         return view('layouts.app');
     }
 });

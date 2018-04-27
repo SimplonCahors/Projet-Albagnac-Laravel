@@ -4,6 +4,11 @@
 			<a href="{!! route('etiquette-index', ['idDso' => $idDso]) !!}">Étiquettes</a>
 			<a href="{!! route('emballage-index', ['idDso' => $idDso]) !!}">Emballages</a>
 			<a href="#">Combinaison</a>
+			|
+			<form method="post" action="{!! route('termine',['idDso' => $idDso]) !!}">
+				@csrf
+				<button class="btn btn-primary  btn-sm  btn-danger" type="submit">DSO marqué comme terminé</button>
+			</form>
 		</nav>
 	</section>
 

@@ -27,7 +27,6 @@ use App\DevisE2;
 use App\DevisE3;
 use App\DevisF;
 
-
 class DsorootController extends Controller
 {
     /**
@@ -43,15 +42,17 @@ class DsorootController extends Controller
 
         $dsocom = Dsoroot::all()->where('id_user', $idUser);  // permet de recupérer les dso du com connecté
 
+        $dsotermine =Dsoroot::all()->where('termine', true)->where('valide', false);// permet de recupérer les dso terminé pour l'adv 
+
         // return view('accueil')->with('dsoList', $dsoList)->with('idUser', $idUser) ;
-        return view('accueil', ['dsoList'=>$dsoList, 'idUser'=> $idUser, 'users'=>$users, 'dsocom'=>$dsocom]);
+        return view('accueil', ['dsoList'=>$dsoList, 'idUser'=> $idUser, 'users'=>$users, 'dsocom'=>$dsocom, 'dsotermine'=>$dsotermine]);
     }
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
-     * 
+     *
      */
     public function create()
     {
@@ -67,7 +68,6 @@ class DsorootController extends Controller
      */
     public function store(Request $request)
     {
-        
         $this->validate(request(), [
             'date_demande' => 'required',
             'date_rep' => 'required',
@@ -75,7 +75,7 @@ class DsorootController extends Controller
             'date_livraison' => 'required',
         ]);
 
-        //create a new emballage 
+        //create a new emballage
         $dsoRoot = new Dsoroot;
 
         //use the request data
@@ -84,6 +84,8 @@ class DsorootController extends Controller
         $dsoRoot->date_rep = request('date_rep');
         $dsoRoot->date_envoi = request('date_envoi');
         $dsoRoot->date_livraison = request('date_livraison');
+        $dsoRoot->termine = false;
+        $dsoRoot->valide = false;
 
         //save it to the dbb
         $dsoRoot->save();
@@ -120,7 +122,7 @@ class DsorootController extends Controller
         $devisA2->save();
 
         //save DevisA3
-         $devisA3 = new DevisA3;
+        $devisA3 = new DevisA3;
 
         $devisA3->id_dso = ($idDso);
         $devisA3->nom_tech = request('nom_tech');
@@ -265,35 +267,35 @@ class DsorootController extends Controller
         $devisD8->save();
 
         //save DevisE
-        $devisE1 = new DevisE1;
+        // $devisE1 = new DevisE1;
 
-        $devisE1->id_dso = ($idDso);
-        $devisE1->type_materiel = request('type_materiel');
-        $devisE1->marque_materiel = request('marque_materiel');
-        $devisE1->modele_materiel = request('modele_materiel');
-        $devisE1->mise_route_materiel = request('mise_route_materiel');
+        // $devisE1->id_dso = ($idDso);
+        // $devisE1->type_materiel = request('type_materiel');
+        // $devisE1->marque_materiel = request('marque_materiel');
+        // $devisE1->modele_materiel = request('modele_materiel');
+        // $devisE1->mise_route_materiel = request('mise_route_materiel');
 
-        $devisE1->save();
+        // $devisE1->save();
 
-        $devisE2 = new DevisE2;
+        // $devisE2 = new DevisE2;
 
-        $devisE2->id_dso = ($idDso);
-        $devisE2->ref_eti = request('ref_eti');
-        $devisE2->position_eti = request('position_eti');
-        $devisE2->dimension_impression_eti = request('dimension_impression_eti');
-        $devisE2->rem_eti = request('rem_eti');
+        // $devisE2->id_dso = ($idDso);
+        // $devisE2->ref_eti = request('ref_eti');
+        // $devisE2->position_eti = request('position_eti');
+        // $devisE2->dimension_impression_eti = request('dimension_impression_eti');
+        // $devisE2->rem_eti = request('rem_eti');
 
-        $devisE2->save();
+        // $devisE2->save();
 
-        $devisE3 = new DevisE3;
+        // $devisE3 = new DevisE3;
 
-        $devisE3->id_dso = ($idDso);
-        $devisE2->ref_emb = request('ref_emb');
-        $devisE2->position_emb = request('position_emb');
-        $devisE2->dimension_impression_emb = request('dimension_impression_emb');
-        $devisE2->rem_emb = request('rem_emb');
+        // $devisE3->id_dso = ($idDso);
+        // $devisE2->ref_emb = request('ref_emb');
+        // $devisE2->position_emb = request('position_emb');
+        // $devisE2->dimension_impression_emb = request('dimension_impression_emb');
+        // $devisE2->rem_emb = request('rem_emb');
 
-        $devisE3->save();
+        // $devisE3->save();
 
         //save DevisF
         $devisF = new DevisF;
@@ -327,10 +329,10 @@ class DsorootController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($idUser, $idDso)
+    public function edit($idDso)
     {
         $data = Dsoroot::find($idDso);
-        return view('dso.devis.roots.edit')->with('idUser', $idUser)->with('idDso', $idDso)->with('data', $data) ;
+        return view('dso.devis.roots.edit')->with('idDso', $idDso)->with('data', $data) ;
     }
 
     /**
@@ -342,7 +344,6 @@ class DsorootController extends Controller
      */
     public function update(Request $request, $idUser, $idDso)
     {
-
         $dsoRoot = Dsoroot::find($idDso); // récupère le Dso à modifier
 
         //use the request data
@@ -368,5 +369,35 @@ class DsorootController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function dsotermine($idDso)
+    {
+        $dsoRoot = Dsoroot::find($idDso); // récupère le Dso à modifier
+        
+        //use the request data
+        $dsoRoot->termine = true;
+        
+        //save it to the dbb
+        $dsoRoot->save();
+
+        //redirect to the home page
+        return redirect()->route('accueil');
+
+    }
+
+    public function dsovalide($idDso)
+    {
+        $dsoRoot = Dsoroot::find($idDso); // récupère le Dso à modifier
+        
+        //use the request data
+        $dsoRoot->valide = true;
+        
+        //save it to the dbb
+        $dsoRoot->save();
+
+        //redirect to the home page
+        return redirect()->route('accueil');
+
     }
 }
