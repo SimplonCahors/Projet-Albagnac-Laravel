@@ -15,8 +15,6 @@
 		</form>
 
 		<div class="archives filtresetliste">
-
-			{{-- filtre --}}			
 			<div class="archives btn-group-vertical">
 				<button id="trierpar">TRIER PAR</button>
 				<select class="custom-select" id="inputGroupSelect01">
@@ -50,28 +48,9 @@
 				<a href="#" class="archives list-group-item list-group-item-action disabled">
 					LISTE DES DSO
 				</a>
-				<ul id="list-DSO">
-					@if (!Auth::guest() && Auth::user()->adv)
-						@foreach ($dsovalide as $dso)
-							<li>
-								<div class="card">
-									<h5 class="card-header text-center">DSO n°{{$dso->id}}</h5>
-									<div class="card-body">
-										<h5 class="card-title">
-											@foreach ($users as $user)
-												@if( $dso->id_user === $user->id)
-													<p>Nom du COM : {{ $user->name }}</p>
-													<p>Autres infos à venir </p>
-												@endif
-											@endforeach
-										</h5>
-										<a href="{{ route('dso-edit', ['idDso' => $dso->id]) }}" class="btn btn-outline-primary vert">Acceder au DSO</a>
-									</div>
-								</div>
-							</li>
-						@endforeach
-					@endif
-				</ul>
+				<a href="#" class="archives list-group-item list-group-item-action">Un autre nom de DSO</a>
+				<a href="#" class="archives list-group-item list-group-item-action">Encore un nom de DSO</a>
+				<a href="#" class="archives list-group-item list-group-item-action">Encore un autre nom de DSO</a>
 			</div>
 		</div>
 	</div>
