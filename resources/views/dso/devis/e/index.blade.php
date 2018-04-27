@@ -41,12 +41,18 @@
 													</div>
 												</div>
 											</div>
-										</div>
-									</div>
-									<button type="button" class="btn btn-primary" type="submit">Valider ></button>
+										</li>
+									</ul>
 								</div>
-							</form>
-						</section>
+								<a href="" role="button" class="btn btn-primary" type="submit">Valider ></a>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</section>
 
 <!-- <section id="a">
 	<form method="POST" action="">
