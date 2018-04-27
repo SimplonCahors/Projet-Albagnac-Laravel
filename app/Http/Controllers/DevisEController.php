@@ -16,13 +16,14 @@ class DevisEController extends Controller
     $devisE2 = DevisE2::all()->where('id_dso', $idDso);
     $devisE3 = DevisE3::all()->where('id_dso', $idDso);
 
-    return view('dso.devis.e.index', ['devisE1'=>$devisE1, 'devisE1'=>$devisE1,'devisE1'=>$devisE1, 'idDso'=> $idDso]);
+    return view('dso.devis.e.index', [
+        'devisE1'=>$devisE1, 'devisE2'=>$devisE2, 'devisE3'=>$devisE3, 'idDso'=> $idDso
+    ]);
 }
 
 public function create($idDso)
 {
     return view('dso.devis.e.create', ['idDso'=> $idDso]);
-
 }
 
 public function store($idDso, Request $request) 
@@ -35,7 +36,6 @@ public function store($idDso, Request $request)
     $devisE1->marque_materiel = request('marque_materiel');
     $devisE1->modele_materiel = request('modele_materiel');
     $devisE1->mise_route_materiel = request('mise_route_materiel');
-
     $devisE1->save();
 
     $devisE2 = new DevisE2;
@@ -51,23 +51,23 @@ public function store($idDso, Request $request)
     $devisE3 = new DevisE3;
 
     $devisE3->id_dso = ($idDso);
-    $devisE2->ref_emb = request('ref_emb');
-    $devisE2->position_emb = request('position_emb');
-    $devisE2->dimension_impression_emb = request('dimension_impression_emb');
-    $devisE2->rem_emb = request('rem_emb');
+    $devisE3->ref_emb = request('ref_emb');
+    $devisE3->position_emb = request('position_emb');
+    $devisE3->dimension_impression_emb = request('dimension_impression_emb');
+    $devisE3->rem_emb = request('rem_emb');
 
     $devisE3->save();
 
-    //redirect to the defined page
+            //redirect to the defined page
     return redirect()->route('devis-e-index', ['idDso' => $idDso]);
 }
 
 public function edit($idDso, $idDevisE1) 
 {
     $data1 = DevisE1::find($idDevisE1);
-    // $data2 = DevisE2::where('id_dso', $idDso)->first();
-    // $data3 = DevisE3::where('id_dso', $idDso)->first();
-    // return view('dso.devis.e.edit', ['data1'=>$data1,'data2'=>$data2,'data3'=>$data3, 'idDso'=>$idDso]);
+            // $data2 = DevisE2::where('id_dso', $idDso)->first();
+            // $data3 = DevisE3::where('id_dso', $idDso)->first();
+            // return view('dso.devis.e.edit', ['data1'=>$data1,'data2'=>$data2,'data3'=>$data3, 'idDso'=>$idDso]);
     return view('dso.devis.e.edit', ['data1'=>$data1, 'idDevisE1'=>$idDevisE1, 'idDso'=>$idDso]);
 }
 
