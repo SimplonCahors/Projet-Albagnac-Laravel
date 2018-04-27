@@ -1,9 +1,9 @@
 
 <section id="connexion">
-    <form method="POST" action="{{ route('addadmin') }}" style="position: absolute;top:0;left: 0;margin-top: -10px;">
+    {{-- <form method="POST" action="{{ route('addadmin') }}" style="position: absolute;top:0;left: 0;margin-top: -10px;">
         @csrf
         <button type="submit"></button>
-    </form>
+    </form> --}}
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
