@@ -332,7 +332,8 @@ class DsorootController extends Controller
     public function edit($idDso)
     {
         $data = Dsoroot::find($idDso);
-        return view('dso.devis.roots.edit')->with('idDso', $idDso)->with('data', $data) ;
+        $today = date("Y-m-d");
+        return view('dso.devis.roots.edit')->with('idDso', $idDso)->with('data', $data)->with('today', $today) ;
     }
 
     /**
