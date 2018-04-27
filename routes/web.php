@@ -15,7 +15,9 @@ Auth::routes();
 
 // affichage liste dso sur accueil
 Route::get('/accueil', 'DsorootController@index')->name('accueil');
-Route::post('/accueil', 'DsorootController@dsotermine');
+
+
+Route::post('/dso/{idDso}/', 'DsorootController@dsotermine')->name('termine');
 
 //archives
 Route::get('/archives', 'ArchivesController@index')->name('archives');

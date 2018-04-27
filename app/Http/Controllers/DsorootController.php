@@ -82,6 +82,8 @@ class DsorootController extends Controller
         $dsoRoot->date_rep = request('date_rep');
         $dsoRoot->date_envoi = request('date_envoi');
         $dsoRoot->date_livraison = request('date_livraison');
+        $dsoRoot->termine = false;
+        $dsoRoot->valide = false;
 
         //save it to the dbb
         $dsoRoot->save();
@@ -367,7 +369,7 @@ class DsorootController extends Controller
         //
     }
 
-    public function dsoTermine($idDso)
+    public function dsotermine($idDso)
     {
         $dsoRoot = Dsoroot::find($idDso); // récupère le Dso à modifier
         
@@ -379,5 +381,6 @@ class DsorootController extends Controller
 
         //redirect to the home page
         return redirect()->route('accueil');
+
     }
 }
