@@ -97,8 +97,6 @@ class EmballageController extends Controller
         //save it to the dbb
         $emballage->save();
 
-        //redirect to the defined page
-        
         return redirect()->route('emballage-index', ['idDso' => $idDso]);
     }
     
@@ -160,43 +158,43 @@ class EmballageController extends Controller
     */
      public function update($idDso, Request $request, $idEmballage)
     {
+        $emballage = Emballage::find($idEmballage);
+
         // Switch pour repérer de quel bouton vient le submit :
         switch ($request->input('action')) {
 
             case 'delete-picture': // Si c'est le bouton "Supprimer photo"
-                    $update = Emballage::find($idEmballage);
-                    Storage::delete('emb_photos/' . $update->url_photo);
-                    $update->url_photo = NULL;
-                    $update->save();
+                    
+                    Storage::delete('emb_photos/' . $emballage->url_photo);
+                    $emballage->url_photo = NULL;
+                    $emballage->save();
                     return redirect()->route('emballage-edit', ['idDso' => $idDso, 'idEmballage' => $idEmballage]);
                     break;
 
             case 'submit-form': // Si c'est le bouton de validation du formulaire :
-                $update = Emballage::find($idEmballage);
 
                 // Si la photo a été modifiée, remplace l'ancienne dans le storage  :
                 if ($request->file('url_photo')) {
-
-                    if ($update->url_photo) { Storage::delete('emb_photos/' . $update->url_photo); }
+                    if ($emballage->url_photo) { Storage::delete('emb_photos/' . $emballage->url_photo); }
                     $img_name = 'dso' . $idDso . '_'. $request->file('url_photo')->getClientOriginalName();
-                    $update->url_photo = $img_name;
+                    $emballage->url_photo = $img_name;
                     $path = $request->file('url_photo')->storeAs('emb_photos', $img_name);
                 }
             
-                $update->ref_int = request('ref_int');
-                $update->ref_ext = request('ref_ext');
-                $update->forme = request('forme');
-                $update->diametre_longueur = request('diametre_longueur');
-                $update->hauteur = request('hauteur');
-                $update->observations = request('observations');
-                $update->plein_vide = request('plein_vide');
-                $update->temp_produit = request('temp_produit');
-                $update->poids_prod = request('poids_prod');
-                $update->matiere = request('matiere');
-                $update->niveau_deform = request('niveau_deform');
-                $update->tolerance_dim = request('tolerance_dim');
+                $emballage->ref_int = request('ref_int');
+                $emballage->ref_ext = request('ref_ext');
+                $emballage->forme = request('forme');
+                $emballage->diametre_longueur = request('diametre_longueur');
+                $emballage->hauteur = request('hauteur');
+                $emballage->observations = request('observations');
+                $emballage->plein_vide = request('plein_vide');
+                $emballage->temp_produit = request('temp_produit');
+                $emballage->poids_prod = request('poids_prod');
+                $emballage->matiere = request('matiere');
+                $emballage->niveau_deform = request('niveau_deform');
+                $emballage->tolerance_dim = request('tolerance_dim');
 
-                $update->save();
+                $emballage->save();
 
                 return redirect()->route('emballage-index', ['idDso' => $idDso]);
 
@@ -220,7 +218,14 @@ class EmballageController extends Controller
     */
     public function destroy($idDso,$idEmballage)
     {
-        $emballage = Emballage::find($idEmballage)->delete(); 
+        $emballage = Emballage::find($idEmballage);
+
+        // Supprime la photo correspondante dans le storage  :
+        if ($emballage->url_photo) { 
+            Storage::delete('emb_photos/' . $emballage->url_photo); 
+        }
+
+        $emballage->delete(); 
 
         return redirect()->route('emballage-index', ['idDso' => $idDso]);
     }

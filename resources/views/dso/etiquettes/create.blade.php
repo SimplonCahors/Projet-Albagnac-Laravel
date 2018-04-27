@@ -9,7 +9,7 @@
 @section('content')
 <section id="etiquettes">
 	<i class="material-icons">menu</i>
-	<form action="/dso/{{$idDso}}/etiquettes/" method="POST">
+	<form action="/dso/{{$idDso}}/etiquettes/" method="POST" enctype="multipart/form-data">
 		 @csrf
 		<div id="left">
 
@@ -111,7 +111,6 @@
 			</div>
 
 			<div class="container" id="btn-bottom-page">
-				<button type="submit" class="btn btn-outline-primary grisfonce">Ajouter une étiquette</button>
 				<button type="submit" class="btn btn-outline-primary vert">Valider</button>
 			</div>
 

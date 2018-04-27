@@ -7,6 +7,7 @@
 @endsection
 
 @section('content')
+
   <section id="emballages">
 	<i class="material-icons">menu</i>
 
@@ -109,7 +110,6 @@
 				<label for="tolerance_dim" class="col-7 col-form-label">Tolérance dimensionnelle</label>
 			</div>
 			<div class="container" id="btn-bottom-page">
-				<button type="button" class="btn btn-outline-primary grisfonce">Ajouter un emballage</button>
 				<button type="submit" class="btn btn-outline-primary vert" name="action" value="submit-form">Valider</button>
 			</div>
 		</div>
