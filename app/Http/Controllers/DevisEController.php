@@ -27,43 +27,35 @@ public function create($idDso)
 
 public function store($idDso, Request $request) 
 {
-    //create a new emballage 
+    //save DevisE
     $devisE1 = new DevisE1;
 
-    //use the request data
     $devisE1->id_dso = ($idDso);
     $devisE1->type_materiel = request('type_materiel');
     $devisE1->marque_materiel = request('marque_materiel');
     $devisE1->modele_materiel = request('modele_materiel');
     $devisE1->mise_route_materiel = request('mise_route_materiel');
 
-    //save it to the dbb
     $devisE1->save();
 
-     //create a new emballage 
     $devisE2 = new DevisE2;
 
-    //use the request data
     $devisE2->id_dso = ($idDso);
-    $devisE2->type_materiel = request('type_materiel');
-    $devisE2->marque_materiel = request('marque_materiel');
-    $devisE2->modele_materiel = request('modele_materiel');
-    $devisE2->mise_route_materiel = request('mise_route_materiel');
+    $devisE2->ref_eti = request('ref_eti');
+    $devisE2->position_eti = request('position_eti');
+    $devisE2->dimension_impression_eti = request('dimension_impression_eti');
+    $devisE2->rem_eti = request('rem_eti');
 
-    //save it to the dbb
     $devisE2->save();
 
-    //create a new emballage 
     $devisE3 = new DevisE3;
 
-    //use the request data
     $devisE3->id_dso = ($idDso);
-    $devisE3->type_materiel = request('type_materiel');
-    $devisE3->marque_materiel = request('marque_materiel');
-    $devisE3->modele_materiel = request('modele_materiel');
-    $devisE3->mise_route_materiel = request('mise_route_materiel');
+    $devisE2->ref_emb = request('ref_emb');
+    $devisE2->position_emb = request('position_emb');
+    $devisE2->dimension_impression_emb = request('dimension_impression_emb');
+    $devisE2->rem_emb = request('rem_emb');
 
-    //save it to the dbb
     $devisE3->save();
 
     //redirect to the defined page
