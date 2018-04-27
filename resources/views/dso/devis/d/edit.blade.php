@@ -492,6 +492,7 @@
 							<div class="a form-group">
 								<label for="charge_albagnac">Transport à la charge de Albagnac</label>
 								<select class="form-control" name="charge_albagnac" value="{{ $data8->charge_albagnac }}">
+									<option selected>Choisir</option>
 									<option value="1">Oui</option>
 									<option value="0">Non</option>
 								</select>
@@ -500,6 +501,7 @@
 							<div class="a form-group">
 								<label for="charge_client">Transport à la charge du client</label>
 								<select class="form-control" name="charge_client" value="{{ $data8->charge_client }}">
+									<option selected>Choisir</option>
 									<option value="1">Oui</option>
 									<option value="0">Non</option>
 								</select>

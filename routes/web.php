@@ -18,8 +18,8 @@ Route::get('/accueil', 'DsorootController@index')->name('accueil');
 
 
 
-Route::post('/dso/{idDso}/valide', 'DsorootController@dsovalide')->name('valide');
 Route::post('/dso/{idDso}/termine', 'DsorootController@dsotermine')->name('termine');
+Route::post('/dso/{idDso}/valide', 'DsorootController@dsovalide')->name('valide');
 
 //archives
 Route::get('/archives', 'ArchivesController@index')->name('archives');
@@ -27,8 +27,8 @@ Route::get('/archives', 'ArchivesController@index')->name('archives');
 // nouveau dso
 Route::get('/nouveau-dso', 'DsorootController@create')->name('dso-create');
 Route::post('/nouveau-dso', 'DsorootController@store');
-Route::get('/edit/{idDso}', 'DsorootController@edit')->name('dso-edit');
-Route::post('/edit/{$idDso}', 'DsorootController@update');
+Route::get('/dso/{idDso}/edit', 'DsorootController@edit')->name('dso-edit');
+Route::post('/dso/{$idDso}/update', 'DsorootController@update');
 
 
 // emballages
