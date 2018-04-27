@@ -10583,40 +10583,40 @@ section#p-accueil div#btn-accueil .rouge:hover {
   color: white;
 }
 
-section#p-accueil div#liste-accueil h3 {
+section#p-accueil div.liste-accueil h3 {
   width: 180px;
   margin: auto;
   margin-bottom: 30px;
   border-bottom: 2px solid #262626;
 }
 
-section#p-accueil div#liste-accueil ul {
+section#p-accueil div.liste-accueil ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-section#p-accueil div#liste-accueil ul li {
+section#p-accueil div.liste-accueil ul li {
   width: 80vw;
   margin: 10px 0;
 }
 
-section#p-accueil div#liste-accueil ul li .vert {
+section#p-accueil div.liste-accueil ul li .vert {
   border: 1px solid #6DB99E !important;
   color: #6DB99E;
 }
 
-section#p-accueil div#liste-accueil ul li .vert:hover {
+section#p-accueil div.liste-accueil ul li .vert:hover {
   background: #6DB99E;
   color: white;
 }
 
-section#p-accueil div#liste-accueil ul li h5.card-header {
+section#p-accueil div.liste-accueil ul li h5.card-header {
   background: #6DB99E;
   color: white;
 }
 
-section#p-accueil div#liste-accueil ul li div.card-body {
+section#p-accueil div.liste-accueil ul li div.card-body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
