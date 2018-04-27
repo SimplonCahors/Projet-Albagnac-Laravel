@@ -16,7 +16,7 @@
 				<div class="card-header" id="headingOne">
 					<h5 class="mb-0">
 						<a role="button"  class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-							MATERIELS IMPOSES / IMPRESSION
+							MATÉRIELS IMPOSÉS / IMPRESSION
 						</a>
 					</h5>
 				</div>
@@ -28,12 +28,17 @@
 								@foreach($devisE1 as $devisx)
 								<li>
 									<div class="card">
-										<h5 class="card-header text-center">Matériel imposé par le client</h5>
+	
+
+
+
+
+									<h5 class="card-header text-center">Matériel imposé par le client</h5>
 										<div class="card-body">
 											<h5 class="card-title">Infos sur l'emballage</h5>
 											<div class="icons">
-												<a  href="/dso/{{ $idDso }}/emballages/{{ $devisx->id }}/edit"><i class="medium material-icons">create</i></a>
-												<a href="/dso/{{ $idDso }}/emballages/{{ $devisx->id }}/destroy"><i class="medium material-icons">delete</i></a>
+												<a  href="{!! route('devis-e-edit', ['idDso'=>$idDso, 'idDevisE1'=>$devisx->id]) !!}"><i class="medium material-icons">create</i></a>
+							<a href="/dso/{{ $idDso }}/emballages/{{ $devisx->id }}/destroyE1"><i class="medium material-icons">delete</i></a>
 											</div>
 										</div>
 									</div>
@@ -44,10 +49,6 @@
 								<a href="/dso/{{ $idDso }}/emballages/create/" role="button" class="btn btn-primary">Ajouter</a>
 								<a role="button" class="btn btn-primary">Suivant ></a>
 							</div>
-						</div>
-					</section>
-				</div>
-
 
 
 				<div class="card">
