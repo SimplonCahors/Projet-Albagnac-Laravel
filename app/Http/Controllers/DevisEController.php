@@ -21,9 +21,19 @@ class DevisEController extends Controller
     ]);
 }
 
-public function create($idDso)
+public function create1($idDso)
 {
-    return view('dso.devis.e.create', ['idDso'=> $idDso]);
+    return view('dso.devis.e.create-e1', ['idDso'=> $idDso]);
+}
+
+public function create2($idDso)
+{
+    return view('dso.devis.e.create-e2', ['idDso'=> $idDso]);
+}
+
+public function create3($idDso)
+{
+    return view('dso.devis.e.create-e3', ['idDso'=> $idDso]);
 }
 
 public function store($idDso, Request $request) 
@@ -103,7 +113,7 @@ public function update($idDso, Request $request)
 
     $devisE3->save();
 
-    return redirect()->route('devis-e-index', ['idDso' => $idDso]);
+    return redirect()->route('devis-f-edit', ['idDso' => $idDso]);
 }
 
 public function destroyE1($idDso,$idDevisE1)

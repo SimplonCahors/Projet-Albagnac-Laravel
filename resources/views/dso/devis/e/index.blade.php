@@ -10,7 +10,7 @@
 @include('sous_nav')
 @include('breadcrumb')
 <section id="a">
-	<form method="POST" action="{{ action('DevisAController@update', [$idDso]) }}">
+	<form method="POST" action="{{ action('DevisEController@update', [$idDso]) }}">
 		@csrf
 		<div id="accordion">
 
@@ -31,7 +31,7 @@
 									<div class="card">
 										<h5 class="card-header text-center">FICHE n°{{ $devisx->id }}</h5>
 										<div class="card-body">
-											<div><h5 class="card-title">Information</h5></div>
+											<div><h5 class="card-title">Du matériel</h5></div>
 											<div class="icons">
 												<a href="{!! route('devis-e-edit', ['idDso'=>$idDso, 'idDevisE1'=>$devisx->id]) !!}" role="button"><i class="medium material-icons">create</i></a>
 												<a href="{!! route('devis-e-destroy', ['idDso'=>$idDso, 'idDevisE1'=>$devisx->id]) !!}" role="button"><i class="medium material-icons">delete</i></a>
@@ -42,7 +42,7 @@
 								</li>
 								@endforeach
 							</ul>
-							<a href="{!! route('devis-e-create', ['idDso'=>$idDso]) !!}" type="submit" role="button" class="btn btn-primary">AJOUTER</a>
+							<a href="{!! route('devis-e-create-e1', ['idDso'=>$idDso]) !!}" type="submit" role="button" class="btn btn-primary">AJOUTER</a>
 						</div>
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 									<div class="card">
 										<h5 class="card-header text-center">FICHE n°{{ $devisy->id }}</h5>
 										<div class="card-body">
-											<div><h5 class="card-title">Information</h5></div>
+											<div><h5 class="card-title">Des étiquettes</h5></div>
 											<div class="icons">
 												<a href="{!! route('devis-e-edit', ['idDso'=>$idDso, 'idDevisE2'=>$devisy->id]) !!}" role="button"><i class="medium material-icons">create</i></a>
 												<a href="{!! route('devis-e-destroy', ['idDso'=>$idDso, 'idDevisE2'=>$devisy->id]) !!}" role="button"><i class="medium material-icons">delete</i></a>
@@ -77,7 +77,7 @@
 								</li>
 								@endforeach
 							</ul>
-							<a href="{!! route('devis-e-create', ['idDso'=>$idDso]) !!}" type="submit" role="button" class="btn btn-primary">AJOUTER</a>
+							<a href="{!! route('devis-e-create-e2', ['idDso'=>$idDso]) !!}" type="submit" role="button" class="btn btn-primary">AJOUTER</a>
 						</div>
 					</div>
 				</div>
@@ -101,7 +101,7 @@
 									<div class="card">
 										<h5 class="card-header text-center">FICHE n°{{ $devisz->id }}</h5>
 										<div class="card-body">
-											<div><h5 class="card-title">Information</h5></div>
+											<div><h5 class="card-title">Des emballages</h5></div>
 											<div class="icons">
 												<a href="{!! route('devis-e-edit', ['idDso'=>$idDso, 'idDevisE3'=>$devisz->id]) !!}" role="button"><i class="medium material-icons">create</i></a>
 												<a href="{!! route('devis-e-destroy', ['idDso'=>$idDso, 'idDevisE3'=>$devisz->id]) !!}" role="button"><i class="medium material-icons">delete</i></a>
@@ -112,13 +112,13 @@
 								</li>
 								@endforeach
 							</ul>
-							<a href="{!! route('devis-e-create', ['idDso'=>$idDso]) !!}" type="submit" role="button" class="btn btn-primary">AJOUTER</a>
+							<a href="{!! route('devis-e-create-e3', ['idDso'=>$idDso]) !!}" type="submit" role="button" class="btn btn-primary">AJOUTER</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<a href="" role="button" class="btn btn-primary" type="submit">Valider ></a>
+		<button class="btn btn-primary" type="submit">Valider ></button>
 	</form>
 </section>
 @endsection
