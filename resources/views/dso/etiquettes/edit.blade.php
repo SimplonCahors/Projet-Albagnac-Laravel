@@ -3,14 +3,15 @@
 @section('title', 'Étiquettes')
 
 @section('sidebar')
-@parent    
+	@parent    
 @endsection
 
 @section('content')
 
 <section id="etiquettes">
 	<i class="material-icons">menu</i>
-	<form action="/dso/{{ $idDso }}/etiquettes/{{ $idEtiquette }}/edit/" method="POST">
+
+	<form action="/dso/{{ $idDso }}/etiquettes/{{ $idEtiquette }}/edit/" method="POST" enctype="multipart/form-data">
 		 @csrf
 		<div id="left">
 			<div class="form-group row">
@@ -45,11 +46,20 @@
 				<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Observations" name="observation_eti">{{ $data->observation_eti }}</textarea>
 			</div>
 			<div class="form-group">
-				<label for="photo_eti">Ajouter une photo :</label>
+				<p>Photo actuelle : {{ $data->photo_eti ? $data->photo_eti : 'aucune' }}</p>
+
+				@if($data->photo_eti)
+					<button class="btn btn-primary" type="submit" name="action" value="delete-picture">Supprimer la photo</button>
+					</br>
+				@endif
+
+				<label for="photo_eti">Nouvelle photo :</label>
 				<input type="file" class="form-control-file" id="photo_eti" name="photo_eti" value="{{ $data->photo_eti }}">
 			</div>
+
+
 			<div id="image-upload">
-				<img src="{{ $data->photo_eti }}">
+				<img src="{{ 'eti_photos/' . $data->photo_eti }}">
 			</div>
 		</div>
 
@@ -93,8 +103,7 @@
 				<label class="col-7 col-form-label" for="enroulement">Enroulement</label>
 			</div>
 			<div class="container" id="btn-bottom-page">
-				<button type="submit" class="btn btn-outline-primary grisfonce">Ajouter une étiquette</button>
-				<button type="submit" class="btn btn-outline-primary vert">Valider</button>
+				<button type="submit" class="btn btn-outline-primary vert" name="action" value="submit-form">Valider</button>
 			</div>
 		</div>
 		
