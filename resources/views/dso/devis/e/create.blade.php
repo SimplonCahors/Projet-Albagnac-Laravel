@@ -45,7 +45,7 @@
 					<div class="card-header" id="headingTwo">
 						<h5 class="mb-0">
 							<a role="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-								IMPRESSION / EMBALLAGE
+								IMPRESSION / ÉTIQUETTE
 							</a>
 						</h5>
 					</div>
@@ -74,7 +74,7 @@
 					<div class="card-header" id="headingThree">
 						<h5 class="mb-0">
 							<a role="button"  class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-								IMPRESSION / ÉTIQUETTE
+								IMPRESSION / EMBALLAGE
 							</a>
 						</h5>
 					</div>
