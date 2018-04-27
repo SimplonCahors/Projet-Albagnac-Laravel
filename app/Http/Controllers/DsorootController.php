@@ -27,7 +27,6 @@ use App\DevisE2;
 use App\DevisE3;
 use App\DevisF;
 
-
 class DsorootController extends Controller
 {
     /**
@@ -51,7 +50,7 @@ class DsorootController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
-     * 
+     *
      */
     public function create()
     {
@@ -67,7 +66,6 @@ class DsorootController extends Controller
      */
     public function store(Request $request)
     {
-        
         $this->validate(request(), [
             'date_demande' => 'required',
             'date_rep' => 'required',
@@ -75,7 +73,7 @@ class DsorootController extends Controller
             'date_livraison' => 'required',
         ]);
 
-        //create a new emballage 
+        //create a new emballage
         $dsoRoot = new Dsoroot;
 
         //use the request data
@@ -120,7 +118,7 @@ class DsorootController extends Controller
         $devisA2->save();
 
         //save DevisA3
-         $devisA3 = new DevisA3;
+        $devisA3 = new DevisA3;
 
         $devisA3->id_dso = ($idDso);
         $devisA3->nom_tech = request('nom_tech');
@@ -342,7 +340,6 @@ class DsorootController extends Controller
      */
     public function update(Request $request, $idUser, $idDso)
     {
-
         $dsoRoot = Dsoroot::find($idDso); // récupère le Dso à modifier
 
         //use the request data
@@ -368,5 +365,19 @@ class DsorootController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function dsoTermine($idDso)
+    {
+        $dsoRoot = Dsoroot::find($idDso); // récupère le Dso à modifier
+        
+        //use the request data
+        $dsoRoot->termine = true;
+        
+        //save it to the dbb
+        $dsoRoot->save();
+
+        //redirect to the home page
+        return redirect()->route('accueil');
     }
 }
