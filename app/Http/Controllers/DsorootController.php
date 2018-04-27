@@ -385,4 +385,19 @@ class DsorootController extends Controller
         return redirect()->route('accueil');
 
     }
+
+    public function dsovalide($idDso)
+    {
+        $dsoRoot = Dsoroot::find($idDso); // récupère le Dso à modifier
+        
+        //use the request data
+        $dsoRoot->valide = true;
+        
+        //save it to the dbb
+        $dsoRoot->save();
+
+        //redirect to the home page
+        return redirect()->route('accueil');
+
+    }
 }

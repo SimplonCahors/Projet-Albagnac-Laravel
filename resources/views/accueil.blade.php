@@ -32,6 +32,11 @@
 									@endforeach
 								</h5>
 								<a href="{{ route('dso-edit', ['idDso' => $dso->id]) }}" class="btn btn-outline-primary vert">Acceder au DSO</a>
+
+								<form method="post" action="{!! route('valide',['idDso' => $dso->id]) !!}">
+								@csrf
+									<button class="btn btn-primary  btn-sm  btn-danger" type="submit">valider le DSO</button>
+							</form>
 							</div>
 						</div>
 					</li>
@@ -78,7 +83,7 @@
 							@endif
 							@endforeach
 						</h5>
-						<a href="{{ route('dso-edit', ['idDso' => $dso->id]) }}" class="btn btn-outline-primary vert">Acceder au DSO</a>
+						<a href="{{ route('dso-edit', ['idDso' => $dso->id]) }}" class="btn btn-outline-primary btn-succes">Acceder au DSO</a>
 					</div>
 				</div>
 			</li>
