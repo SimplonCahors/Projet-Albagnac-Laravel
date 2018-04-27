@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Nouveau DSO')
+@section('title', 'Edition du DSO')
 
 @section('content')
 <section id="nouveau_dso">
