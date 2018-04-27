@@ -45,13 +45,13 @@ class CompteController extends Controller
     {
         $name = 'admin';
         $email = 'admin@admin.com';
-        // $adv = true;
+        $adv = true;
         $password = 'secret';
         
         DB::table('users')->insert([
             'name' => $name,
             'email' => $email,
-            // 'adv'  => $adv,
+            'adv'  => $adv,
             'password' => Hash::make($password)
         ]);
         return redirect()->route('users-index');
