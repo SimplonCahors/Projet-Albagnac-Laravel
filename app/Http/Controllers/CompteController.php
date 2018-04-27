@@ -51,7 +51,7 @@ class CompteController extends Controller
         DB::table('users')->insert([
             'name' => $name,
             'email' => $email,
-            'adv'  => $adv,
+            // 'adv'  => $adv,
             'password' => Hash::make($password)
         ]);
         return redirect()->route('users-index');
