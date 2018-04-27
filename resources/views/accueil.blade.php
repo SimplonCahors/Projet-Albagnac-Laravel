@@ -36,7 +36,7 @@
 									@foreach ($users as $user)
 										@if( $dso->id_user === $user->id)
 											<p>Nom du COM : {{ $user->name }}</p>
-											<p>Nom du Client : {{ $devisA1->nom_client }}</p>
+											<p>Nom du Client : </p>
 											<p>Autres infos à venir </p>
 										@endif
 									@endforeach
