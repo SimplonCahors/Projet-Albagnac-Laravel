@@ -8,6 +8,7 @@
 
 @section('content')
 @include('sous_nav')
+@include('breadcrumb')
 <section id="a">
 	<form method="POST" action="">
 		@csrf
@@ -26,27 +27,30 @@
 							<section id="liste_etiquettes">
 								<div class="liste_etiqu">
 									<ul>
+										@foreach($devisE1 as $devisx)
 										<li>
 											<div class="card">
 												<h5 class="card-header text-center">FICHE n°XXX</h5>
 												<div class="card-body">
 													<div><h5 class="card-title">Information</h5></div>
 													<div class="icons">
-														<a><i class="medium material-icons">create</i></a>
-														<a><i class="medium material-icons">delete</i></a>
+														<a href="{!! route('devis-e-edit', ['idDso'=>$idDso, 'idDevisE1'=>$devisx->id]) !!}" role="button"><i class="medium material-icons">create</i></a>
+														<a href="{!! route('devis-e-destroy', ['idDso'=>$idDso, 'idDevisE1'=>$devisx->id]) !!}" role="button"><i class="medium material-icons">delete</i></a>
 													</div>
 												</div>
 											</div>
 										</li>
-									</div>
+										@endforeach
+									</ul>
 								</div>
 							</div>
 						</div>
 					</div>
-					<button type="button" class="btn btn-primary" type="submit">Valider ></button>
 				</div>
-			</form>
-		</section>
+				<button type="button" class="btn btn-primary" type="submit">Valider ></button>
+			</div>
+		</form>
+	</section>
 
 		<!-- <a  href="{!! route('devis-e-edit', ['idDso'=>$idDso, 'idDevisE1'=>$devisx->id]) !!}"><i class="medium material-icons">create</i></a>
 		<a href="/dso/{{ $idDso }}/emballages/{{ $devisx->id }}/destroyE1"><i class="medium material-icons">delete</i></a>
