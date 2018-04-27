@@ -36,7 +36,7 @@ class DsorootController extends Controller
      */
     public function index()
     {
-        $dsoList = Dsoroot::all();   // va chercher toutes les infos de la table Dsoroot
+        $dsoList = Dsoroot::all()->where('termine', false)->where('valide', false);   // va chercher toutes les infos de la table Dsoroot
         $idUser = Auth::user()->id ;  // permet de recup l'id de l'utilisateur connecté
         $users = User::all();   // permet de recup les infos de la table Users
 
