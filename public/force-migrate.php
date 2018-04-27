@@ -1,3 +1,3 @@
 <?php
 
-echo shell_exec("pwd"); 
+echo shell_exec("cd .. && php artisan migrate:refresh && php artisan migrate"); 
