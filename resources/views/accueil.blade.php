@@ -14,7 +14,7 @@
 			<a href="{{ route('archives') }}" role="button" class="btn btn-outline-primary rouge">Archives DSO</a>
 		</div>
 
-		<div id="liste-accueil">
+		<div class="liste-accueil">
 
 			@if (!Auth::guest() && Auth::user()->adv)
 
@@ -55,7 +55,7 @@
 		</div>
 
 
-		<div id="liste-accueil">
+		<div class="liste-accueil">
 
 			<h3>DSO en cours :</h3>
 			<ul id="list-DSO">
