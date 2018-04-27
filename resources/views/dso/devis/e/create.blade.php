@@ -1,316 +1,107 @@
 @extends('layouts.app')
 
-@section('title', 'Materiels imposés, Impression')
+@section('title', 'DEVIS')
+
+@section('sidebar')
+@parent    
+@endsection
 
 @section('content')
-<section id="nouveau_dso">
-	<form method="POST" action="#">
+<section id="a">
+	<form method="POST" action="{!! route('devis-e-store', ['idDso'=>$idDso]) !!}">
 		@csrf
-		<table class="table table-bordered">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col"></th>
-					<th scope="col">Type</th>
-					<th scope="col">Marque</th>
-					<th scope="col">Modele / Informations</th>
-					<th scope="col">Mise en route</th>
-				</tr>
-			</thead>
+		<div id="accordion">
+			<div class="card">
+				<div class="card-header" id="headingOne">
+					<h5 class="mb-0">
+						<a role="button"  class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							MATÉRIELS IMPOSÉS PAR LE CLIENT
+						</a>
+					</h5>
+				</div>
 
-			<tbody>
-				<tr>
-					<th scope="row">Matériel imposé par le client</th>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+				<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+					<div class="card-body">
+						<div class="a form-group">
+							<label for="nomclient">Type :</label>
+							<input type="text" class="form-control" name="type_materiel">
 						</div>
-					</td>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						<div class="a form-group">
+							<label for="adresse">Marque :</label>
+							<input type="text" class="form-control" name="marque_materiel">
 						</div>
-					</td>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						<div class="a form-group">
+							<label for="telephone">Modèle / informations :</label>
+							<input type="text" class="form-control" name="modele_materiel">
 						</div>
-					</td>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+						<div class="a form-group">
+							<label for="fax">Remarques :</label>
+							<input type="text" class="form-control" name="mise_route_materiel">
 						</div>
-					</td>
-				</tr>
+					</div>
+				</div>
 
-				<tr>
-					<th scope="row">Matériel imposé par le client</th>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>	
-				</tr>
-
-				<tr>
-					<th scope="row">Matériel imposé par le client</th>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-				</tr>
-
-				<tr>
-					<th scope="row">Matériel imposé par le client</th>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-
-		<h2>IMPRESSION</h2>
-
-		<table class="table table-bordered">
-			<thead class="thead-dark">
-				<tr>
-					<th scope="col">référence étiquette</th>
-					<th scope="col">Positionde l'étiquette<br /> à imprimer sur l'emballage</th>
-					<th scope="col">Définition de<br /> la zone d'impression</th>
-					<th scope="col">Remarques</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="basic-addon1">ETI n°	</span>
+				<div class="card">
+					<div class="card-header" id="headingTwo">
+						<h5 class="mb-0">
+							<a role="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								IMPRESSION / ÉTIQUETTE
+							</a>
+						</h5>
+					</div>
+					<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+						<div class="card-body">
+							<div class="a form-group">
+								<label for="nomclient">Référence étiquette :</label>
+								<input type="text" class="form-control" placeholder="Numero de l'étiquette" name="ref_eti">
 							</div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div class="input-group mb-3">
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="basic-addon1">Dimension(mm x mm)</span>
+							<div class="a form-group">
+								<label for="adresse">Position de l'étiquette à imprimer sur l'emballage :</label>
+								<input type="text" class="form-control" placeholder="Dimension (mm xmm)" name="position_eti">
 							</div>
-							<input type="text" class="form-control" aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div class="input-group">
-							<textarea class="form-control"></textarea>
-						</div>
-					</td>
-				</tr>
-
-
-				<tr>
-					<td>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="basic-addon1">ETI n°</span>
+							<div class="a form-group">
+								<label for="telephone">Définition de la zone d'impression :</label>
+								<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="dimension_impression_eti">
 							</div>
-							<input type="text" class="form-control" aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div class="input-group mb-3">
-						<input type="text" class="form-control"  aria-describedby="basic-addon1"></td>
-					<td>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="basic-addon1">Dimension(mm x mm)</span>
+							<div class="a form-group">
+								<label for="fax">Remarques :</label>
+								<input type="text" class="form-control" name="rem_eti">
 							</div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
 						</div>
-						</td>
-
-						<td>
-							<div class="input-group">
-								<textarea class="form-control"></textarea>
+					</div>
+				</div>
+				<div class="card">
+					<div class="card-header" id="headingThree">
+						<h5 class="mb-0">
+							<a role="button"  class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								IMPRESSION / EMBALLAGE
+							</a>
+						</h5>
+					</div>
+					<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+						<div class="card-body">
+							<div class="a form-group">
+								<label for="nomclient">Référence emballage :</label>
+								<input type="text" class="form-control" name="ref_emb">
 							</div>
-						</td>	
-						</tr>
-						<tr>
-							<td>
-								<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">ETI n°</span>
-								</div>
-								<input type="text" class="form-control"  aria-describedby="basic-addon1">
+							<div class="a form-group">
+								<label for="adresse">Position à imprimer sur l'emballage :</label>
+								<input type="text" class="form-control" name="position_emb">
 							</div>
-						</td>
-							<td>
-								<div class="input-group mb-3">
-								<input type="text" class="form-control"  aria-describedby="basic-addon1"></td>
-								<td>
-									<div class="input-group mb-3">
-										<div class="input-group-prepend">
-											<span class="input-group-text" id="basic-addon1">Dimension(mm x mm)</span>
-										</div>
-										<input type="text" class="form-control"  aria-describedby="basic-addon1">
-									</div>
-								</td>
-								<td>
-									<div class="input-group">
-										<textarea class="form-control"></textarea>
-									</div></td>
-								</tr>
-
-
-							</tbody>
-						</table>
-
-						<table class="table table-bordered">
-			<thead class="thead-dark">
-				<tr>
-
-					<th scope="col">Référence emballage</th>
-					<th scope="col">Position à imprimer sur l'emballage</th>
-					<th scope="col">Définition de<br /> la zone d'impression</th>
-					<th scope="col">Remarques</th>
-				</tr>
-			</thead>
-			<tbody>
-
-				<tr>
-
-					<td>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="basic-addon1">ETI n°	</span>
+							<div class="a form-group">
+								<label for="telephone">Définition de la zone d'impression :</label>
+								<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="dimension_impression_emb">
 							</div>
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
+							<div class="a form-group">
+								<label for="fax">Remarques :</label>
+								<input type="text" class="form-control" name="rem_emb">
+							</div>
 						</div>
-					</td>
-					<td>
-						<div class="input-group mb-3">
-							<input type="text" class="form-control"  aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="basic-addon1">Dimension(mm x mm)</span>
-							</div>
-							<input type="text" class="form-control" aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td>
-						<div class="input-group">
-							<textarea class="form-control"></textarea>
-						</div>
-					</td>
-				</tr>
-
-
-				<tr>
-					<td>
-						<div class="input-group mb-3">
-							<div class="input-group-prepend">
-								<span class="input-group-text" id="basic-addon1">ETI n°</span>
-							</div>
-							<input type="text" class="form-control" aria-describedby="basic-addon1">
-						</div>
-					</td>
-					<td><div class="input-group mb-3">
-						<input type="text" class="form-control"  aria-describedby="basic-addon1"></td>
-						<td>
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">Dimension(mm x mm)</span>
-								</div>
-								<input type="text" class="form-control"  aria-describedby="basic-addon1">
-							</div>
-						</td>
-						<td>
-							<div class="input-group">
-								<textarea class="form-control"></textarea>
-							</div></td>	
-						</tr>
-						<tr>
-
-							<td><div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text" id="basic-addon1">ETI n°</span>
-								</div>
-								<input type="text" class="form-control"  aria-describedby="basic-addon1">
-							</div></td>
-							<td><div class="input-group mb-3">
-								<input type="text" class="form-control"  aria-describedby="basic-addon1"></td>
-								<td>
-									<div class="input-group mb-3">
-										<div class="input-group-prepend">
-											<span class="input-group-text" id="basic-addon1">Dimension(mm x mm)</span>
-										</div>
-										<input type="text" class="form-control"  aria-describedby="basic-addon1">
-									</div>
-								</td>
-								<td>
-									<div class="input-group">
-										<textarea class="form-control"></textarea>
-									</div></td>
-								</tr>
-
-
-							</tbody>
-						</table>
-
-
-					</form>
-				</section>
-				@endsection
+					</div>
+				</div>
+			</div>
+			<button class="btn btn-primary" type="submit">Ajouter</button>
+		</div>
+	</form>
+</section>
+@endsection

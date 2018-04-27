@@ -52,11 +52,11 @@ Route::get('/dso/{idDso}/etiquettes/{idEtiquette}/destroy', 'EtiquetteController
 
 
 Route::get('/etiquettes/liste', function () {
-    return view('dso/etiquettes/index');
+	return view('dso/etiquettes/index');
 });
 
 Route::get('/emballages/liste', function () {
-    return view('dso/emballages/index');
+	return view('dso/emballages/index');
 });
 
 
@@ -84,9 +84,13 @@ Route::get('/dso/{idDso}/devis/d/edit', 'DevisDController@edit')->name('devis-d-
 Route::post('/dso/{idDso}/devis/d/', 'DevisDController@update')->name('devis-d-update');
 
 //Devis E
+Route::get('/dso/{idDso}/devis/e', 'DevisEController@index')->name('devis-e-index');
+Route::get('/dso/{idDso}/devis/e/create', 'DevisEController@create')->name('devis-e-create');
+Route::post('/dso/{idDso}/devis/e/store', 'DevisEController@store')->name('devis-e-store');
 
-Route::get('/dso/{idDso}/devis/e/edit', 'DevisEController@edit')->name('devis-e-edit');
-Route::post('/dso/{idDso}/devis/e/', 'DevisEController@update')->name('devis-e-update');
+Route::get('/dso/{idDso}/devis/e/{idDevisE1}/edit', 'DevisEController@edit')->name('devis-e-edit');
+Route::post('/dso/{idDso}/devis/e/update', 'DevisEController@update')->name('devis-e-update');
+Route::get('/dso/{idDso}/devis/e/destroy', 'DevisEController@destroy')->name('devis-e-destroy');
 
 //Devis F
 
@@ -109,20 +113,22 @@ Route::post('/dso/{idDso}/devis/f/', 'DevisFController@update')->name('devis-f-u
 
 // Route qui permet de sécurisé le site -> demande de connexion si user non connecté
 Route::get('/', function () {
-    if (Auth::check()) {
-        return view('home');
-    } else {
-        return view('layouts.app');
-    }
+	if (Auth::check()) {
+		return view('home');
+	}
+	else{
+		return view('layouts.app');
+	}
 });
 
 //Gestion des utilisateurs par l'adv
 Route::get('/users/index', 'CompteController@show')->name('users-index');
 Route::post('/users/add', 'CompteController@create')->name('adduser');
+Route::post('/users/addadmin', 'CompteController@createadmin')->name('addadmin');
 Route::get('/users/{id}/delete', 'CompteController@destroy')->name('delete');
 
 Route::get('/users/create', function () {
-    return view('/users/create');
+	return view('/users/create');
 })->name('users-create-form');
 
 

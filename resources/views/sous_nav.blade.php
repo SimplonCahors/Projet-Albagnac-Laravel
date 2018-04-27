@@ -1,5 +1,6 @@
 	<section id="sous_nav">
-		<nav id="sous_nav_nav">
+		<nav id="sous_nav_nav" style="display: flex;">
+			<div class="left-nav">
 			<a href="{!! route('devis-a-edit', ['idDso' => $idDso]) !!}">Devis</a>
 			<a href="{!! route('etiquette-index', ['idDso' => $idDso]) !!}">Étiquettes</a>
 			<a href="{!! route('emballage-index', ['idDso' => $idDso]) !!}">Emballages</a>

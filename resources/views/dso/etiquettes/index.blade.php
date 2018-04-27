@@ -12,45 +12,23 @@
 <section id="liste_etiquettes">
 	<div class="liste_etiqu">
 		<ul>
+		@foreach($etiquettes as $etiquette)
 			<li>
 				<div class="card">
-					<h5 class="card-header text-center">Étiquette n°XXX</h5>
+					<h5 class="card-header text-center">Etiquette n°{{ $etiquette->id }}</h5>
 					<div class="card-body">
-						<div><h5 class="card-title">Infos sur l'étiquette</h5></div>
+						<h5 class="card-title">Infos sur l'etiquette</h5>
 						<div class="icons">
-							<a><i class="medium material-icons">create</i></a>
-							<a><i class="medium material-icons">delete</i></a>
+							<a  href="/dso/{{ $idDso }}/etiquettes/{{ $etiquette->id }}/edit"><i class="medium material-icons">create</i></a>
+							<a href="/dso/{{ $idDso }}/etiquettes/{{ $etiquette->id }}/destroy"><i class="medium material-icons">delete</i></a>
 						</div>
 					</div>
 				</div>
 			</li>
-			<li>
-				<div class="card">
-					<h5 class="card-header text-center">Étiquette n°XXX</h5>
-					<div class="card-body">
-						<div><h5 class="card-title">Infos sur l'étiquette</h5></div>
-						<div class="icons">
-							<a><i class="medium material-icons">create</i></a>
-							<a><i class="medium material-icons">delete</i></a>
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<div class="card">
-					<h5 class="card-header text-center">Étiquette n°XXX</h5>
-					<div class="card-body">
-						<div><h5 class="card-title">Infos sur l'étiquette</h5></div>
-						<div class="icons">
-							<a><i class="medium material-icons">create</i></a>
-							<a><i class="medium material-icons">delete</i></a>
-						</div>
-					</div>
-				</div>
-			</li>
+			@endforeach
 		</ul>
 		<div class="etiq_buttons">
-			<a role="button" class="btn btn-primary">Ajouter une étiquette</a>
+			<a href="/dso/{{ $idDso }}/etiquettes/create/" role="button" class="btn btn-primary">Ajouter une étiquette</a>
 			<a role="button" class="btn btn-primary">Suivant ></a>
 		</div>
 	</section>

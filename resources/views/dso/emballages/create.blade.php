@@ -9,7 +9,8 @@
 @section('content')
   <section id="emballages">
 	<i class="material-icons">menu</i>
-	<form action="/dso/{{$idDso}}/emballages" method="POST">
+
+	<form action="/dso/{{$idDso}}/emballages" method="POST" enctype="multipart/form-data">
 		@csrf
 
 		<div id="left">
@@ -145,7 +146,6 @@
 			</div>
 
 			<div class="container" id="btn-bottom-page">
-				
 				<button type="submit" class="btn btn-outline-primary vert" name="">Valider</button>
 			</div>
 
