@@ -7,9 +7,11 @@
 @endsection
 
 @section('content')
+
   <section id="emballages">
 	<i class="material-icons">menu</i>
-	<form action="/dso/{{$idDso}}/emballages/{{ $idEmballage }}/edit/" method="POST">
+
+	<form action="/dso/{{$idDso}}/emballages/{{ $idEmballage }}/edit/" method="POST" enctype="multipart/form-data">
 		@csrf
 
 		<div id="left">
@@ -69,8 +71,17 @@
 			</div>
 
 			<div class="form-group">
-				<label for="url_photo">Ajouter une photo :</label>
-				<input type="file" class="form-control-file" name="url_photo" value="{{ $data->url_photo }}">
+				<p>Photo actuelle : {{ $data->url_photo ? $data->url_photo : 'aucune' }}</p>
+
+				@if($data->url_photo)
+					<button class="btn btn-primary" type="submit" name="action" value="delete-picture">Supprimer la photo</button>
+					</br>
+				@endif
+
+				<label for="url_photo">Nouvelle photo :</label>
+				<input type="file" class="form-control-file" id="url_photo" name="url_photo" value="{{ $data->url_photo }}">
+
+
 			</div>
 			<div id="image-upload">
 				<img src="{{ $data->url_photo }}" >
@@ -145,7 +156,7 @@
 			</div>
 
 			<div class="container" id="btn-bottom-page">
-				<button type="submit" class="btn btn-outline-primary vert" name="">Valider</button>
+				<button type="submit" class="btn btn-outline-primary vert" name="action" value="submit-form">Valider</button>
 			</div>
 
 		</div>

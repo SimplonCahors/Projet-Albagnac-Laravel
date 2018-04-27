@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Database\QueryException;
+use Illuminate\Support\Facades\Storage;
 use App\Emballage;
 
 
@@ -69,9 +71,11 @@ class EmballageController extends Controller
     */
     public function store($idDso, Request $request) {
 
+        $img_name = 'dso' . $idDso . '_'. $request->file('url_photo')->getClientOriginalName();   
+
         //create a new emballage 
         $emballage = new Emballage;
-        
+
         //use the request data
         $emballage->id_dso = ($idDso);
         $emballage->ref_int = request('ref_int');
@@ -80,19 +84,19 @@ class EmballageController extends Controller
         $emballage->diametre_longueur = request('diametre_longueur');
         $emballage->hauteur = request('hauteur');
         $emballage->observations = request('observations');
-        $emballage->url_photo = request('url_photo');
+        $emballage->url_photo = $img_name;
         $emballage->plein_vide = request('plein_vide');
-        $emballage->temp_produit = request('temp_produit');
         $emballage->poids_prod = request('poids_prod');
         $emballage->matiere = request('matiere');
         $emballage->niveau_deform = request('niveau_deform');
         $emballage->tolerance_dim = request('tolerance_dim');
 
+        //put uploaded photo in storage
+        $path = $request->file('url_photo')->storeAs('emb_photos', $img_name);
+
         //save it to the dbb
         $emballage->save();
 
-        //redirect to the defined page
-        
         return redirect()->route('emballage-index', ['idDso' => $idDso]);
     }
     
@@ -154,25 +158,48 @@ class EmballageController extends Controller
     */
      public function update($idDso, Request $request, $idEmballage)
     {
-        $update = Emballage::find($idEmballage);
+        $emballage = Emballage::find($idEmballage);
 
-        $update->ref_int = request('ref_int');
-        $update->ref_ext = request('ref_ext');
-        $update->forme = request('forme');
-        $update->diametre_longueur = request('diametre_longueur');
-        $update->hauteur = request('hauteur');
-        $update->observations = request('observations');
-        $update->url_photo = request('url_photo');
-        $update->plein_vide = request('plein_vide');
-        $update->temp_produit = request('temp_produit');
-        $update->poids_prod = request('poids_prod');
-        $update->matiere = request('matiere');
-        $update->niveau_deform = request('niveau_deform');
-        $update->tolerance_dim = request('tolerance_dim');
+        // Switch pour repérer de quel bouton vient le submit :
+        switch ($request->input('action')) {
 
-        $update->save();
+            case 'delete-picture': // Si c'est le bouton "Supprimer photo"
+                    
+                    Storage::delete('emb_photos/' . $emballage->url_photo);
+                    $emballage->url_photo = NULL;
+                    $emballage->save();
+                    return redirect()->route('emballage-edit', ['idDso' => $idDso, 'idEmballage' => $idEmballage]);
+                    break;
 
-        return redirect()->route('emballage-index', ['idDso' => $idDso]);
+            case 'submit-form': // Si c'est le bouton de validation du formulaire :
+
+                // Si la photo a été modifiée, remplace l'ancienne dans le storage  :
+                if ($request->file('url_photo')) {
+                    if ($emballage->url_photo) { Storage::delete('emb_photos/' . $emballage->url_photo); }
+                    $img_name = 'dso' . $idDso . '_'. $request->file('url_photo')->getClientOriginalName();
+                    $emballage->url_photo = $img_name;
+                    $path = $request->file('url_photo')->storeAs('emb_photos', $img_name);
+                }
+            
+                $emballage->ref_int = request('ref_int');
+                $emballage->ref_ext = request('ref_ext');
+                $emballage->forme = request('forme');
+                $emballage->diametre_longueur = request('diametre_longueur');
+                $emballage->hauteur = request('hauteur');
+                $emballage->observations = request('observations');
+                $emballage->plein_vide = request('plein_vide');
+                $emballage->temp_produit = request('temp_produit');
+                $emballage->poids_prod = request('poids_prod');
+                $emballage->matiere = request('matiere');
+                $emballage->niveau_deform = request('niveau_deform');
+                $emballage->tolerance_dim = request('tolerance_dim');
+
+                $emballage->save();
+
+                return redirect()->route('emballage-index', ['idDso' => $idDso]);
+
+                break;
+        }
     }
 
 
@@ -191,7 +218,14 @@ class EmballageController extends Controller
     */
     public function destroy($idDso,$id)
     {
-        $emballage = Emballage::find($idEmballage)->delete(); 
+        $emballage = Emballage::find($idEmballage);
+
+        // Supprime la photo correspondante dans le storage  :
+        if ($emballage->url_photo) { 
+            Storage::delete('emb_photos/' . $emballage->url_photo); 
+        }
+
+        $emballage->delete(); 
 
         return redirect()->route('emballage-index', ['idDso' => $idDso]);
     }
