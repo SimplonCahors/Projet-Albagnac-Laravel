@@ -17,8 +17,10 @@
 		<div class="liste-accueil">
 
 			@if (!Auth::guest() && Auth::user()->adv)
-
+				@if(count($dsotermine) !== 0)
 				<h3>DSO à valider :</h3>
+				@else
+				@endif
 				<ul id="list-DSO">
 
 					@foreach ($dsotermine as $dso)
