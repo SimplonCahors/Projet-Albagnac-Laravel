@@ -10,7 +10,7 @@
   <section id="emballages">
 	<i class="material-icons">menu</i>
 
-	<form action="/dso/{{$idDso}}/emballages/{{ $idEmballage }}/edit/" method="POST">
+	<form action="/dso/{{$idDso}}/emballages/{{ $idEmballage }}/edit/" method="POST" enctype="multipart/form-data">
 		@csrf
 
 		<div id="left">
@@ -51,8 +51,17 @@
 				<textarea class="form-control" id="observations" name="observations" rows="3" placeholder="Observations" value="{{ $data->observations }}"></textarea>
 			</div>
 			<div class="form-group">
-				<label for="url_photo">Ajouter une photo :</label>
+				<p>Photo actuelle : {{ $data->url_photo ? $data->url_photo : 'aucune' }}</p>
+
+				@if($data->url_photo)
+					<button class="btn btn-primary" type="submit" name="action" value="delete-picture">Supprimer la photo</button>
+					</br>
+				@endif
+
+				<label for="url_photo">Nouvelle photo :</label>
 				<input type="file" class="form-control-file" id="url_photo" name="url_photo" value="{{ $data->url_photo }}">
+
+
 			</div>
 			<div id="image-upload">
 				<img src="" >
@@ -101,7 +110,7 @@
 			</div>
 			<div class="container" id="btn-bottom-page">
 				<button type="button" class="btn btn-outline-primary grisfonce">Ajouter un emballage</button>
-				<button type="submit" class="btn btn-outline-primary vert" name="">Valider</button>
+				<button type="submit" class="btn btn-outline-primary vert" name="action" value="submit-form">Valider</button>
 			</div>
 		</div>
 

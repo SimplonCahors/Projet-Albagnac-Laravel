@@ -10,7 +10,7 @@
   <section id="emballages">
 	<i class="material-icons">menu</i>
 
-	<form action="/dso/{{$idDso}}/emballages" method="POST">
+	<form action="/dso/{{$idDso}}/emballages" method="POST" enctype="multipart/form-data">
 		@csrf
 
 		<div id="left">
