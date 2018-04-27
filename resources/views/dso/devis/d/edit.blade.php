@@ -513,7 +513,7 @@
 
 				</div>
 				
-				<button type="button" class="btn btn-primary" type="submit">Valider ></button>
+				<button class="btn btn-primary" type="submit">Valider ></button>
 
 			</div>
 
