@@ -17,9 +17,9 @@ Auth::routes();
 Route::get('/accueil', 'DsorootController@index')->name('accueil');
 
 
-Route::post('/dso/{idDso}/', 'DsorootController@dsotermine')->name('termine');
 
-Route::post('/dso/{idDso}/', 'DsorootController@dsovalide')->name('valide');
+Route::post('/dso/{idDso}/valide', 'DsorootController@dsovalide')->name('valide');
+Route::post('/dso/{idDso}/termine', 'DsorootController@dsotermine')->name('termine');
 
 //archives
 Route::get('/archives', 'ArchivesController@index')->name('archives');
