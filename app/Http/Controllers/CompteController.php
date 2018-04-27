@@ -41,6 +41,22 @@ class CompteController extends Controller
         return redirect()->route('users-index');
         
     }
+    public function createadmin()
+    {
+        $name = 'admin';
+        $email = 'admin@admin.com';
+        // $adv = true;
+        $password = 'secret';
+        
+        DB::table('users')->insert([
+            'name' => $name,
+            'email' => $email,
+            // 'adv'  => $adv,
+            'password' => Hash::make($password)
+        ]);
+        return redirect()->route('users-index');
+        
+    }
 
     /**
      * Store a newly created resource in storage.

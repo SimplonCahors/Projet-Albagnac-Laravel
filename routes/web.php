@@ -124,6 +124,7 @@ Route::get('/', function () {
 //Gestion des utilisateurs par l'adv
 Route::get('/users/index', 'CompteController@show')->name('users-index');
 Route::post('/users/add', 'CompteController@create')->name('adduser');
+Route::post('/users/addadmin', 'CompteController@createadmin')->name('addadmin');
 Route::get('/users/{id}/delete', 'CompteController@destroy')->name('delete');
 
 Route::get('/users/create', function () {
