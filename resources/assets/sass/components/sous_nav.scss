@@ -7,15 +7,38 @@ section#sous_nav{
 	text-align: center;	
 
 	a{
+
 		color: $grisfonce;
 		padding: 20px;
+	}
 
-	}	
+	form {
+			margin-left: 50px;
+		}
+
+	a:hover {
+		color: $jaune;
+		background-color: $grisfonce;
+		text-decoration: none;
+		padding-bottom: 9px;
+		transition-property: background-color; 
+		transition-duration: 1.5s;
+	}
 
 	@media screen and (max-device-width: 800px){
-		font-size: 14px;
+		font-size: 13px;
 		a{
 			padding: 2px;
+		}
+		a:hover {
+		padding-bottom: 2px;
+	}
+		form {
+			margin-top: 180px;
+			margin-right: 7px;
+			button {
+				font-size: 10px;	
+			}
 		}
 	}	
 }

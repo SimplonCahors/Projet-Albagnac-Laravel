@@ -44,7 +44,6 @@ div#app{
 			li.nav-item.dropdown.show div.dropdown-menu.show a.dropdown-item{
 				color:black;
 			}
-		}
 	}
 
 	.row{
@@ -58,4 +57,18 @@ div#app{
 		border: solid 1px black
 	}
 
+}
+	@media screen and (max-device-width: 800px) {
+		nav#nav_principale{
+		font-size: 14px;
+			h2{
+				width: 60%;
+				font-size: 18px;
+				text-align: left;
+			}
+			ul{
+			right:10%;
+			}
+		}			
+	}
 }
