@@ -14,10 +14,10 @@
 	</div>
 
 		<div id="liste-accueil">
+			@if (!Auth::guest() && Auth::user()->adv)
 		<h3>DSO à valider :</h3>
 
 		<ul id="list-DSO">
-			@if (!Auth::guest() && Auth::user()->adv)
 				@foreach ($dsotermine as $dso)
 					<li>
 						<div class="card">
@@ -41,9 +41,9 @@
 						</div>
 					</li>
 				@endforeach
-			@endif
 		</ul>
 	</div>
+	@endif
 
 
 	<div id="liste-accueil">
