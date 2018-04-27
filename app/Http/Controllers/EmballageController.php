@@ -189,7 +189,7 @@ class EmballageController extends Controller
     | DESTROY => supprime les données dans la DBB | /emballages/id
     |--------------------------------------------------------------------------
     */
-    public function destroy($idDso,$idEmballage)
+    public function destroy($idDso,$id)
     {
         $emballage = Emballage::find($idEmballage)->delete(); 
 
